@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "191460708881",
+    "project_id": "blood-bank-a69a5",
+    "storage_bucket": "blood-bank-a69a5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:191460708881:android:fea2caf947f163a61dd7b0",
+        "android_client_info": {
+          "package_name": "com.example.blood_bank"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOQ8ifhbKEkYg41GmDlGJMTfsFuzax6Co"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:191460708881:android:c6b32cf3c5e851251dd7b0",
+        "android_client_info": {
+          "package_name": "com.example.graduation_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOQ8ifhbKEkYg41GmDlGJMTfsFuzax6Co"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
