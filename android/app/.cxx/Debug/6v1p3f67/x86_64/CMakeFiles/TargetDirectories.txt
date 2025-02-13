@@ -1,0 +1,2 @@
+D:/3omran/flutter projects/blood_bank/android/app/.cxx/Debug/6v1p3f67/x86_64/CMakeFiles/edit_cache.dir
+D:/3omran/flutter projects/blood_bank/android/app/.cxx/Debug/6v1p3f67/x86_64/CMakeFiles/rebuild_cache.dir
