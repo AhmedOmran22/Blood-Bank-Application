@@ -137,7 +137,7 @@ class _RegisterFormState extends State<RegisterForm> {
             (type) => DropdownMenuItem(
               value: type,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8),
+                padding: const EdgeInsets.symmetric(horizontal: 2),
                 child: Text(type),
               ),
             ),
