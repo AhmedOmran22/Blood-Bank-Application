@@ -18,9 +18,9 @@ class OnBoardingPageViewItem extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(height: MediaQuery.of(context).size.height * .15),
+          SizedBox(height: MediaQuery.of(context).size.height * .2),
           SvgPicture.asset(
-            height: 270,
+            height: 280,
             onBoardingModel.image,
           ),
           const SizedBox(
