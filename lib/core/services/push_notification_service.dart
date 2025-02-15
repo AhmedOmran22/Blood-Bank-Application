@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import '../models/notficiation_model.dart';
 import 'local_notfiication_service.dart';
@@ -9,10 +10,40 @@ class PushNotificationService {
 
   static Future<void> initialize() async {
     await _messaging.requestPermission();
-    fcmToken = await _messaging.getToken();
+
+    var connectivityResult = await Connectivity().checkConnectivity();
+    if (connectivityResult == ConnectivityResult.none) {
+      print("No internet connection. Skipping FCM token request.");
+      listenForInternet();
+      return;
+    }
+
+    await fetchFcmToken();
     onBackGroundMessage();
     onForegroundMessage();
     _messaging.subscribeToTopic("AllUsers");
+  }
+
+  static void listenForInternet() {
+    Connectivity()
+        .onConnectivityChanged
+        .listen((List<ConnectivityResult> results) {
+      if (results.isNotEmpty && results.contains(ConnectivityResult.mobile) ||
+          results.contains(ConnectivityResult.wifi) ||
+          results.contains(ConnectivityResult)) {
+        print("Internet connected! Fetching FCM token...");
+        fetchFcmToken();
+      }
+    });
+  }
+
+  static Future<void> fetchFcmToken() async {
+    try {
+      fcmToken = await _messaging.getToken();
+      print("FCM Token: $fcmToken");
+    } catch (e) {
+      print("Error getting FCM token: $e");
+    }
   }
 
   static Future<void> onBackGroundMessage() async {
@@ -39,5 +70,3 @@ class PushNotificationService {
     // log(message.notification?.title.toString() ?? "null");
   }
 }
-
-
