@@ -10,7 +10,11 @@ class PushNotificationService {
   static Future<void> initialize() async {
     await _messaging.requestPermission();
     //! there is an exception thrown from here
-    fcmToken = await _messaging.getToken();
+    try {
+      fcmToken = await _messaging.getToken();
+    } on Exception catch (e) {
+      log(e.toString());
+    }
     onBackGroundMessage();
     onForegroundMessage();
     _messaging.subscribeToTopic("AllUsers");
@@ -40,5 +44,3 @@ class PushNotificationService {
     // log(message.notification?.title.toString() ?? "null");
   }
 }
-
-

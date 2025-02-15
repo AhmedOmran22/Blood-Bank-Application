@@ -43,7 +43,7 @@ class AuthRepoImpl extends AuthRepo {
         email: email,
         phoneNumber: phoneNumber,
         bloodType: bloodType,
-        fcmTokenm: PushNotificationService.fcmToken!,
+        fcmTokenm: PushNotificationService.fcmToken ?? " no token for this device ",
         gender: gender,
       );
       await addUserData(user: userModel);
