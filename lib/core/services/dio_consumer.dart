@@ -1,8 +1,8 @@
 import 'package:blood_bank/core/errors/failure.dart';
 import 'package:dio/dio.dart';
-import 'api_consumer.dart';
+import 'api_service.dart';
 
-class DioConsumer extends ApiConsumer {
+class DioConsumer extends ApiService {
   final Dio dio;
 
   DioConsumer({required this.dio}) {
