@@ -44,7 +44,8 @@ class AuthRepoImpl extends AuthRepo {
         email: email,
         phoneNumber: phoneNumber,
         bloodType: bloodType,
-        fcmTokenm: PushNotificationService.fcmToken ?? " no token for this device ",
+        fcmTokenm:
+            PushNotificationService.fcmToken ?? " no token for this device ",
         gender: gender,
         NationalId: NationalId,
       );
@@ -101,7 +102,7 @@ class AuthRepoImpl extends AuthRepo {
       path: BackendEndpoints.kUsers,
       docuementId: uid,
     );
-    return UserModel.fromJson(userData);
+    return UserModel.fromFireStore(userData);
   }
 
   @override

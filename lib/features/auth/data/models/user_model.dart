@@ -18,7 +18,7 @@ class UserModel {
     required this.gender,
     required this.NationalId,
   });
-  factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
+  factory UserModel.fromFireStore(Map<String, dynamic> json) => UserModel(
         uid: json['uid'] as String,
         email: json['email'] as String,
         name: json['name'] as String,
