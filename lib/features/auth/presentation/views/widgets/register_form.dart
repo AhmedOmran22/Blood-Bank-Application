@@ -201,12 +201,13 @@ class _RegisterFormState extends State<RegisterForm> {
       if (isTermsAccepted) {
         if (passwordController.text == confirmPasswordController.text) {
           await context.read<RegisterCubit>().register(
-                gender: gender,
                 name: nameController.text,
                 email: emailController.text,
                 bloodType: bloodType,
-                password: passwordController.text,
+                gender: gender,
                 phoneNumber: phoneController.text,
+                NationalId: nationalIDController.text, 
+                password: passwordController.text,
               );
         } else {
           showSnackBar(context, "Passwords do not match");

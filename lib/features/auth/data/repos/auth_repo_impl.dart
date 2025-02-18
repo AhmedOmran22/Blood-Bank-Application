@@ -30,6 +30,7 @@ class AuthRepoImpl extends AuthRepo {
     required String phoneNumber,
     required String bloodType,
     required String gender,
+    required String NationalId,
   }) async {
     User? user;
     try {
@@ -45,6 +46,7 @@ class AuthRepoImpl extends AuthRepo {
         bloodType: bloodType,
         fcmTokenm: PushNotificationService.fcmToken ?? " no token for this device ",
         gender: gender,
+        NationalId: NationalId,
       );
       await addUserData(user: userModel);
       await saveUserData(user: userModel);
