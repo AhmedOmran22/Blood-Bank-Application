@@ -14,6 +14,7 @@ class RegisterCubit extends Cubit<RegisterCubitState> {
     required String phoneNumber,
     required String bloodType,
     required String gender,
+    required String NationalId,
   }) async {
     // send loading state
     emit(RegisterCubitLoading());
@@ -24,6 +25,7 @@ class RegisterCubit extends Cubit<RegisterCubitState> {
       phoneNumber: phoneNumber,
       bloodType: bloodType,
       gender: gender,
+      NationalId: NationalId,
     );
     result.fold(
       (failure) => emit(RegisterCubitError(failure.errMessage)),

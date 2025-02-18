@@ -30,6 +30,7 @@ class AuthRepoImpl extends AuthRepo {
     required String phoneNumber,
     required String bloodType,
     required String gender,
+    required String NationalId,
   }) async {
     User? user;
     try {
@@ -43,8 +44,10 @@ class AuthRepoImpl extends AuthRepo {
         email: email,
         phoneNumber: phoneNumber,
         bloodType: bloodType,
-        fcmTokenm: PushNotificationService.fcmToken ?? " no token for this device ",
+        fcmTokenm:
+            PushNotificationService.fcmToken ?? " no token for this device ",
         gender: gender,
+        NationalId: NationalId,
       );
       await addUserData(user: userModel);
       await saveUserData(user: userModel);
@@ -99,7 +102,7 @@ class AuthRepoImpl extends AuthRepo {
       path: BackendEndpoints.kUsers,
       docuementId: uid,
     );
-    return UserModel.fromJson(userData);
+    return UserModel.fromFireStore(userData);
   }
 
   @override

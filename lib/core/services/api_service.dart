@@ -1,4 +1,4 @@
-abstract class ApiConsumer {
+abstract class ApiService {
   Future<dynamic> get(
     String path, {
     Map<String, dynamic>? queryParameters,

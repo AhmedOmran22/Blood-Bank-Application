@@ -1,4 +1,4 @@
-import 'package:blood_bank/core/api/dio_consumer.dart';
+import 'package:blood_bank/core/services/dio_consumer.dart';
 import 'package:blood_bank/core/routes/app_routes.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
