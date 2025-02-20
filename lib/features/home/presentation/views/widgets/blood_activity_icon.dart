@@ -11,7 +11,7 @@ class BloodActivityItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        // padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         alignment: Alignment.center,
         margin: const EdgeInsets.symmetric(horizontal: 16),
         decoration: BoxDecoration(

@@ -18,9 +18,9 @@ class HomeViewBody extends StatelessWidget {
         SliverToBoxAdapter(child: SizedBox(height: 16)),
         SliverText(text: "activity as "),
         SliverToBoxAdapter(child: SizedBox(height: 16)),
-        SliverToBoxAdapter(
-          child: ActivityOptionsGrid(),
-        ),
+        ActivityOptionsGrid(),
+        SliverToBoxAdapter(child: SizedBox(height: 16)),
+        SliverText(text: "Blood Groups"),
       ],
     );
   }

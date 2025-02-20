@@ -12,6 +12,7 @@ class HomeSliverAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+      surfaceTintColor: Theme.of(context).colorScheme.surface,
       backgroundColor: Theme.of(context).colorScheme.surface,
       expandedHeight: 80,
       floating: true,

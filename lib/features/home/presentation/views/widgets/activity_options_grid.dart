@@ -8,24 +8,16 @@ class ActivityOptionsGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      spacing: 16,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            BloodActivityItem(),
-            BloodActivityItem(),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            BloodActivityItem(),
-            BloodActivityItem(),
-          ],
-        ),
-      ],
+    return SliverGrid(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        mainAxisSpacing: 16,
+        childAspectRatio: 2.3,
+      ),
+      delegate: SliverChildBuilderDelegate(
+        (context, index) => const BloodActivityItem(),
+        childCount: 4, // عدد العناصر
+      ),
     );
   }
 }

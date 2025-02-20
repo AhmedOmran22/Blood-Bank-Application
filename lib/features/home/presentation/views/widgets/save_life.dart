@@ -24,7 +24,9 @@ class SaveLife extends StatelessWidget {
             Text(
               "Save a Life\nGive Blood",
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.titleLarge,
+              style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                    letterSpacing: 1,
+                  ),
             ),
             SvgPicture.asset(
               AppAssets.imagesAnotherTesting,

@@ -14,7 +14,10 @@ class SliverText extends StatelessWidget {
       sliver: SliverToBoxAdapter(
         child: Text(
           text,
-          style: Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: 22),
+          style: Theme.of(context)
+              .textTheme
+              .titleLarge!
+              .copyWith(letterSpacing: 1, fontSize: 22),
         ),
       ),
     );
