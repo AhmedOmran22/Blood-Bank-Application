@@ -54,4 +54,8 @@ ThemeData lightTheme = ThemeData(
     bodyLarge: AppStyles.cairoBold20.copyWith(color: AppColors.blackColor),
     bodySmall: AppStyles.cairoRegular14.copyWith(color: AppColors.blackColor),
   ),
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+    backgroundColor: AppColors.whiteColor,
+    selectedItemColor: AppColors.primaryColor,
+  ),
 );

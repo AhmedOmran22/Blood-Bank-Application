@@ -1,4 +1,6 @@
+import 'package:blood_bank/core/theme_cubit/theme_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BottomNavigationBarView extends StatefulWidget {
@@ -16,17 +18,22 @@ class _BottomNavigationBarViewState extends State<BottomNavigationBarView> {
     return Scaffold(
       body: IndexedStack(
         index: currentIndex,
-        children: const [
+        children: [
           Center(
-            child: Text('Home'),
+            child: GestureDetector(
+              child: const Text('Home'),
+              onTap: () {
+                BlocProvider.of<ThemeCubit>(context).toggleTheme();
+              },
+            ),
           ),
-          Center(
+          const Center(
             child: Text('Awareness'),
           ),
-          Center(
+          const Center(
             child: Text('chat bot'),
           ),
-          Center(
+          const Center(
             child: Text('More'),
           ),
         ],
@@ -41,31 +48,19 @@ class _BottomNavigationBarViewState extends State<BottomNavigationBarView> {
         currentIndex: currentIndex,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(
-              FontAwesomeIcons.house,
-              size: 20,
-            ),
+            icon: Icon(FontAwesomeIcons.house, size: 20),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              FontAwesomeIcons.lightbulb,
-              size: 20,
-            ),
+            icon: Icon(FontAwesomeIcons.lightbulb, size: 20),
             label: 'Awareness',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              FontAwesomeIcons.robot,
-              size: 20,
-            ),
+            icon: Icon(FontAwesomeIcons.robot, size: 20),
             label: 'chat bot',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              FontAwesomeIcons.ellipsis,
-              size: 20,
-            ),
+            icon: Icon(FontAwesomeIcons.gear, size: 20),
             label: 'More',
           ),
         ],
