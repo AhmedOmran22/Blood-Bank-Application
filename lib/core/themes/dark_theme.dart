@@ -3,6 +3,7 @@ import 'package:blood_bank/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
 ThemeData darkTheme = ThemeData(
+  splashFactory: NoSplash.splashFactory,
   snackBarTheme: const SnackBarThemeData(
     backgroundColor: AppColors.blackColor,
   ),
@@ -53,5 +54,11 @@ ThemeData darkTheme = ThemeData(
     displayLarge: AppStyles.cairoBold28.copyWith(color: AppColors.whiteColor),
     bodyLarge: AppStyles.cairoBold20.copyWith(color: AppColors.whiteColor),
     bodySmall: AppStyles.cairoRegular14.copyWith(color: AppColors.whiteColor),
+  ),
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+    backgroundColor: Color(0xFF121212),
+    selectedItemColor: AppColors.primaryColor,
+    unselectedItemColor: AppColors.greyColor,
+    type: BottomNavigationBarType.fixed,
   ),
 );

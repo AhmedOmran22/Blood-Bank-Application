@@ -4,11 +4,11 @@ import '../utils/app_colors.dart';
 import '../utils/app_styles.dart';
 
 ThemeData lightTheme = ThemeData(
+  splashFactory: NoSplash.splashFactory,
   snackBarTheme: const SnackBarThemeData(
     backgroundColor: AppColors.whiteColor,
   ),
   brightness: Brightness.light,
-  
   primaryColor: AppColors.primaryColor,
   scaffoldBackgroundColor: AppColors.whiteColor,
   colorScheme: const ColorScheme.light(
