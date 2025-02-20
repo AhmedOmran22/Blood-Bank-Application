@@ -1,6 +1,8 @@
-import 'package:blood_bank/core/theme_cubit/theme_cubit.dart';
+import 'package:blood_bank/features/awarness/presentation/views/awarness_view.dart';
+import 'package:blood_bank/features/chat_bot/presentation/views/chat_bot_view.dart';
+import 'package:blood_bank/features/home/presentation/views/home_view.dart';
+import 'package:blood_bank/features/settings/presentation/views/settings_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BottomNavigationBarView extends StatefulWidget {
@@ -19,23 +21,10 @@ class _BottomNavigationBarViewState extends State<BottomNavigationBarView> {
       body: IndexedStack(
         index: currentIndex,
         children: [
-          Center(
-            child: GestureDetector(
-              child: const Text('Home'),
-              onTap: () {
-                BlocProvider.of<ThemeCubit>(context).toggleTheme();
-              },
-            ),
-          ),
-          const Center(
-            child: Text('Awareness'),
-          ),
-          const Center(
-            child: Text('chat bot'),
-          ),
-          const Center(
-            child: Text('More'),
-          ),
+          const HomeView(),
+          const AwarnessView(),
+          const ChatBotView(),
+          const SettingsView(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
