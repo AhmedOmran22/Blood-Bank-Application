@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/functions/get_current_user.dart';
-import '../../../../../core/utils/app_colors.dart' show AppColors;
 
 class HomeSliverAppBar extends StatelessWidget {
   const HomeSliverAppBar({
@@ -30,11 +29,14 @@ class HomeSliverAppBar extends StatelessWidget {
                 fontSize: 20,
               ),
         ),
-        subtitle: Text(
-          "Blood Type : ${getCurrentUser().bloodType}",
-          style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                color: Colors.grey.shade600,
-              ),
+        subtitle: Padding(
+          padding: const EdgeInsets.only(top: 4),
+          child: Text(
+            "Blood Type : ${getCurrentUser().bloodType}",
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                  color: Colors.grey.shade600,
+                ),
+          ),
         ),
         trailing: Badge(
           smallSize: 12,
@@ -43,10 +45,12 @@ class HomeSliverAppBar extends StatelessWidget {
             onTap: () {
               BlocProvider.of<ThemeCubit>(context).toggleTheme();
             },
-            child: const Icon(
+            child: Icon(
               Icons.notifications,
-              size: 28,
-              color: AppColors.blackColor,
+              size: 32,
+              color: Theme.of(context).brightness == Brightness.dark
+                  ? Colors.white
+                  : Colors.black,
             ),
           ),
         ),

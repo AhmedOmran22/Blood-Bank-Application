@@ -50,7 +50,7 @@ class _BottomNavigationBarViewState extends State<BottomNavigationBarView> {
           ),
           BottomNavigationBarItem(
             icon: Icon(FontAwesomeIcons.gear, size: 20),
-            label: 'More',
+            label: 'Settings',
           ),
         ],
       ),

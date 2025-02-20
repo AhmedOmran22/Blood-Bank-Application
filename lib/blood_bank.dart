@@ -1,4 +1,3 @@
-import 'package:blood_bank/core/services/firebase_auth_service.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,9 +22,7 @@ class BloodBank extends StatelessWidget {
                 debugShowCheckedModeBanner: false,
                 theme: state is LightThemeState ? lightTheme : darkTheme,
                 onGenerateRoute: onGenerateRoute,
-                initialRoute: FirebaseAuthService().isLoggedIn()
-                    ? AppRoutes.bottomNavigationBarView
-                    : AppRoutes.languageAndTheme,
+                initialRoute: AppRoutes.languageAndTheme,
                 localizationsDelegates: context.localizationDelegates,
                 supportedLocales: context.supportedLocales,
                 locale: context.locale,
