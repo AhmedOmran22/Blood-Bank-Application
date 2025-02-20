@@ -3,8 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../../core/utils/app_assets.dart';
 
-class SaveLife extends StatelessWidget {
-  const SaveLife({
+class SaveLifeWidget extends StatelessWidget {
+  const SaveLifeWidget({
     super.key,
   });
 
