@@ -28,13 +28,13 @@ class _BottomNavigationBarViewState extends State<BottomNavigationBarView> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentIndex,
         type: BottomNavigationBarType.fixed,
         onTap: (index) {
           setState(() {
             currentIndex = index;
           });
         },
-        currentIndex: currentIndex,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(FontAwesomeIcons.house, size: 20),

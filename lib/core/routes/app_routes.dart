@@ -7,6 +7,5 @@ abstract class AppRoutes {
   static const String forgetPassword = 'forgetPasswordView';
   static const String verify = 'verifyView';
   static const String resetPassword = 'resetPasswordView';
-  static const String home = 'homeView';
   static const String bottomNavigationBarView= 'bottomNavigationBarView';
 }

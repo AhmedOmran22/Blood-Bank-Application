@@ -2,7 +2,6 @@ import 'package:blood_bank/core/routes/app_routes.dart';
 import 'package:blood_bank/features/auth/presentation/views/login_view.dart';
 import 'package:blood_bank/features/auth/presentation/views/register_view.dart';
 import 'package:blood_bank/features/auth/presentation/views/reset_password_view.dart';
-import 'package:blood_bank/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import '../../bottom_navigation_bar_view.dart';
 import '../../features/auth/presentation/views/forget_password_view.dart';
@@ -67,11 +66,6 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
           return const BottomNavigationBarView();
         },
       );
-    case AppRoutes.home:
-      return MaterialPageRoute(
-        builder: (context) => const HomeView(),
-      );
-
     default:
       return MaterialPageRoute(
         builder: (context) => Scaffold(
