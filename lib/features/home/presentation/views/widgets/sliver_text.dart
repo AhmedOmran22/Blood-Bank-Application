@@ -17,7 +17,7 @@ class SliverText extends StatelessWidget {
           style: Theme.of(context)
               .textTheme
               .titleLarge!
-              .copyWith(letterSpacing: 1, fontSize: 22),
+              .copyWith(letterSpacing: 1, fontSize: 20),
         ),
       ),
     );

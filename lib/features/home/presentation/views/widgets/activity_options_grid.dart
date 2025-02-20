@@ -16,7 +16,7 @@ class ActivityOptionsGrid extends StatelessWidget {
       ),
       delegate: SliverChildBuilderDelegate(
         (context, index) => const BloodActivityItem(),
-        childCount: 4, // عدد العناصر
+        childCount: 4,
       ),
     );
   }
