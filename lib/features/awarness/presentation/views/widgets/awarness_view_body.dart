@@ -5,6 +5,8 @@ class AwarnessViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text("Awarness View ");
+    return const Center(
+      child: Text("Awarness View "),
+    );
   }
 }

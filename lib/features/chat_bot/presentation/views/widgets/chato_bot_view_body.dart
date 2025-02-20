@@ -5,6 +5,8 @@ class ChatBotViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text("Chat Bot View ");
+    return const Center(
+      child: Text("Chat Bot View "),
+    );
   }
 }

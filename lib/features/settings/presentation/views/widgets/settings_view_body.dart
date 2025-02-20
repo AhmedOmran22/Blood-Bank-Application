@@ -5,6 +5,8 @@ class SettingsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text("Settings View ");
+    return const Center(
+      child: Text("Settings View "),
+    );
   }
 }
