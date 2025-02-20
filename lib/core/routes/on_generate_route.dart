@@ -4,6 +4,7 @@ import 'package:blood_bank/features/auth/presentation/views/register_view.dart';
 import 'package:blood_bank/features/auth/presentation/views/reset_password_view.dart';
 import 'package:blood_bank/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
+import '../../bottom_navigation_bar_view.dart';
 import '../../features/auth/presentation/views/forget_password_view.dart';
 import '../../features/auth/presentation/views/verify_view.dart';
 import '../../features/on_boarding/presentation/views/language_and_theme_view.dart';
@@ -58,6 +59,12 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (BuildContext context) {
           return const VerifyView();
+        },
+      );
+    case AppRoutes.bottomNavigationBarView:
+      return MaterialPageRoute(
+        builder: (BuildContext context) {
+          return const BottomNavigationBarView();
         },
       );
     case AppRoutes.home:
