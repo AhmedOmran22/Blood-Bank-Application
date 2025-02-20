@@ -19,6 +19,13 @@ class BloodBank extends StatelessWidget {
           return BlocBuilder<ThemeCubit, ThemeCubitState>(
             builder: (context, state) {
               return MaterialApp(
+                builder: (context, child) {
+                  return MediaQuery(
+                    data: MediaQuery.of(context)
+                        .copyWith(textScaler: const TextScaler.linear(1.0)),
+                    child: child!,
+                  );
+                },
                 debugShowCheckedModeBanner: false,
                 theme: state is LightThemeState ? lightTheme : darkTheme,
                 onGenerateRoute: onGenerateRoute,
