@@ -13,6 +13,7 @@ ThemeData lightTheme = ThemeData(
   scaffoldBackgroundColor: AppColors.whiteColor,
   colorScheme: const ColorScheme.light(
     primary: AppColors.primaryColor,
+    surface: const Color(0xfffff6ee),
   ),
   appBarTheme: const AppBarTheme(
     backgroundColor: AppColors.whiteColor,
