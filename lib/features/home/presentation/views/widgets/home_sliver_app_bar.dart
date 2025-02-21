@@ -14,7 +14,7 @@ class HomeSliverAppBar extends StatelessWidget {
     return SliverAppBar(
       surfaceTintColor: Theme.of(context).colorScheme.surface,
       backgroundColor: Theme.of(context).colorScheme.surface,
-      expandedHeight: 80,
+      expandedHeight: 90,
       floating: true,
       snap: true,
       title: Padding(
@@ -22,7 +22,7 @@ class HomeSliverAppBar extends StatelessWidget {
         child: ListTile(
           contentPadding: const EdgeInsets.symmetric(horizontal: 12),
           leading: const CircleAvatar(
-            radius: 22,
+            radius: 20,
             child: Icon(Icons.person),
           ),
           title: Text(

@@ -20,6 +20,7 @@ class BloodTypeWidget extends StatelessWidget {
         child: Icon(
           Icons.bloodtype,
           color: AppColors.primaryColor,
+          size: 32,
         ),
       ),
     );

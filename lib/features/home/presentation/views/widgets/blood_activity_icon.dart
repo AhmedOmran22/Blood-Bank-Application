@@ -11,9 +11,8 @@ class BloodActivityItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        padding: const EdgeInsets.symmetric(vertical: 16),
         alignment: Alignment.center,
-        // margin: const EdgeInsets.symmetric(horizontal: 8),
         decoration: BoxDecoration(
           color: Theme.of(context).scaffoldBackgroundColor,
           borderRadius: BorderRadius.circular(16),
@@ -29,18 +28,20 @@ class BloodActivityItem extends StatelessWidget {
             const Icon(
               Icons.bloodtype,
               color: AppColors.primaryColor,
-              size: 35,
+              size: 32,
             ),
             const SizedBox(width: 8),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              spacing: 4,
+              spacing: 2,
               children: [
                 Text(
                   "Blood Donor",
-                  style: Theme.of(context).textTheme.titleMedium,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(fontSize: 14),
                 ),
                 Text(
                   "120 Post",

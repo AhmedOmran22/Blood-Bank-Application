@@ -26,6 +26,7 @@ class SaveLifeWidget extends StatelessWidget {
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     letterSpacing: 1,
+                    fontSize: 20
                   ),
             ),
             SvgPicture.asset(
