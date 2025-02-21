@@ -15,9 +15,9 @@ class DotsIndicators extends StatelessWidget {
       effect: ExpandingDotsEffect(
         spacing: 8.0,
         radius: 60,
-        dotWidth: 8,
+        dotWidth: 10,
         dotHeight: 10.0,
-        dotColor: AppColors.primaryColor.withAlpha(128),
+        dotColor: Colors.grey.shade300,
         activeDotColor: AppColors.primaryColor,
       ),
     );
