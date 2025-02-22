@@ -1,4 +1,4 @@
-import 'package:blood_bank/features/home/presentation/views/widgets/blood_activity_item.dart';
+import 'package:blood_bank/features/home/presentation/views/widgets/activity_option_item.dart';
 import 'package:flutter/material.dart';
 
 class ActivityOptions extends StatelessWidget {
@@ -16,17 +16,17 @@ class ActivityOptions extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              BloodActivityItem(),
+              ActivityOptionItem(),
               SizedBox(width: 16),
-              BloodActivityItem(),
+              ActivityOptionItem(),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              BloodActivityItem(),
+              ActivityOptionItem(),
               SizedBox(width: 16),
-              BloodActivityItem(),
+              ActivityOptionItem(),
             ],
           ),
         ],

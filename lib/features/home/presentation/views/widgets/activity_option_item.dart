@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 
-class BloodActivityItem extends StatelessWidget {
-  const BloodActivityItem({
+class ActivityOptionItem extends StatelessWidget {
+  const ActivityOptionItem({
     super.key,
   });
 
