@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 import '../../../../../core/utils/app_styles.dart';
 import 'custom_check_box.dart';
 
-class TermsAncConditions extends StatefulWidget {
-  const TermsAncConditions({
+class TermsAndConditions extends StatefulWidget {
+  const TermsAndConditions({
     super.key,
     required this.onChanged,
   });
   final ValueChanged<bool> onChanged;
 
   @override
-  State<TermsAncConditions> createState() => _TermsAncConditionsState();
+  State<TermsAndConditions> createState() => _TermsAndConditionsState();
 }
 
-class _TermsAncConditionsState extends State<TermsAncConditions> {
+class _TermsAndConditionsState extends State<TermsAndConditions> {
   bool isTermsAccepted = false;
   @override
   Widget build(BuildContext context) {

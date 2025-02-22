@@ -70,7 +70,7 @@ class _RegisterFormState extends State<RegisterForm> {
           buildDropDownGenderField(),
           buildPasswordField(),
           buildConfirmPasswordField(),
-          TermsAncConditions(
+          TermsAndConditions(
             onChanged: (bool value) {
               setState(
                 () {
@@ -206,7 +206,7 @@ class _RegisterFormState extends State<RegisterForm> {
                 bloodType: bloodType,
                 gender: gender,
                 phoneNumber: phoneController.text,
-                NationalId: nationalIDController.text, 
+                NationalId: nationalIDController.text,
                 password: passwordController.text,
               );
         } else {

@@ -1,4 +1,4 @@
-import 'package:blood_bank/features/home/presentation/views/widgets/blood_activity_icon.dart';
+import 'package:blood_bank/features/home/presentation/views/widgets/blood_activity_item.dart';
 import 'package:flutter/material.dart';
 
 class ActivityOptions extends StatelessWidget {
