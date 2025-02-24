@@ -8,6 +8,8 @@ class AppAssets {
 
   static const String imagesBloodTesting = "assets/images/blood_testing.svg";
 
+  static const String imagesCalenderDate = "assets/images/calender_date.svg";
+
   static const String imagesImage1 = "assets/images/image1.png";
 
   static const String imagesImage2 = "assets/images/image2.png";

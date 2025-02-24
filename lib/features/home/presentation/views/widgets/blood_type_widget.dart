@@ -1,4 +1,6 @@
+import 'package:blood_bank/core/utils/app_assets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 
@@ -15,12 +17,15 @@ class BloodTypeWidget extends StatelessWidget {
           width: 1,
         ),
       ),
-      child: const Padding(
-        padding: EdgeInsets.all(16),
-        child: Icon(
-          Icons.bloodtype,
-          color: AppColors.primaryColor,
-          size: 32,
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Stack(
+          children: [
+            SvgPicture.asset(
+              AppAssets.imagesBloodDrop,
+              height: 40,
+            ),
+          ],
         ),
       ),
     );

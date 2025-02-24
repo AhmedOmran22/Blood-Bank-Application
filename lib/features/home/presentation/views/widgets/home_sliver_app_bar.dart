@@ -27,6 +27,8 @@ class HomeSliverAppBar extends StatelessWidget {
           ),
           title: Text(
             getCurrentUser().name,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   fontSize: 20,
                 ),
