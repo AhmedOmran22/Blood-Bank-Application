@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 import '../../../data/models/post_model.dart';
+
 class PostItem extends StatelessWidget {
   const PostItem({super.key, required this.postModel});
 
@@ -24,8 +25,8 @@ class PostItem extends StatelessWidget {
           child: Row(
             spacing: 16,
             children: [
-              const CircleAvatar(
-                child: Icon(Icons.bloodtype),
+              CircleAvatar(
+                child: Text(postModel.bloodType),
               ),
               Column(
                 spacing: 8,

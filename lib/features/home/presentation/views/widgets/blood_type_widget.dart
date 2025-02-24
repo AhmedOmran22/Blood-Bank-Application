@@ -1,6 +1,4 @@
-import 'package:blood_bank/core/utils/app_assets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 
@@ -18,29 +16,10 @@ class BloodTypeWidget extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Stack(
-          children: [
-            SvgPicture.asset(
-              AppAssets.imagesBloodDropRed,
-              height: 48,
-            ),
-            Positioned.fill(
-              child: Align(
-                alignment: Alignment.center,
-                child: Text(
-                  bloodType,
-                  style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 12,
-                      ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
+          padding: const EdgeInsets.all(16),
+          child: CircleAvatar(
+            child: Text(bloodType),
+          )),
     );
   }
 }

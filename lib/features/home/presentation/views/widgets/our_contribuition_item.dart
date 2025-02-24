@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-class OurContributionsItem extends StatelessWidget {
-  const OurContributionsItem(
-      {super.key, this.backGroundColor = Colors.greenAccent});
 
-  final Color? backGroundColor;
+import '../../../data/models/contribution_model.dart';
+
+class OurContributionsItem extends StatelessWidget {
+  const OurContributionsItem({
+    super.key,
+    required this.contributionModel,
+  });
+  final ContributionModel contributionModel;
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -14,24 +18,24 @@ class OurContributionsItem extends StatelessWidget {
             spacing: 8,
             children: [
               Text(
-                "1k+",
+                contributionModel.title,
                 style: Theme.of(context)
                     .textTheme
                     .titleMedium!
-                    .copyWith(color: Colors.black),
+                    .copyWith(color: contributionModel.textColor),
               ),
               Text(
                 "Blood Donner",
                 style: Theme.of(context)
                     .textTheme
                     .titleMedium!
-                    .copyWith(color: Colors.black, fontSize: 12),
+                    .copyWith(color: Colors.grey.shade600, fontSize: 12),
               ),
             ],
           ),
         ),
         decoration: BoxDecoration(
-          color: backGroundColor,
+          color: contributionModel.backgroundColor,
           borderRadius: BorderRadius.circular(8),
         ),
       ),

@@ -24,6 +24,7 @@ class ActivityOptionItem extends StatelessWidget {
           ),
         ),
         child: Row(
+          spacing: 4,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Icon(
@@ -31,7 +32,6 @@ class ActivityOptionItem extends StatelessWidget {
               color: AppColors.primaryColor,
               size: 32,
             ),
-            const SizedBox(width: 8),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
