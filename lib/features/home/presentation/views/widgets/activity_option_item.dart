@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/app_colors.dart';
+import '../../../data/models/activity_option_item_model.dart';
 
 class ActivityOptionItem extends StatelessWidget {
   const ActivityOptionItem({
     super.key,
+    required this.activityOptionItemModel,
   });
 
+  final ActivityOptionItemModel activityOptionItemModel;
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 16),
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: Theme.of(context).scaffoldBackgroundColor,
@@ -37,15 +40,18 @@ class ActivityOptionItem extends StatelessWidget {
               spacing: 2,
               children: [
                 Text(
-                  "Blood Donor",
+                  activityOptionItemModel.title,
                   style: Theme.of(context)
                       .textTheme
                       .titleMedium!
-                      .copyWith(fontSize: 14),
+                      .copyWith(fontSize: 15),
                 ),
                 Text(
-                  "120 Post",
-                  style: Theme.of(context).textTheme.bodySmall,
+                  activityOptionItemModel.subtitle,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodySmall!
+                      .copyWith(color: Colors.grey.shade600),
                 ),
               ],
             )
