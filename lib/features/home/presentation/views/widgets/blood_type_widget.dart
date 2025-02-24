@@ -5,8 +5,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../../core/utils/app_colors.dart';
 
 class BloodTypeWidget extends StatelessWidget {
-  const BloodTypeWidget({super.key});
-
+  const BloodTypeWidget({super.key, required this.bloodType});
+  final String bloodType;
   @override
   Widget build(BuildContext context) {
     return DecoratedBox(
@@ -22,8 +22,21 @@ class BloodTypeWidget extends StatelessWidget {
         child: Stack(
           children: [
             SvgPicture.asset(
-              AppAssets.imagesBloodDrop,
-              height: 40,
+              AppAssets.imagesBloodDropRed,
+              height: 48,
+            ),
+            Positioned.fill(
+              child: Align(
+                alignment: Alignment.center,
+                child: Text(
+                  bloodType,
+                  style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12,
+                      ),
+                ),
+              ),
             ),
           ],
         ),

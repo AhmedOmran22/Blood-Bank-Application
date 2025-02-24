@@ -15,7 +15,7 @@ class PostsAndSeeAllRow extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
-                .copyWith(letterSpacing: 1, fontSize: 18),
+                .copyWith(letterSpacing: 1, fontSize: 16),
           ),
           const Spacer(),
           Text(
@@ -23,7 +23,7 @@ class PostsAndSeeAllRow extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
-                .copyWith(letterSpacing: 1, fontSize: 18),
+                .copyWith(letterSpacing: 1, fontSize: 16),
           ),
         ],
       ),

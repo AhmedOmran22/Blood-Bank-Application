@@ -14,7 +14,7 @@ class ActivityOptionItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+        padding: const EdgeInsets.symmetric(vertical: 16),
         decoration: BoxDecoration(
           color: Theme.of(context).scaffoldBackgroundColor,
           borderRadius: BorderRadius.circular(16),
@@ -24,8 +24,7 @@ class ActivityOptionItem extends StatelessWidget {
           ),
         ),
         child: Row(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Icon(
               Icons.bloodtype,
@@ -44,6 +43,8 @@ class ActivityOptionItem extends StatelessWidget {
                       .textTheme
                       .titleMedium!
                       .copyWith(fontSize: 15),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                 ),
                 Text(
                   activityOptionItemModel.subtitle,
@@ -51,6 +52,8 @@ class ActivityOptionItem extends StatelessWidget {
                       .textTheme
                       .bodySmall!
                       .copyWith(color: Colors.grey.shade600),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                 ),
               ],
             )

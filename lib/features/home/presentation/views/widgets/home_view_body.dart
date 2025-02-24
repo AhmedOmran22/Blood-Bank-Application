@@ -7,6 +7,8 @@ import 'package:blood_bank/features/home/presentation/views/widgets/save_life_wi
 import 'package:blood_bank/features/home/presentation/views/widgets/sliver_text.dart';
 import 'package:flutter/material.dart';
 
+import 'our_contributions_grid.dart';
+
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
 
@@ -32,6 +34,10 @@ class HomeViewBody extends StatelessWidget {
           sliver: PostsAndSeeAllRow(),
         ),
         PostsSliverList(childCount: 2),
+        SliverToBoxAdapter(child: SizedBox(height: 16)),
+        SliverText(text: "Our Contributions"),
+        SliverToBoxAdapter(child: SizedBox(height: 16)),
+        SliverToBoxAdapter(child: OurContributionsGrid()),
       ],
     );
   }

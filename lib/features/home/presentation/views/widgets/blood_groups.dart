@@ -14,19 +14,35 @@ class BloodGroups extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              BloodTypeWidget(),
-              BloodTypeWidget(),
-              BloodTypeWidget(),
-              BloodTypeWidget(),
+              BloodTypeWidget(
+                bloodType: 'A+',
+              ),
+              BloodTypeWidget(
+                bloodType: 'A-',
+              ),
+              BloodTypeWidget(
+                bloodType: 'B+',
+              ),
+              BloodTypeWidget(
+                bloodType: 'B-',
+              ),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              BloodTypeWidget(),
-              BloodTypeWidget(),
-              BloodTypeWidget(),
-              BloodTypeWidget(),
+              BloodTypeWidget(
+                bloodType: 'AB+',
+              ),
+              BloodTypeWidget(
+                bloodType: 'AB-',
+              ),
+              BloodTypeWidget(
+                bloodType: 'O+',
+              ),
+              BloodTypeWidget(
+                bloodType: 'O-',
+              ),
             ],
           )
         ],
