@@ -10,45 +10,45 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CustomScrollView(
-      physics: BouncingScrollPhysics(),
+    return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
       slivers: [
-        HomeSliverAppBar(),
-        SliverToBoxAdapter(child: SizedBox(height: 16)),
-        SaveLifeWidget(),
-        SliverToBoxAdapter(child: SizedBox(height: 16)),
-        SliverText(text: "Activity As "),
-        SliverToBoxAdapter(child: SizedBox(height: 16)),
-        SliverToBoxAdapter(child: ActivityOptions()),
-        SliverToBoxAdapter(child: SizedBox(height: 16)),
-        SliverText(text: "Blood Groups"),
-        SliverToBoxAdapter(child: SizedBox(height: 16)),
-        SliverToBoxAdapter(child: BloodGroups()),
-        SliverToBoxAdapter(child: SizedBox(height: 16)),
-        SliverText(text: "Recently Reviewed"),
-        SliverText(text: "activity as "),
-        SliverToBoxAdapter(child: SizedBox(height: 16)),
-        SliverToBoxAdapter(child: ActivityOptions()),
-        SliverToBoxAdapter(child: SizedBox(height: 16)),
-        SliverText(text: "Blood Groups"),
-        SliverToBoxAdapter(child: SizedBox(height: 16)),
-        SliverToBoxAdapter(child: BloodGroups()),
-        SliverToBoxAdapter(child: SizedBox(height: 16)),
-        SliverText(text: "activity as "),
-        SliverToBoxAdapter(child: SizedBox(height: 16)),
-        SliverToBoxAdapter(child: ActivityOptions()),
-        SliverToBoxAdapter(child: SizedBox(height: 16)),
-        SliverText(text: "Blood Groups"),
-        SliverToBoxAdapter(child: SizedBox(height: 16)),
-        SliverToBoxAdapter(child: BloodGroups()),
-        SliverToBoxAdapter(child: SizedBox(height: 16)),
-        SliverText(text: "activity as "),
-        SliverToBoxAdapter(child: SizedBox(height: 16)),
-        SliverToBoxAdapter(child: ActivityOptions()),
-        SliverToBoxAdapter(child: SizedBox(height: 16)),
-        SliverText(text: "Blood Groups"),
-        SliverToBoxAdapter(child: SizedBox(height: 16)),
-        SliverToBoxAdapter(child: BloodGroups()),
+        const HomeSliverAppBar(),
+        const SliverToBoxAdapter(child: SizedBox(height: 16)),
+        const SaveLifeWidget(),
+        const SliverToBoxAdapter(child: SizedBox(height: 16)),
+        const SliverText(text: "Activity As "),
+        const SliverToBoxAdapter(child: SizedBox(height: 16)),
+        const SliverToBoxAdapter(child: ActivityOptions()),
+        const SliverToBoxAdapter(child: SizedBox(height: 16)),
+        const SliverText(text: "Blood Groups"),
+        const SliverToBoxAdapter(child: SizedBox(height: 16)),
+        const SliverToBoxAdapter(child: BloodGroups()),
+        const SliverToBoxAdapter(child: SizedBox(height: 16)),
+        SliverPadding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          sliver: SliverToBoxAdapter(
+            child: Row(
+              children: [
+                Text(
+                  "Posts",
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(letterSpacing: 1, fontSize: 18),
+                ),
+                const Spacer(),
+                Text(
+                  "See All",
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(letterSpacing: 1, fontSize: 18),
+                ),
+              ],
+            ),
+          ),
+        )
       ],
     );
   }
