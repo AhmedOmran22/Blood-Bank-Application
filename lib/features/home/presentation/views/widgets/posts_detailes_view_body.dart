@@ -74,6 +74,16 @@ class PostDetailesViewBody extends StatelessWidget {
                   ),
             ),
           ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              postModel.whyDoYouNeedBlood,
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w100,
+                  ),
+            ),
+          )
         ],
       ),
     );
