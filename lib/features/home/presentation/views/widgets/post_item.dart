@@ -1,5 +1,6 @@
 import 'package:blood_bank/core/routes/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 import '../../../data/models/post_model.dart';
@@ -54,7 +55,7 @@ class PostItem extends StatelessWidget {
                         spacing: 8,
                         children: [
                           const Icon(
-                            Icons.local_hospital_outlined,
+                            Icons.home_repair_service_outlined,
                             color: AppColors.primaryColor,
                           ),
                           Expanded(
@@ -74,7 +75,7 @@ class PostItem extends StatelessWidget {
                         spacing: 8,
                         children: [
                           const Icon(
-                            Icons.calendar_today,
+                            FontAwesomeIcons.calendarCheck,
                             size: 22,
                             color: AppColors.primaryColor,
                           ),

@@ -3,7 +3,7 @@ import 'package:blood_bank/features/home/presentation/views/widgets/blood_groups
 import 'package:blood_bank/features/home/presentation/views/widgets/home_sliver_app_bar.dart';
 import 'package:blood_bank/features/home/presentation/views/widgets/posts_and_see_all_row.dart';
 import 'package:blood_bank/features/home/presentation/views/widgets/posts_sliver_list.dart';
-import 'package:blood_bank/features/home/presentation/views/widgets/save_life_widget.dart';
+import 'package:blood_bank/core/widgets/save_life_widget.dart';
 import 'package:blood_bank/features/home/presentation/views/widgets/sliver_text.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +19,12 @@ class HomeViewBody extends StatelessWidget {
       slivers: [
         HomeSliverAppBar(),
         SliverToBoxAdapter(child: SizedBox(height: 16)),
-        SaveLifeWidget(),
+        SliverPadding(
+          padding: EdgeInsets.symmetric(
+            horizontal: 16,
+          ),
+          sliver: SaveLifeWidget(),
+        ),
         SliverToBoxAdapter(child: SizedBox(height: 16)),
         SliverText(text: "Activity As "),
         SliverToBoxAdapter(child: SizedBox(height: 16)),

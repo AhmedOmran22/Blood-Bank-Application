@@ -6,8 +6,18 @@ class AwarnessView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: AwarnessViewBody(),
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          "Awarness",
+          style: Theme.of(context).textTheme.bodyLarge,
+        ),
+      ),
+      body: const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16),
+        child: AwarnessViewBody(),
+      ),
     );
   }
 }
