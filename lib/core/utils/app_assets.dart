@@ -4,6 +4,8 @@ class AppAssets {
   
   static const String imagesAnotherTesting = "assets/images/another_testing.svg";
 
+  static const String imagesBloodDrop = "assets/images/blood_drop.svg";
+
   static const String imagesBloodTesting = "assets/images/blood_testing.svg";
 
   static const String imagesImage1 = "assets/images/image1.png";
