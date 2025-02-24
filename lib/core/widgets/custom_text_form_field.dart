@@ -11,21 +11,27 @@ class CustomTextFormField extends StatelessWidget {
     this.controller,
     this.textInputType = TextInputType.text,
     this.validator,
+    this.suffixIcon,
+    this.maxLines,
   });
   final String? hitnText;
   final Function(String?)? onSaved;
   final TextEditingController? controller;
   final TextInputType? textInputType;
   final String? Function(String?)? validator;
+  final Widget? suffixIcon;
+  final int? maxLines;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLines: maxLines,
       decoration: InputDecoration(
         hintText: hitnText?.tr(),
         hintStyle: Theme.of(context)
             .textTheme
             .titleMedium!
             .copyWith(color: Colors.grey, fontSize: 14),
+        suffixIcon: suffixIcon,
         border: Theme.of(context).inputDecorationTheme.border,
         focusedBorder: Theme.of(context).inputDecorationTheme.focusedBorder,
         enabledBorder: Theme.of(context).inputDecorationTheme.enabledBorder,

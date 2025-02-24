@@ -16,16 +16,17 @@ class BloodTypeWidget extends StatelessWidget {
         ),
       ),
       child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: CircleAvatar(
-            child: Text(
-              bloodType,
-              style: Theme.of(context)
-                  .textTheme
-                  .titleMedium!
-                  .copyWith(color: Colors.white, fontSize: 13),
-            ),
-          )),
+        padding: const EdgeInsets.all(16),
+        child: CircleAvatar(
+          child: Text(
+            bloodType,
+            style: Theme.of(context)
+                .textTheme
+                .titleMedium!
+                .copyWith(color: Colors.white, fontSize: 13),
+          ),
+        ),
+      ),
     );
   }
 }
