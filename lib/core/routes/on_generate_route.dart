@@ -5,6 +5,7 @@ import 'package:blood_bank/features/auth/presentation/views/reset_password_view.
 import 'package:blood_bank/features/home/data/models/post_model.dart';
 import 'package:blood_bank/features/home/presentation/views/all_posts_view.dart';
 import 'package:blood_bank/features/home/presentation/views/post_detailes_view.dart';
+import 'package:blood_bank/features/home/presentation/views/send_post_view.dart';
 import 'package:flutter/material.dart';
 import '../../bottom_navigation_bar_view.dart';
 import '../../features/auth/presentation/views/forget_password_view.dart';
@@ -81,6 +82,12 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
           return PostDetailesView(
             postModel: settings.arguments as PostModel,
           );
+        },
+      );
+    case AppRoutes.sendPost: 
+      return MaterialPageRoute(
+        builder: (BuildContext context) {
+          return const SendPostView();
         },
       );
     default:

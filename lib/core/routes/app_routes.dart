@@ -10,4 +10,5 @@ abstract class AppRoutes {
   static const String bottomNavigationBarView = 'bottomNavigationBarView';
   static const String allPostsView = 'postsView';
   static const String postDetails = 'postDetailsView';
+  static const String sendPost = 'addPostView';
 }

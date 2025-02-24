@@ -47,10 +47,6 @@ class _LoginFormState extends State<LoginForm> {
             controller: emailController,
             hitnText: "Email Address",
             textInputType: TextInputType.emailAddress,
-            suffixIcon: Icon(
-              Icons.email,
-              color: AppColors.greyColor.withAlpha(128),
-            ),
           ),
           const SizedBox(height: 16),
           PasswordField(
