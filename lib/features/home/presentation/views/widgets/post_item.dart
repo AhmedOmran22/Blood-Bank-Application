@@ -37,52 +37,62 @@ class PostItem extends StatelessWidget {
                 CircleAvatar(
                   child: Text(postModel.bloodType),
                 ),
-                Column(
-                  spacing: 8,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      postModel.title,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                            fontSize: 16,
+                Expanded(
+                  child: Column(
+                    spacing: 12,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        postModel.title,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                              fontSize: 16,
+                            ),
+                      ),
+                      Row(
+                        spacing: 8,
+                        children: [
+                          const Icon(
+                            Icons.local_hospital_outlined,
+                            color: AppColors.primaryColor,
                           ),
-                    ),
-                    Row(
-                      spacing: 8,
-                      children: [
-                        const Icon(
-                          Icons.local_hospital_outlined,
-                          color: AppColors.primaryColor,
-                        ),
-                        Text(
-                          postModel.hospitalName,
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleMedium!
-                              .copyWith(fontSize: 14),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      spacing: 8,
-                      children: [
-                        const Icon(
-                          Icons.calendar_today,
-                          size: 22,
-                          color: AppColors.primaryColor,
-                        ),
-                        Text(
-                          postModel.dateOfPost,
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleMedium!
-                              .copyWith(fontSize: 14),
-                        ),
-                      ],
-                    ),
-                  ],
+                          Expanded(
+                            child: Text(
+                              postModel.hospitalName,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium!
+                                  .copyWith(fontSize: 13),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        spacing: 8,
+                        children: [
+                          const Icon(
+                            Icons.calendar_today,
+                            size: 22,
+                            color: AppColors.primaryColor,
+                          ),
+                          Expanded(
+                            child: Text(
+                              postModel.dateOfPost,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium!
+                                  .copyWith(fontSize: 13),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),

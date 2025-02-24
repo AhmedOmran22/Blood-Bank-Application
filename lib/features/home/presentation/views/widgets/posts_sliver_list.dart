@@ -14,7 +14,7 @@ class PostsSliverList extends StatelessWidget {
       delegate: SliverChildBuilderDelegate(
         childCount: childCount,
         (context, index) {
-          return PostItem(postModel: posts[0]);
+          return PostItem(postModel: posts[index]);
         },
       ),
     );

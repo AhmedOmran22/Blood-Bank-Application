@@ -7,31 +7,34 @@ class PostDetailesItem extends StatelessWidget {
     super.key,
     required this.label,
     required this.details,
+    required this.icon,
   });
   final String label;
   final String details;
+  final IconData icon;
   @override
   Widget build(BuildContext context) {
     return Row(
-      spacing: 8,
+      spacing: 12,
       children: [
-        const Icon(
-          Icons.phone,
+        Icon(
+          size: 20,
+          icon,
           color: AppColors.primaryColor,
         ),
         Text(
-          "contact preston",
+          label,
           style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                fontSize: 15,
+                fontSize: 14,
                 color: Colors.grey.shade600,
                 letterSpacing: .5,
               ),
         ),
         const Spacer(),
         Text(
-          "sajldfnsl",
+          details,
           style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                fontSize: 15,
+                fontSize: 14,
                 color: Colors.grey.shade600,
                 letterSpacing: .5,
               ),

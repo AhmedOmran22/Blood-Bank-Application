@@ -1,5 +1,6 @@
 import 'package:blood_bank/features/home/presentation/views/widgets/post_detailes_item.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../data/models/post_model.dart';
 
@@ -11,7 +12,7 @@ class PostDetailesViewBody extends StatelessWidget {
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       child: Column(
-        spacing: 16,
+        spacing: 12,
         children: [
           SizedBox(
             height: MediaQuery.of(context).size.height * .02,
@@ -20,14 +21,59 @@ class PostDetailesViewBody extends StatelessWidget {
             radius: 32,
             child: Text(
               postModel.bloodType,
+              textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.titleMedium!.copyWith(
                     fontSize: 20,
+                    letterSpacing: 1,
                   ),
             ),
           ),
-          Text(postModel.title, style: Theme.of(context).textTheme.titleLarge),
-          Divider(color: Colors.grey.shade600, thickness: .5),
-          PostDetailesItem(label: 'Phone', details: postModel.mobileNumber),
+          Text(
+            postModel.title,
+            style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  fontSize: 18,
+                ),
+          ),
+          Divider(color: Colors.grey.shade600, thickness: .2),
+          PostDetailesItem(
+            label: 'Contact Person',
+            details: postModel.userName,
+            icon: Icons.person,
+          ),
+          Divider(color: Colors.grey.shade600, thickness: .2),
+          PostDetailesItem(
+            label: 'Mobile Number',
+            details: postModel.userName,
+            icon: FontAwesomeIcons.phoneVolume,
+          ),
+          Divider(color: Colors.grey.shade600, thickness: .2),
+          PostDetailesItem(
+            label: 'How many bags needed',
+            details: postModel.howManyBagsNeeeded.toString(),
+            icon: FontAwesomeIcons.bagShopping,
+          ),
+          Divider(color: Colors.grey.shade600, thickness: .2),
+          PostDetailesItem(
+            label: 'City Name',
+            details: postModel.cityName,
+            icon: FontAwesomeIcons.city,
+          ),
+          Divider(color: Colors.grey.shade600, thickness: .2),
+          PostDetailesItem(
+            label: 'Hospital Name',
+            details: postModel.hospitalName,
+            icon: FontAwesomeIcons.hospital,
+          ),
+          Divider(color: Colors.grey.shade600, thickness: .2),
+          Align(
+            alignment: Alignment.topLeft,
+            child: Text(
+              "Why do you need blood ? ",
+              style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                    fontSize: 18,
+                  ),
+            ),
+          ),
         ],
       ),
     );
