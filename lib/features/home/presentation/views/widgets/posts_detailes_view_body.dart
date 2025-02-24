@@ -25,6 +25,7 @@ class PostDetailesViewBody extends StatelessWidget {
               style: Theme.of(context).textTheme.titleMedium!.copyWith(
                     fontSize: 20,
                     letterSpacing: 1,
+                    color: Colors.white,
                   ),
             ),
           ),
