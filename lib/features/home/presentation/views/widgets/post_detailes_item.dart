@@ -30,21 +30,15 @@ class PostDetailesItem extends StatelessWidget {
                 letterSpacing: .5,
               ),
         ),
-        const Spacer(),
         Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Text(
-                details,
-                textAlign: TextAlign.end,
-                style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                      fontSize: 14,
-                      color: Colors.grey.shade600,
-                      letterSpacing: .5,
-                    ),
-              ),
-            ],
+          child: Text(
+            details,
+            textAlign: TextAlign.end,
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                  fontSize: 14,
+                  color: Colors.grey.shade600,
+                  letterSpacing: .5,
+                ),
           ),
         ),
       ],

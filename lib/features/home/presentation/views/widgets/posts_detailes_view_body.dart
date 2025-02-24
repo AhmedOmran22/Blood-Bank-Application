@@ -43,7 +43,7 @@ class PostDetailesViewBody extends StatelessWidget {
           Divider(color: Colors.grey.shade600, thickness: .2),
           PostDetailesItem(
             label: 'Mobile Number',
-            details: postModel.userName,
+            details: postModel.mobileNumber,
             icon: FontAwesomeIcons.phoneVolume,
           ),
           Divider(color: Colors.grey.shade600, thickness: .2),
