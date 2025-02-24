@@ -7,5 +7,7 @@ abstract class AppRoutes {
   static const String forgetPassword = 'forgetPasswordView';
   static const String verify = 'verifyView';
   static const String resetPassword = 'resetPasswordView';
-  static const String bottomNavigationBarView= 'bottomNavigationBarView';
+  static const String bottomNavigationBarView = 'bottomNavigationBarView';
+  static const String allPostsView = 'postsView';
+  static const String postDetails = 'postDetailsView';
 }

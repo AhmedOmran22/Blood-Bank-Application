@@ -1,3 +1,4 @@
+import 'package:blood_bank/core/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class PostsAndSeeAllRow extends StatelessWidget {
@@ -18,12 +19,17 @@ class PostsAndSeeAllRow extends StatelessWidget {
                 .copyWith(letterSpacing: 1, fontSize: 16),
           ),
           const Spacer(),
-          Text(
-            "See All",
-            style: Theme.of(context)
-                .textTheme
-                .titleLarge!
-                .copyWith(letterSpacing: 1, fontSize: 16),
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, AppRoutes.allPostsView);
+            },
+            child: Text(
+              "See All",
+              style: Theme.of(context)
+                  .textTheme
+                  .titleLarge!
+                  .copyWith(letterSpacing: 1, fontSize: 16),
+            ),
           ),
         ],
       ),
