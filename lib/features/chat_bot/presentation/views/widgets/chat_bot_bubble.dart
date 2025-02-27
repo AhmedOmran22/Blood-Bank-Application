@@ -11,37 +11,35 @@ class ChatBotBubble extends StatelessWidget {
   final MessageModel messageModel;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        Expanded(
-          child: Container(
-            margin: const EdgeInsets.only(top: 10, left: 12, right: 12),
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-            decoration: BoxDecoration(
-              borderRadius: context.locale.languageCode == "en"
-                  ? const BorderRadius.only(
-                      topLeft: Radius.circular(24),
-                      topRight: Radius.circular(24),
-                      bottomRight: Radius.circular(24),
-                    )
-                  : const BorderRadius.only(
-                      topLeft: Radius.circular(24),
-                      topRight: Radius.circular(24),
-                      bottomLeft: Radius.circular(24),
-                    ),
-              color: Theme.of(context).colorScheme.surface,
-            ),
-            child: Text(
-              messageModel.message,
-              style: Theme.of(context)
-                  .textTheme
-                  .titleMedium!
-                  .copyWith(letterSpacing: -.5, fontWeight: FontWeight.normal),
-            ),
-          ),
+    return Align(
+      alignment: context.locale.languageCode == "en"
+          ? Alignment.centerLeft
+          : Alignment.centerRight,
+      child: Container(
+        margin: const EdgeInsets.symmetric(vertical: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        decoration: BoxDecoration(
+          borderRadius: context.locale.languageCode == "en"
+              ? const BorderRadius.only(
+                  topLeft: Radius.circular(24),
+                  topRight: Radius.circular(24),
+                  bottomRight: Radius.circular(24),
+                )
+              : const BorderRadius.only(
+                  topLeft: Radius.circular(24),
+                  topRight: Radius.circular(24),
+                  bottomLeft: Radius.circular(24),
+                ),
+          color: Theme.of(context).colorScheme.surface,
         ),
-      ],
+        child: Text(
+          messageModel.message,
+          style: Theme.of(context)
+              .textTheme
+              .titleMedium!
+              .copyWith(letterSpacing: -.5, fontWeight: FontWeight.normal),
+        ),
+      ),
     );
   }
 }

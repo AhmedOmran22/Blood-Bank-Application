@@ -14,7 +14,9 @@ class ChatBotView extends StatelessWidget {
           style: Theme.of(context).textTheme.bodyLarge,
         ),
       ),
-      body: const ChatBotViewBody(),
+      body: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8),
+          child: ChatBotViewBody()),
     );
   }
 }
