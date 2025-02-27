@@ -47,4 +47,20 @@ abstract class AppRegex {
   static bool isPhoneNumberValid(String phoneNumber) {
     return RegExp(r'^(010|011|012|015)[0-9]{8}$').hasMatch(phoneNumber);
   }
+
+ static bool isValidDateFormat(String input) {
+    final RegExp datePattern = RegExp(r'^\d{4}/\d{2}/\d{2}$');
+
+    if (!datePattern.hasMatch(input)) return false;
+
+    try {
+      DateTime parsedDate = DateTime.parse(input.replaceAll('/', '-'));
+
+      String formattedDate =
+          "${parsedDate.year}/${parsedDate.month.toString().padLeft(2, '0')}/${parsedDate.day.toString().padLeft(2, '0')}";
+      return formattedDate == input;
+    } catch (e) {
+      return false;
+    }
+  }
 }

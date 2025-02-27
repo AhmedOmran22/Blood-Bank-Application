@@ -5,7 +5,7 @@ import '../cache/prefs.dart';
 import '../constants/constatnts.dart';
 
 /// get the data of logged in user !
-UserModel getCurrentUser() {
+UserModel getCurrentUserFunction() {
   var jsonString = Prefs.getString(kUserData);
   var currentUser = UserModel.fromFireStore(jsonDecode(jsonString));
   return currentUser;

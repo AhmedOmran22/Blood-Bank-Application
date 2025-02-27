@@ -13,6 +13,7 @@ class CustomTextFormField extends StatelessWidget {
     this.validator,
     this.suffixIcon,
     this.maxLines,
+    this.enabled,
   });
   final String? hitnText;
   final Function(String?)? onSaved;
@@ -21,9 +22,11 @@ class CustomTextFormField extends StatelessWidget {
   final String? Function(String?)? validator;
   final Widget? suffixIcon;
   final int? maxLines;
+  final bool? enabled;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      enabled: enabled,
       maxLines: maxLines,
       decoration: InputDecoration(
         hintText: hitnText?.tr(),

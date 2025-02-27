@@ -2,7 +2,7 @@ import 'package:blood_bank/core/widgets/custom_drop_down_buttom_field.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../../core/functions/show_snack_bar.dart';
+import '../../../../../core/functions/show_snack_bar_function.dart';
 import '../../../../../core/utils/app_regex.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
@@ -151,6 +151,27 @@ class _RegisterFormState extends State<RegisterForm> {
       onChanged: (value) {
         bloodType = value!;
       },
+      items: [
+        "A+",
+        "A-",
+        "B+",
+        "B-",
+        "O+",
+        "O-",
+        "AB+",
+        "AB-",
+        "I don't know",
+      ]
+          .map(
+            (type) => DropdownMenuItem(
+              value: type,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 2),
+                child: Text(type),
+              ),
+            ),
+          )
+          .toList(),
     );
   }
 
@@ -210,12 +231,12 @@ class _RegisterFormState extends State<RegisterForm> {
                 password: passwordController.text,
               );
         } else {
-          showSnackBar(context, "Passwords do not match");
+          showSnackBarFuction(context, "Passwords do not match");
           autoValidateMode = AutovalidateMode.always;
           setState(() {});
         }
       } else {
-        showSnackBar(
+        showSnackBarFuction(
           context,
           "You must accept the terms and conditions".tr(),
         );

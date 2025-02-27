@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
-import '../../../../../core/functions/show_snack_bar.dart';
+import '../../../../../core/functions/show_snack_bar_function.dart';
 import '../../../../../core/routes/app_routes.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../manager/register_cubit/register_cubit.dart';
@@ -26,7 +26,7 @@ class RegisterViewBodyBlocConsumer extends StatelessWidget {
           );
         }
         if (state is RegisterCubitError) {
-          showSnackBar(context, state.errMessage);
+          showSnackBarFuction(context, state.errMessage);
         }
       },
       builder: (context, state) {

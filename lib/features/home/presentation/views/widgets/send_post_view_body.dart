@@ -1,8 +1,9 @@
+import 'package:blood_bank/core/functions/formate_date_function.dart';
+import 'package:blood_bank/core/functions/show_date_picker_function.dart';
 import 'package:blood_bank/core/utils/app_colors.dart';
 import 'package:blood_bank/core/widgets/custom_text_form_field.dart';
 import 'package:blood_bank/core/widgets/custom_drop_down_buttom_field.dart';
 import 'package:blood_bank/core/widgets/general_button.dart';
-import 'package:blood_bank/features/home/data/models/post_model.dart';
 import 'package:flutter/material.dart';
 
 class SendPostViewBody extends StatefulWidget {
@@ -17,20 +18,39 @@ class _SendPostViewBodyState extends State<SendPostViewBody> {
   AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
   late TextEditingController postTitleController,
       howManyUnitsController,
-      descriptionController,
-      phoneNumberController,
       hospitalNameController,
+      contactPersonNameController,
+      cityController,
+      phoneNumberController,
+      dateController,
       whyDoYouNeedBloodController;
-  late String? date, bloodType;
+  late String bloodType;
+
   @override
   void initState() {
     postTitleController = TextEditingController();
     howManyUnitsController = TextEditingController();
-    phoneNumberController = TextEditingController();
     hospitalNameController = TextEditingController();
-    descriptionController = TextEditingController();
+    contactPersonNameController = TextEditingController();
+    dateController = TextEditingController();
+    cityController = TextEditingController();
+    phoneNumberController = TextEditingController();
     whyDoYouNeedBloodController = TextEditingController();
+
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    postTitleController.dispose();
+    howManyUnitsController.dispose();
+    hospitalNameController.dispose();
+    dateController.dispose();
+    contactPersonNameController.dispose();
+    cityController.dispose();
+    phoneNumberController.dispose();
+    whyDoYouNeedBloodController.dispose();
+    super.dispose();
   }
 
   @override
@@ -44,59 +64,92 @@ class _SendPostViewBodyState extends State<SendPostViewBody> {
           spacing: 16,
           children: [
             const SizedBox(height: 16),
-            const CustomTextFormField(
-              controller: null,
+            CustomTextFormField(
+              controller: postTitleController,
               hitnText: "Post Title",
             ),
             CustomDropdownButtonFormField(
               onChanged: (value) {
                 bloodType = value!;
               },
+              items: [
+                "A+",
+                "A-",
+                "B+",
+                "B-",
+                "O+",
+                "O-",
+                "AB+",
+                "AB-",
+              ]
+                  .map(
+                    (type) => DropdownMenuItem(
+                      value: type,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 2),
+                        child: Text(type),
+                      ),
+                    ),
+                  )
+                  .toList(),
             ),
-            const CustomTextFormField(
-              controller: null,
-              hitnText: "Amount you need",
+            CustomTextFormField(
+              controller: howManyUnitsController,
+              textInputType: TextInputType.number,
+              hitnText: "Amount you need ? ",
             ),
-            const CustomTextFormField(
-              hitnText: "Date",
+            GestureDetector(
+              onTap: () async {
+                DateTime? myDate = await ShowDatePickerFunction(context);
+                setState(
+                  () {
+                    dateController.text = formatDateFunction(myDate) ?? "";
+                  },
+                );
+              },
+              child: CustomTextFormField(
+                controller: dateController,
+                enabled: false,
+                hitnText: "Date",
+              ),
             ),
-            const CustomTextFormField(
-              controller: null,
+            CustomTextFormField(
+              controller: cityController,
+              hitnText: "City Name",
+            ),
+            CustomTextFormField(
+              controller: hospitalNameController,
               hitnText: "Hopsital Name",
             ),
-            const CustomTextFormField(
-              controller: null,
+            CustomTextFormField(
+              controller: whyDoYouNeedBloodController,
               maxLines: 4,
-              hitnText: "Why Do You Need Blood",
+              hitnText: "Why Do You Need Blood ?",
             ),
-            const CustomTextFormField(
-              controller: null,
+            CustomTextFormField(
+              controller: contactPersonNameController,
               hitnText: "Contact Person Name",
             ),
-            const CustomTextFormField(
-              controller: null,
+            CustomTextFormField(
+              controller: phoneNumberController,
               hitnText: "Phone Number",
             ),
             GeneralButton(
               text: "Send",
               backgroundColor: AppColors.primaryColor,
               textColor: AppColors.whiteColor,
-              onPressed: () {},
+              onPressed: () {
+                if (_formKey.currentState!.validate()) {
+                  _formKey.currentState!.save();
+                } else {
+                  autoValidateMode = AutovalidateMode.always;
+                  setState(() {});
+                }
+              },
             )
           ],
         ),
       ),
     );
   }
-
 }
-
-// final String userName;
-//   final String mobileNumber;
-//   final String title;
-//   final int howManyBagsNeeeded;
-//   final String bloodType;
-//   final String hospitalName;
-//   final String whyDoYouNeedBlood;
-//   final String dateOfPost;
-//   final String cityName;

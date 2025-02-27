@@ -59,4 +59,24 @@ ThemeData lightTheme = ThemeData(
     backgroundColor: AppColors.whiteColor,
     selectedItemColor: AppColors.primaryColor,
   ),
+  datePickerTheme: DatePickerThemeData(
+    cancelButtonStyle: ButtonStyle(
+      backgroundColor: WidgetStateProperty.all(AppColors.primaryColor),
+      foregroundColor: WidgetStateProperty.all(AppColors.blackColor),
+    ),
+    confirmButtonStyle: ButtonStyle(
+      backgroundColor: WidgetStateProperty.all(AppColors.primaryColor),
+      foregroundColor: WidgetStateProperty.all(AppColors.blackColor),
+    ),
+    // backgroundColor: const Color(0xFF2B2520),
+    headerBackgroundColor: AppColors.primaryColor,
+    // headerForegroundColor: AppColors.whiteColor,
+    surfaceTintColor: const Color(0xFF2B2520),
+    yearStyle: AppStyles.cairoRegular16.copyWith(color: AppColors.blackColor),
+    dayStyle: AppStyles.cairoRegular16.copyWith(color: AppColors.blackColor),
+    todayBorder: const BorderSide(color: AppColors.primaryColor, width: 2),
+    dayOverlayColor:
+        WidgetStateProperty.all(AppColors.primaryColor.withAlpha(64)),
+   
+  ),
 );

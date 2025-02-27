@@ -2,7 +2,7 @@ import 'package:blood_bank/core/theme_cubit/theme_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../core/functions/get_current_user.dart';
+import '../../../../../core/functions/get_current_user_function.dart';
 
 class HomeSliverAppBar extends StatelessWidget {
   const HomeSliverAppBar({
@@ -26,7 +26,7 @@ class HomeSliverAppBar extends StatelessWidget {
             child: Icon(Icons.person),
           ),
           title: Text(
-            getCurrentUser().name,
+            getCurrentUserFunction().name,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
@@ -36,7 +36,7 @@ class HomeSliverAppBar extends StatelessWidget {
           subtitle: Padding(
             padding: const EdgeInsets.only(top: 4),
             child: Text(
-              "Blood Type : ${getCurrentUser().bloodType}",
+              "Blood Type : ${getCurrentUserFunction().bloodType}",
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
                     color: Colors.grey.shade600,
                   ),

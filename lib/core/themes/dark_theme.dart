@@ -33,7 +33,7 @@ ThemeData darkTheme = ThemeData(
       borderRadius: BorderRadius.circular(16),
       borderSide: BorderSide(color: AppColors.greyColor.withAlpha(128)),
     ),
-    floatingLabelStyle: AppStyles.cairoRegular14,
+    floatingLabelStyle: AppStyles.cairoRegular14.copyWith(color: Colors.white),
     hintStyle: AppStyles.cairoRegular14.copyWith(color: AppColors.greyColor),
   ),
   textButtonTheme: TextButtonThemeData(
@@ -61,5 +61,24 @@ ThemeData darkTheme = ThemeData(
     selectedItemColor: AppColors.primaryColor,
     unselectedItemColor: AppColors.greyColor,
     type: BottomNavigationBarType.fixed,
+  ),
+  datePickerTheme: DatePickerThemeData(
+    cancelButtonStyle: ButtonStyle(
+      backgroundColor: WidgetStateProperty.all(AppColors.primaryColor),
+      foregroundColor: WidgetStateProperty.all(AppColors.whiteColor),
+    ),
+    confirmButtonStyle: ButtonStyle(
+      backgroundColor: WidgetStateProperty.all(AppColors.primaryColor),
+      foregroundColor: WidgetStateProperty.all(AppColors.whiteColor),
+    ),
+    backgroundColor: const Color(0xFF2B2520),
+    headerBackgroundColor: AppColors.primaryColor,
+    headerForegroundColor: AppColors.whiteColor,
+    surfaceTintColor: const Color(0xFF2B2520),
+    yearStyle: AppStyles.cairoRegular16.copyWith(color: AppColors.whiteColor),
+    dayStyle: AppStyles.cairoRegular16.copyWith(color: AppColors.whiteColor),
+    todayBorder: const BorderSide(color: AppColors.primaryColor, width: 2),
+    dayOverlayColor:
+        WidgetStateProperty.all(AppColors.primaryColor.withAlpha(64)),
   ),
 );
