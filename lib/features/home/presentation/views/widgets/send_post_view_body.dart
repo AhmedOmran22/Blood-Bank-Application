@@ -133,6 +133,17 @@ class _SendPostViewBodyState extends State<SendPostViewBody> {
             CustomTextFormField(
               controller: phoneNumberController,
               hitnText: "Phone Number",
+              textInputType: TextInputType.phone,
+              validator: (data) {
+                if (data == null || data.isEmpty) {
+                  return "Enter your phone number";
+                }
+                final regex = RegExp(r'^(010|011|012|015)\d{8}$');
+                if (!regex.hasMatch(data)) {
+                  return "Invalid phone number";
+                }
+                return null;
+              },
             ),
             GeneralButton(
               text: "Send",
