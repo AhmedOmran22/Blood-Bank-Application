@@ -2,6 +2,8 @@ import 'package:blood_bank/features/home/data/models/activity_option_item_model.
 import 'package:blood_bank/features/home/presentation/views/widgets/activity_option_item.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../core/routes/app_routes.dart';
+
 class ActivityOptions extends StatelessWidget {
   const ActivityOptions({
     super.key,
@@ -30,6 +32,10 @@ class ActivityOptions extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               ActivityOptionItem(
+                onTap: ()
+                {
+                  Navigator.pushNamed(context, AppRoutes.sendPost);
+                },
                 activityOptionItemModel: activityOptionItems[2],
               ),
               const SizedBox(width: 16),
@@ -44,21 +50,3 @@ class ActivityOptions extends StatelessWidget {
   }
 }
 
-List<ActivityOptionItemModel> activityOptionItems = [
-  ActivityOptionItemModel(
-    title: 'Blood Donor',
-    subtitle: '120 Post',
-  ),
-  ActivityOptionItemModel(
-    title: 'Request Blood',
-    subtitle: 'Get help',
-  ),
-  ActivityOptionItemModel(
-    title: 'Create Post',
-    subtitle: 'It\'s easy 1 step',
-  ),
-  ActivityOptionItemModel(
-    title: 'Blood Given',
-    subtitle: 'It\'s easy 1 step',
-  ),
-];
