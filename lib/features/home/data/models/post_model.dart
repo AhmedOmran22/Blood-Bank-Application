@@ -6,13 +6,13 @@ class PostModel {
   final String bloodType;
   final String hospitalName;
   final String whyDoYouNeedBlood;
-  final String dateOfPost;
+  final String dateYouNeedBlod;
   final String cityName;
   PostModel({
     required this.cityName,
     required this.title,
     required this.userName,
-    required this.dateOfPost,
+    required this.dateYouNeedBlod,
     required this.mobileNumber,
     required this.howManyBagsNeeeded,
     required this.bloodType,
@@ -26,7 +26,7 @@ List<PostModel> posts = [
     cityName: "Cairo",
     title: "Urgent Need for Blood",
     userName: "Ahmed Ali",
-    dateOfPost: "2025-02-24",
+    dateYouNeedBlod: "2025-02-24",
     mobileNumber: "01012345678",
     howManyBagsNeeeded: 2,
     bloodType: "O+",
@@ -37,7 +37,7 @@ List<PostModel> posts = [
     cityName: "Alexandria",
     title: "Help Save a Life",
     userName: "Sara Mohamed",
-    dateOfPost: "2025-02-23",
+    dateYouNeedBlod: "2025-02-23",
     mobileNumber: "01198765432",
     howManyBagsNeeeded: 3,
     bloodType: "A-",
@@ -48,7 +48,7 @@ List<PostModel> posts = [
     cityName: "Mansoura",
     title: "Cancer Patient Needs Blood",
     userName: "Omar Tarek",
-    dateOfPost: "2025-02-22",
+    dateYouNeedBlod: "2025-02-22",
     mobileNumber: "01234567890",
     howManyBagsNeeeded: 1,
     bloodType: "B+",
@@ -59,7 +59,7 @@ List<PostModel> posts = [
     cityName: "Giza",
     title: "Heart Surgery Patient Needs Blood",
     userName: "Youssef Hassan",
-    dateOfPost: "2025-02-21",
+    dateYouNeedBlod: "2025-02-21",
     mobileNumber: "01098765432",
     howManyBagsNeeeded: 4,
     bloodType: "AB-",
@@ -70,7 +70,7 @@ List<PostModel> posts = [
     cityName: "Giza",
     title: "Mother in Critical Condition Needs Blood",
     userName: "Mariam Adel",
-    dateOfPost: "2025-02-20",
+    dateYouNeedBlod: "2025-02-20",
     mobileNumber: "01512345678",
     howManyBagsNeeeded: 2,
     bloodType: "O-",

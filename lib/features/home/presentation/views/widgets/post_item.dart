@@ -81,7 +81,7 @@ class PostItem extends StatelessWidget {
                           ),
                           Expanded(
                             child: Text(
-                              postModel.dateOfPost,
+                              postModel.dateYouNeedBlod,
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: Theme.of(context)
