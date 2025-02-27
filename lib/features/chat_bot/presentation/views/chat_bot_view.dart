@@ -1,4 +1,4 @@
-import 'package:blood_bank/features/chat_bot/presentation/views/widgets/chato_bot_view_body.dart';
+import 'package:blood_bank/features/chat_bot/presentation/views/widgets/chat_bot_view_body.dart';
 import 'package:flutter/material.dart';
 
 class ChatBotView extends StatelessWidget {
@@ -6,8 +6,15 @@ class ChatBotView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: ChatBotViewBody(),
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          "Chat Bot",
+          style: Theme.of(context).textTheme.bodyLarge,
+        ),
+      ),
+      body: const ChatBotViewBody(),
     );
   }
 }
