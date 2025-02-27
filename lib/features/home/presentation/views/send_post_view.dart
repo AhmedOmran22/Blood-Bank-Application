@@ -24,7 +24,9 @@ class SendPostView extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
       ),
-      body: const SendPostViewBody(),
+      body: const SingleChildScrollView(
+        child: SendPostViewBody(),
+      ),
     );
   }
 }
