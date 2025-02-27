@@ -15,7 +15,7 @@ class ChatBotView extends StatelessWidget {
         ),
       ),
       body: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 8),
+        padding: EdgeInsets.symmetric(horizontal: 16),
         child: ChatBotViewBody(),
       ),
     );
