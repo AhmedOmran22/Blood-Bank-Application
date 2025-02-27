@@ -11,4 +11,5 @@ abstract class AppRoutes {
   static const String allPostsView = 'postsView';
   static const String postDetails = 'postDetailsView';
   static const String sendPost = 'addPostView';
+  static const String chatBot = 'chatBotView';
 }

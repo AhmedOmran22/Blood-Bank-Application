@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import '../../bottom_navigation_bar_view.dart';
 import '../../features/auth/presentation/views/forget_password_view.dart';
 import '../../features/auth/presentation/views/verify_view.dart';
+import '../../features/chat_bot/presentation/views/chat_bot_view.dart';
 import '../../features/on_boarding/presentation/views/language_and_theme_view.dart';
 import '../../features/on_boarding/presentation/views/on_boarding_view.dart';
 import '../../features/on_boarding/presentation/views/register_or_login_view.dart';
@@ -88,6 +89,12 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (BuildContext context) {
           return const SendPostView();
+        },
+      );
+      case AppRoutes.chatBot:
+      return MaterialPageRoute(
+        builder: (BuildContext context) {
+          return const ChatBotView();
         },
       );
     default:
