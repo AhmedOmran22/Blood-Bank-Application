@@ -1,4 +1,4 @@
-import 'package:blood_bank/features/home/presentation/views/widgets/post_detailes_item.dart';
+import 'package:blood_bank/core/widgets/detailes_item.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -36,31 +36,31 @@ class PostDetailesViewBody extends StatelessWidget {
                 ),
           ),
           Divider(color: Colors.grey.shade600, thickness: .2),
-          PostDetailesItem(
+          DetailesItem(
             label: 'Contact Person',
             details: postModel.userName,
             icon: Icons.person,
           ),
           Divider(color: Colors.grey.shade600, thickness: .2),
-          PostDetailesItem(
+          DetailesItem(
             label: 'Mobile Number',
             details: postModel.mobileNumber,
             icon: FontAwesomeIcons.phoneVolume,
           ),
           Divider(color: Colors.grey.shade600, thickness: .2),
-          PostDetailesItem(
+          DetailesItem(
             label: 'How many bags needed',
             details: postModel.howManyBagsNeeeded.toString(),
             icon: FontAwesomeIcons.bagShopping,
           ),
           Divider(color: Colors.grey.shade600, thickness: .2),
-          PostDetailesItem(
+          DetailesItem(
             label: 'City Name',
             details: postModel.cityName,
             icon: FontAwesomeIcons.city,
           ),
           Divider(color: Colors.grey.shade600, thickness: .2),
-          PostDetailesItem(
+          DetailesItem(
             label: 'Hospital Name',
             details: postModel.hospitalName,
             icon: FontAwesomeIcons.hospital,
