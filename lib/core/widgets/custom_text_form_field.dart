@@ -57,3 +57,13 @@ class CustomTextFormField extends StatelessWidget {
     );
   }
 }
+// class ValidationType
+// {
+//   static String? email(String? value) {
+//     if (value!.isEmpty) {
+//       return "Field is required".tr();
+//     }
+//     else 
+//     return null;
+//   }
+// }
