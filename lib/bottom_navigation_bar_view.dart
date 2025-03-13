@@ -1,7 +1,7 @@
 import 'package:blood_bank/features/awarness/presentation/views/awarness_view.dart';
 import 'package:blood_bank/features/chat_bot/presentation/views/chat_bot_view.dart';
 import 'package:blood_bank/features/home/presentation/views/home_view.dart';
-import 'package:blood_bank/features/settings/presentation/views/settings_view.dart';
+import 'package:blood_bank/features/more/presentation/views/more_view.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -24,7 +24,7 @@ class _BottomNavigationBarViewState extends State<BottomNavigationBarView> {
           const HomeView(),
           const AwarnessView(),
           const ChatBotView(),
-          const SettingsView(),
+          const MoreView(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -50,7 +50,7 @@ class _BottomNavigationBarViewState extends State<BottomNavigationBarView> {
           ),
           BottomNavigationBarItem(
             icon: Icon(FontAwesomeIcons.gear, size: 20),
-            label: 'Settings',
+            label: 'More',
           ),
         ],
       ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'user_information_header.dart';
 
-class SettingsViewBody extends StatelessWidget {
-  const SettingsViewBody({super.key});
+class MoreViewBody extends StatelessWidget {
+  const MoreViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {

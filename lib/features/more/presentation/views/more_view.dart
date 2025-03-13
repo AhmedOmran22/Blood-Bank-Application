@@ -1,8 +1,8 @@
-import 'package:blood_bank/features/settings/presentation/views/widgets/settings_view_body.dart';
+import 'package:blood_bank/features/more/presentation/views/widgets/settings_view_body.dart';
 import 'package:flutter/material.dart';
 
-class SettingsView extends StatelessWidget {
-  const SettingsView({super.key});
+class MoreView extends StatelessWidget {
+  const MoreView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class SettingsView extends StatelessWidget {
           style: Theme.of(context).textTheme.bodyLarge,
         ),
       ),
-      body: const SettingsViewBody(),
+      body: const MoreViewBody(),
     );
   }
 }
