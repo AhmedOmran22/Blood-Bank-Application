@@ -1,4 +1,5 @@
 import 'package:blood_bank/core/theme_cubit/theme_cubit.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -36,7 +37,7 @@ class HomeSliverAppBar extends StatelessWidget {
           subtitle: Padding(
             padding: const EdgeInsets.only(top: 4),
             child: Text(
-              "Blood Type : ${getCurrentUserFunction().bloodType}",
+              "Blood Type".tr() + getCurrentUserFunction().bloodType,
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
                     color: Colors.grey.shade600,
                   ),

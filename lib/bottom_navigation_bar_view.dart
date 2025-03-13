@@ -2,6 +2,7 @@ import 'package:blood_bank/features/awarness/presentation/views/awarness_view.da
 import 'package:blood_bank/features/chat_bot/presentation/views/chat_bot_view.dart';
 import 'package:blood_bank/features/home/presentation/views/home_view.dart';
 import 'package:blood_bank/features/more/presentation/views/more_view.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -35,22 +36,22 @@ class _BottomNavigationBarViewState extends State<BottomNavigationBarView> {
             currentIndex = index;
           });
         },
-        items: const [
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.house, size: 20),
-            label: 'Home',
+            icon: const Icon(FontAwesomeIcons.house, size: 20),
+            label: 'Home'.tr(),
           ),
           BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.lightbulb, size: 20),
-            label: 'Awareness',
+            icon: const Icon(FontAwesomeIcons.lightbulb, size: 20),
+            label: 'Awareness'.tr(),
           ),
           BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.robot, size: 20),
-            label: 'chat bot',
+            icon: const Icon(FontAwesomeIcons.robot, size: 20),
+            label: 'chat bot'.tr(),
           ),
           BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.gear, size: 20),
-            label: 'More',
+            icon: const Icon(FontAwesomeIcons.gear, size: 20),
+            label: 'More'.tr(),
           ),
         ],
       ),

@@ -1,4 +1,4 @@
-import 'package:blood_bank/features/home/presentation/views/widgets/activity_options_grid.dart';
+import 'package:blood_bank/features/home/presentation/views/widgets/activity_options.dart';
 import 'package:blood_bank/features/home/presentation/views/widgets/blood_groups.dart';
 import 'package:blood_bank/features/home/presentation/views/widgets/home_sliver_app_bar.dart';
 import 'package:blood_bank/features/home/presentation/views/widgets/posts_and_see_all_row.dart';
@@ -26,7 +26,7 @@ class HomeViewBody extends StatelessWidget {
           sliver: SaveLifeWidget(),
         ),
         SliverToBoxAdapter(child: SizedBox(height: 16)),
-        SliverText(text: "Activity As "),
+        SliverText(text: "Activity As"),
         SliverToBoxAdapter(child: SizedBox(height: 16)),
         SliverToBoxAdapter(child: ActivityOptions()),
         SliverToBoxAdapter(child: SizedBox(height: 16)),

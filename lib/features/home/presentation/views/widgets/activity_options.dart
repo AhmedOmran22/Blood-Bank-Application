@@ -32,8 +32,7 @@ class ActivityOptions extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               ActivityOptionItem(
-                onTap: ()
-                {
+                onTap: () {
                   Navigator.pushNamed(context, AppRoutes.sendPost);
                 },
                 activityOptionItemModel: activityOptionItems[2],
@@ -49,4 +48,3 @@ class ActivityOptions extends StatelessWidget {
     );
   }
 }
-
