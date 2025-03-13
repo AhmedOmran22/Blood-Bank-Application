@@ -14,6 +14,7 @@ class UserInformationHeader extends StatelessWidget {
       clipBehavior: Clip.none,
       children: [
         Container(
+          margin: const EdgeInsets.only(top: 16),
           padding: const EdgeInsets.only(bottom: 16),
           alignment: Alignment.bottomCenter,
           height: MediaQuery.of(context).size.height * .12,
@@ -43,7 +44,7 @@ class UserInformationHeader extends StatelessWidget {
           ),
         ),
         const Positioned(
-          top: -15,
+          top: 0,
           right: 0,
           left: 0,
           child: CircleAvatar(
