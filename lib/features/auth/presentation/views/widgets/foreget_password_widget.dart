@@ -19,7 +19,7 @@ class ForgetPasswordWidget extends StatelessWidget {
               Navigator.pushReplacementNamed(context, AppRoutes.forgetPassword);
             },
             child: Text(
-              textAlign: TextAlign.start,
+              textAlign: TextAlign.end,
               "Forget Password?",
               style: Theme.of(context).textTheme.bodySmall!.copyWith(
                     color: AppColors.primaryColor,

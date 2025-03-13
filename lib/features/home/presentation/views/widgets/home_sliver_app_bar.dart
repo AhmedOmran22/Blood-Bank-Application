@@ -37,7 +37,7 @@ class HomeSliverAppBar extends StatelessWidget {
           subtitle: Padding(
             padding: const EdgeInsets.only(top: 4),
             child: Text(
-              "Blood Type".tr() + getCurrentUserFunction().bloodType,
+              "Blood Type".tr()+" : " + getCurrentUserFunction().bloodType,
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
                     color: Colors.grey.shade600,
                   ),
