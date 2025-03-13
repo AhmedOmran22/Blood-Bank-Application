@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class SliverText extends StatelessWidget {
@@ -13,7 +14,7 @@ class SliverText extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       sliver: SliverToBoxAdapter(
         child: Text(
-          text,
+          text.tr(),
           style: Theme.of(context)
               .textTheme
               .titleLarge!

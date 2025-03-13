@@ -1,4 +1,5 @@
 import 'package:blood_bank/core/routes/app_routes.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class PostsAndSeeAllRow extends StatelessWidget {
@@ -12,7 +13,7 @@ class PostsAndSeeAllRow extends StatelessWidget {
       child: Row(
         children: [
           Text(
-            "Posts",
+            "Posts".tr(),
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
@@ -24,7 +25,7 @@ class PostsAndSeeAllRow extends StatelessWidget {
               Navigator.pushNamed(context, AppRoutes.allPostsView);
             },
             child: Text(
-              "See All",
+              "See All".tr(),
               style: Theme.of(context)
                   .textTheme
                   .titleLarge!
