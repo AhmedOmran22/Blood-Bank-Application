@@ -36,7 +36,7 @@ class HomeViewBody extends StatelessWidget {
         SliverToBoxAdapter(child: SizedBox(height: 16)),
         SliverPadding(
           padding: EdgeInsets.symmetric(horizontal: 16),
-          sliver: PostsAndSeeAllRow(),
+          sliver: SliverToBoxAdapter(child: PostsAndSeeAllRow()),
         ),
         SliverToBoxAdapter(child: SizedBox(height: 16)),
         PostsSliverList(childCount: 2),

@@ -9,31 +9,29 @@ class PostsAndSeeAllRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-      child: Row(
-        children: [
-          Text(
-            "Posts".tr(),
+    return Row(
+      children: [
+        Text(
+          "Posts".tr(),
+          style: Theme.of(context)
+              .textTheme
+              .titleLarge!
+              .copyWith(letterSpacing: 1, fontSize: 16),
+        ),
+        const Spacer(),
+        GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, AppRoutes.allPostsView);
+          },
+          child: Text(
+            "See All".tr(),
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
                 .copyWith(letterSpacing: 1, fontSize: 16),
           ),
-          const Spacer(),
-          GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context, AppRoutes.allPostsView);
-            },
-            child: Text(
-              "See All".tr(),
-              style: Theme.of(context)
-                  .textTheme
-                  .titleLarge!
-                  .copyWith(letterSpacing: 1, fontSize: 16),
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

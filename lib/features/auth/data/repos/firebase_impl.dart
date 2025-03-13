@@ -14,11 +14,11 @@ import '../../../../core/services/firebase_auth_service.dart';
 import '../models/user_model.dart';
 import 'auth_repo.dart';
 
-class AuthRepoImpl extends AuthRepo {
+class FirebaseImpl extends AuthRepo {
   final FirebaseAuthService firebaseAuthService;
   final FireStoreService fireStoreService;
 
-  AuthRepoImpl({
+  FirebaseImpl({
     required this.firebaseAuthService,
     required this.fireStoreService,
   });
@@ -45,7 +45,7 @@ class AuthRepoImpl extends AuthRepo {
         phoneNumber: phoneNumber,
         bloodType: bloodType,
         fcmTokenm:
-            PushNotificationService.fcmToken ?? " no token for this device ",
+            PushNotificationService.fcmToken ?? "fcmToken is not initialized",
         gender: gender,
         NationalId: NationalId,
       );

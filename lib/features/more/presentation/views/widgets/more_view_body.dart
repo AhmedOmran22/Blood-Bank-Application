@@ -20,36 +20,36 @@ class MoreViewBody extends StatelessWidget {
             const UserInformationHeader(),
             MoreItem(
               text: "Create Request Blood",
-              icon: FontAwesomeIcons.handshake,
+              icon: FontAwesomeIcons.lightbulb,
               onTap: () => Navigator.pushNamed(context, AppRoutes.sendPost),
             ),
             const MoreItem(
               text: "Create Request Blood",
-              icon: FontAwesomeIcons.handshake,
+              icon: FontAwesomeIcons.lightbulb,
             ),
             const MoreItem(
               text: "Create Request Blood",
-              icon: FontAwesomeIcons.handshake,
+              icon: FontAwesomeIcons.lightbulb,
             ),
             const MoreItem(
               text: "Create Request Blood",
-              icon: FontAwesomeIcons.handshake,
+              icon: FontAwesomeIcons.lightbulb,
             ),
             const MoreItem(
               text: "Create Request Blood",
-              icon: FontAwesomeIcons.handshake,
+              icon: FontAwesomeIcons.lightbulb,
             ),
             const MoreItem(
               text: "Create Request Blood",
-              icon: FontAwesomeIcons.handshake,
+              icon: FontAwesomeIcons.lightbulb,
             ),
             const MoreItem(
               text: "Create Request Blood",
-              icon: FontAwesomeIcons.handshake,
+              icon: FontAwesomeIcons.lightbulb,
             ),
             const MoreItem(
               text: "Create Request Blood",
-              icon: FontAwesomeIcons.handshake,
+              icon: FontAwesomeIcons.lightbulb,
             ),
           ],
         ),

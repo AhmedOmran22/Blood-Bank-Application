@@ -21,12 +21,13 @@ class MoreItem extends StatelessWidget {
             spacing: 16,
             children: [
               CircleAvatar(
-                backgroundColor: const Color(0xffffdada),
+                backgroundColor: Theme.of(context).primaryColor,
                 radius: 20,
                 child: Center(
                   child: Icon(
                     icon,
                     size: 20,
+                    color: Colors.white,
                   ),
                 ),
               ),
