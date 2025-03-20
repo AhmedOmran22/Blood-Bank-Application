@@ -1,7 +1,5 @@
-import 'package:blood_bank/core/theme_cubit/theme_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/functions/get_current_user_function.dart';
 
@@ -37,7 +35,7 @@ class HomeSliverAppBar extends StatelessWidget {
           subtitle: Padding(
             padding: const EdgeInsets.only(top: 4),
             child: Text(
-              "Blood Type".tr()+" : " + getCurrentUserFunction().bloodType,
+              "Blood Type".tr() + " : " + getCurrentUserFunction().bloodType,
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
                     color: Colors.grey.shade600,
                   ),
@@ -47,9 +45,7 @@ class HomeSliverAppBar extends StatelessWidget {
             smallSize: 12,
             alignment: Alignment.topRight,
             child: GestureDetector(
-              onTap: () {
-                BlocProvider.of<ThemeCubit>(context).toggleTheme();
-              },
+              onTap: null,
               child: Icon(
                 Icons.notifications,
                 size: 32,

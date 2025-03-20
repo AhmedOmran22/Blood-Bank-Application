@@ -6,14 +6,16 @@ class MoreItem extends StatelessWidget {
     required this.text,
     required this.icon,
     this.onTap,
+    this.color,
   });
   final String text;
   final IconData icon;
   final VoidCallback? onTap;
+  final Color? color;
   @override
   Widget build(BuildContext context) {
     return Column(
-      spacing: 4,
+      spacing: 2,
       children: [
         GestureDetector(
           onTap: onTap,
@@ -21,7 +23,7 @@ class MoreItem extends StatelessWidget {
             spacing: 16,
             children: [
               CircleAvatar(
-                backgroundColor: Theme.of(context).primaryColor,
+                backgroundColor: color ?? Theme.of(context).primaryColor,
                 radius: 20,
                 child: Center(
                   child: Icon(
