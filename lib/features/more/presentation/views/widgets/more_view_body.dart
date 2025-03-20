@@ -24,31 +24,24 @@ class MoreViewBody extends StatelessWidget {
               onTap: () => Navigator.pushNamed(context, AppRoutes.sendPost),
             ),
             const MoreItem(
-              text: "Create Request Blood",
+              text: "Create donate blood",
               icon: FontAwesomeIcons.lightbulb,
             ),
             const MoreItem(
-              text: "Create Request Blood",
+              text: "Blogs",
+              icon: FontAwesomeIcons.lightbulb,
+            ),
+            MoreItem(
+              onTap: () => Navigator.pushNamed(context, AppRoutes.settings),
+              text: "Settings",
+              icon: Icons.settings,
+            ),
+            const MoreItem(
+              text: "Compatibility",
               icon: FontAwesomeIcons.lightbulb,
             ),
             const MoreItem(
-              text: "Create Request Blood",
-              icon: FontAwesomeIcons.lightbulb,
-            ),
-            const MoreItem(
-              text: "Create Request Blood",
-              icon: FontAwesomeIcons.lightbulb,
-            ),
-            const MoreItem(
-              text: "Create Request Blood",
-              icon: FontAwesomeIcons.lightbulb,
-            ),
-            const MoreItem(
-              text: "Create Request Blood",
-              icon: FontAwesomeIcons.lightbulb,
-            ),
-            const MoreItem(
-              text: "Create Request Blood",
+              text: "Donate us",
               icon: FontAwesomeIcons.lightbulb,
             ),
           ],
