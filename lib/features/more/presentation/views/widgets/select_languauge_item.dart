@@ -21,10 +21,10 @@ class SelectLanguageItem extends StatelessWidget {
                     value: const Locale('en'),
                     groupValue: context.locale,
                     onChanged: (value) {
-                      context.setLocale(value!);
+                      context.setLocale(const Locale('en'));
                     },
                   ),
-                  const Text("English"),
+                  const Text("English").tr(),
                 ],
               ),
               const Divider(
@@ -37,10 +37,10 @@ class SelectLanguageItem extends StatelessWidget {
                     value: const Locale('ar'),
                     groupValue: context.locale,
                     onChanged: (value) {
-                      context.setLocale(value!);
+                      context.setLocale(const Locale("ar"));
                     },
                   ),
-                  const Text("العربية"),
+                  const Text("العربية").tr(),
                 ],
               ),
             ],

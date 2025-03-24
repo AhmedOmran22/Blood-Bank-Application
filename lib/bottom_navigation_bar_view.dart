@@ -19,6 +19,7 @@ class _BottomNavigationBarViewState extends State<BottomNavigationBarView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: ValueKey(EasyLocalization.of(context)!.locale),
       body: IndexedStack(
         index: currentIndex,
         children: [

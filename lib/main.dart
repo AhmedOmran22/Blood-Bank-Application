@@ -27,7 +27,7 @@ void main() async {
     EasyLocalization(
       supportedLocales: [const Locale('en'), const Locale('ar')],
       path: 'assets/translations',
-      fallbackLocale: const Locale('en'),
+      fallbackLocale: const Locale('ar'),
       saveLocale: true,
       child: const BloodBank(),
     ),

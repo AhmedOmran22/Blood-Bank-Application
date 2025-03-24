@@ -1,5 +1,6 @@
 import 'package:blood_bank/features/more/presentation/views/widgets/select_languauge_item.dart';
 import 'package:blood_bank/features/more/presentation/views/widgets/theme_switcher.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class SetingsViewBody extends StatelessWidget {
@@ -11,7 +12,7 @@ class SetingsViewBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Select language",
+          "Select language".tr(),
           style: Theme.of(context).textTheme.titleMedium!.copyWith(
                 fontWeight: FontWeight.normal,
               ),
@@ -22,16 +23,15 @@ class SetingsViewBody extends StatelessWidget {
         Row(
           children: [
             Text(
-              "Dark Mode",
+              "Dark Mode".tr(),
               style: Theme.of(context).textTheme.titleMedium!.copyWith(
                     fontWeight: FontWeight.normal,
                   ),
             ),
             const Spacer(),
-          const ThemeSwitcher(),
+            const ThemeSwitcher(),
           ],
         ),
-       
       ],
     );
   }
