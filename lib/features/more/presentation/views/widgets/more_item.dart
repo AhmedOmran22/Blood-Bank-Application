@@ -15,7 +15,7 @@ class MoreItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      spacing: 2,
+      // spacing: 2,
       children: [
         GestureDetector(
           onTap: onTap,

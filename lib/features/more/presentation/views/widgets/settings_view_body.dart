@@ -1,52 +1,38 @@
-
-import 'package:blood_bank/features/more/presentation/views/widgets/more_item.dart';
+import 'package:blood_bank/features/more/presentation/views/widgets/select_languauge_item.dart';
+import 'package:blood_bank/features/more/presentation/views/widgets/theme_switcher.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../../../core/cache/prefs.dart';
-import '../../../../../core/theme_cubit/theme_cubit.dart';
 
 class SetingsViewBody extends StatelessWidget {
   const SetingsViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      spacing: 16,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        MoreItem(
-          text: "Language",
-          icon: Icons.language,
-          onTap: null,
+        Text(
+          "Select language",
+          style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                fontWeight: FontWeight.normal,
+              ),
         ),
-        ThemeSwitcher(),
+        const SizedBox(height: 16),
+        const SelectLanguageItem(),
+        const SizedBox(height: 16),
+        Row(
+          children: [
+            Text(
+              "Dark Mode",
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                    fontWeight: FontWeight.normal,
+                  ),
+            ),
+            const Spacer(),
+          const ThemeSwitcher(),
+          ],
+        ),
+       
       ],
-    );
-  }
-}
-
-class ThemeSwitcher extends StatefulWidget {
-  const ThemeSwitcher({
-    super.key,
-  });
-
-  @override
-  State<ThemeSwitcher> createState() => _ThemeSwitcherState();
-}
-
-class _ThemeSwitcherState extends State<ThemeSwitcher> {
-  @override
-  Widget build(BuildContext context) {
-    return Switch(
-      value: Prefs.getBool("isDark"),
-      onChanged: (value) {
-        setState(
-          () {
-            Prefs.setBool("isDark", value);
-            BlocProvider.of<ThemeCubit>(context).getCurrentTheme();
-          },
-        );
-      },
     );
   }
 }

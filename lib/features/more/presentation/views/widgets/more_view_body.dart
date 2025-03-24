@@ -15,7 +15,7 @@ class MoreViewBody extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
-          spacing: 16,
+          spacing: 8,
           children: [
             const UserInformationHeader(),
             MoreItem(

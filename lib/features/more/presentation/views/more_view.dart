@@ -10,7 +10,7 @@ class MoreView extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Settings",
+          "More",
           style: Theme.of(context).textTheme.bodyLarge,
         ),
       ),
