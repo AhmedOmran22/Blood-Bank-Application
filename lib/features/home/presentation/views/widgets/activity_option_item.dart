@@ -1,7 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 import '../../../data/models/activity_option_item_model.dart';
+
 
 class ActivityOptionItem extends StatelessWidget {
   const ActivityOptionItem({
@@ -42,7 +44,7 @@ class ActivityOptionItem extends StatelessWidget {
                 spacing: 2,
                 children: [
                   Text(
-                    activityOptionItemModel.title,
+                    activityOptionItemModel.title.tr(),
                     style: Theme.of(context)
                         .textTheme
                         .titleMedium!
@@ -51,7 +53,7 @@ class ActivityOptionItem extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                   ),
                   Text(
-                    activityOptionItemModel.subtitle,
+                    activityOptionItemModel.subtitle.tr(),
                     style: Theme.of(context)
                         .textTheme
                         .bodySmall!

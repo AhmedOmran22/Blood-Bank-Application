@@ -1,5 +1,6 @@
 import 'package:blood_bank/features/home/data/models/post_model.dart';
 import 'package:blood_bank/features/home/presentation/views/widgets/posts_detailes_view_body.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class PostDetailesView extends StatelessWidget {
@@ -11,7 +12,7 @@ class PostDetailesView extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Post Detailes",
+          "Post Detailes".tr(),
           style: Theme.of(context).textTheme.bodyLarge,
         ),
         leading: IconButton(

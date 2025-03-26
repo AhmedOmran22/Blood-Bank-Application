@@ -1,4 +1,5 @@
 import 'package:blood_bank/features/more/presentation/views/widgets/settings_view_body.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class SettingsView extends StatelessWidget {
@@ -10,7 +11,7 @@ class SettingsView extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Settings",
+          "Settings".tr(),
           style: Theme.of(context).textTheme.bodyLarge,
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:blood_bank/features/more/presentation/views/widgets/more_view_body.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class MoreView extends StatelessWidget {
@@ -10,7 +11,7 @@ class MoreView extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "More",
+          "More".tr(),
           style: Theme.of(context).textTheme.bodyLarge,
         ),
       ),

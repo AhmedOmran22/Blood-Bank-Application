@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 
 class ActivityOptionItemModel {
   final String title;
@@ -11,19 +10,19 @@ class ActivityOptionItemModel {
 }
 List<ActivityOptionItemModel> activityOptionItems = [
   ActivityOptionItemModel(
-    title: 'Blood Donor'.tr(),
-    subtitle: '120 Post'.tr(),
+    title: 'Blood Donor',
+    subtitle: '120 Post'
   ),
   ActivityOptionItemModel(
-    title: 'Request Blood'.tr(),
-    subtitle: 'Get help'.tr(),
+    title: 'Request Blood',
+    subtitle: 'Get help'
   ),
   ActivityOptionItemModel(
-    title: 'Create Post'.tr(),
-    subtitle: "It's easy 1 step".tr(),
+    title: 'Create Post',
+    subtitle: "It's easy 1 step"
   ),
   ActivityOptionItemModel(
-    title: 'Blood Given'.tr(),
-    subtitle: "It's easy 1 step".tr(),
+    title: 'Blood Given',
+    subtitle: "It's easy 1 step"
   ),
 ];

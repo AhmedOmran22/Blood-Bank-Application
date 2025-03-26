@@ -1,4 +1,5 @@
 import 'package:blood_bank/features/home/presentation/views/widgets/all_posts_view_body.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class AllPostsView extends StatelessWidget {
@@ -10,7 +11,7 @@ class AllPostsView extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "All Posts",
+          "All Posts".tr(),
           style: Theme.of(context).textTheme.bodyLarge,
         ),
         leading: IconButton(

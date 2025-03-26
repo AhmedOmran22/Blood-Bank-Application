@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -37,43 +38,45 @@ class PostDetailesViewBody extends StatelessWidget {
           ),
           Divider(color: Colors.grey.shade600, thickness: .2),
           PostDetailesItem(
-            label: 'Contact Person',
+            label: 'Contact Person'.tr(),
             details: postModel.userName,
             icon: Icons.person,
           ),
           Divider(color: Colors.grey.shade600, thickness: .2),
           PostDetailesItem(
-            label: 'Mobile Number',
+            label: 'Mobile Number'.tr(),
             details: postModel.mobileNumber,
             icon: FontAwesomeIcons.phoneVolume,
           ),
           Divider(color: Colors.grey.shade600, thickness: .2),
           PostDetailesItem(
-            label: 'How many bags needed',
+            label: 'How many bags needed'.tr(),
             details: postModel.howManyBagsNeeeded.toString(),
             icon: FontAwesomeIcons.bagShopping,
           ),
           Divider(color: Colors.grey.shade600, thickness: .2),
           PostDetailesItem(
-            label: 'City Name',
+            label: 'City Name'.tr(),
             details: postModel.cityName,
             icon: FontAwesomeIcons.city,
           ),
           Divider(color: Colors.grey.shade600, thickness: .2),
           PostDetailesItem(
-            label: 'Hospital Name',
+            label: 'Hospital Name'.tr(),
             details: postModel.hospitalName,
             icon: FontAwesomeIcons.hospital,
           ),
           Divider(color: Colors.grey.shade600, thickness: .2),
-          Align(
-            alignment: Alignment.topLeft,
-            child: Text(
-              "Why do you need blood ? ",
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                    fontSize: 18,
-                  ),
-            ),
+          Row(
+            children: [
+              Text(
+                "Why do you need blood ? ".tr(),
+                textAlign: TextAlign.start,
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                      fontSize: 18,
+                    ),
+              ),
+            ],
           ),
           Align(
             alignment: Alignment.centerLeft,

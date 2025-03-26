@@ -24,7 +24,13 @@ class SelectLanguageItem extends StatelessWidget {
                       context.setLocale(const Locale('en'));
                     },
                   ),
-                  const Text("English").tr(),
+                  Text(
+                    "English",
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleMedium!
+                        .copyWith(fontWeight: FontWeight.normal, fontSize: 14),
+                  ).tr(),
                 ],
               ),
               const Divider(
@@ -40,7 +46,13 @@ class SelectLanguageItem extends StatelessWidget {
                       context.setLocale(const Locale("ar"));
                     },
                   ),
-                  const Text("العربية").tr(),
+                  Text(
+                    "العربية",
+                    style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                          fontWeight: FontWeight.normal,
+                          fontSize: 14,
+                        ),
+                  ).tr(),
                 ],
               ),
             ],
