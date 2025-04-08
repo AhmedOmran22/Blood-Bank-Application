@@ -19,6 +19,33 @@ class PostModel {
     required this.hospitalName,
     required this.whyDoYouNeedBlood,
   });
+  toJson() {
+    return {
+      "cityName": cityName,
+      "title": title,
+      "userName": userName,
+      "dateYouNeedBlod": dateYouNeedBlod,
+      "mobileNumber": mobileNumber,
+      "howManyBagsNeeeded": howManyBagsNeeeded,
+      "bloodType": bloodType,
+      "hospitalName": hospitalName,
+      "whyDoYouNeedBlood": whyDoYouNeedBlood,
+    };
+  }
+
+  factory PostModel.fromJson(Map<String, dynamic> json) {
+    return PostModel(
+      cityName: json["cityName"],
+      title: json["title"],
+      userName: json["userName"],
+      dateYouNeedBlod: json["dateYouNeedBlod"],
+      mobileNumber: json["mobileNumber"],
+      howManyBagsNeeeded: json["howManyBagsNeeeded"],
+      bloodType: json["bloodType"],
+      hospitalName: json["hospitalName"],
+      whyDoYouNeedBlood: json["whyDoYouNeedBlood"],
+    );
+  }
 }
 
 List<PostModel> posts = [
