@@ -1,6 +1,8 @@
 import 'package:blood_bank/features/home/data/models/activity_option_item_model.dart';
+import 'package:blood_bank/features/home/presentation/cubits/posts_cubit.dart';
 import 'package:blood_bank/features/home/presentation/views/widgets/activity_option_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/routes/app_routes.dart';
 
@@ -33,7 +35,11 @@ class ActivityOptions extends StatelessWidget {
             children: [
               ActivityOptionItem(
                 onTap: () {
-                  Navigator.pushNamed(context, AppRoutes.sendPost);
+                  Navigator.pushNamed(
+                    context,
+                    AppRoutes.sendPost,
+                    arguments: BlocProvider.of<PostsCubit>(context),
+                  );
                 },
                 activityOptionItemModel: activityOptionItems[2],
               ),
