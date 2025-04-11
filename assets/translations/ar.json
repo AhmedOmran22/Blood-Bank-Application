@@ -59,7 +59,7 @@
     "Enter your national ID": "ادخل رقم القومي",
     "Invalid national ID": "الرقم القومي غير صحيح",
     "Home": "الرئيسية",
-    "Awareness": "التواصل",
+    "Awareness": "التوعية",
     "chat bot": "الدردشة",
     "More": "المزيد",
     "Blood Type":"قصيلة الدم",
@@ -86,6 +86,10 @@
    "City Name":"اسم المدينة",
    "Hospital Name":"اسم المستشفى",
    "Why do you need blood ? ":"لماذا تحتاج الدم؟",
+   "Create Request Blood":"انشاء طلب دم",
+   "Be a Donor":"أظهار نفسك كمتبرع",
+   "Compatibility":"تطابقية الدم",
+   "Donate us":"تبرع لنا",
    
     "English": "اللغة الانجليزية",
     "Arabic": "اللغة العربية"

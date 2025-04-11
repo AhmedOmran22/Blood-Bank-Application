@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class MoreItem extends StatelessWidget {
@@ -34,7 +35,7 @@ class MoreItem extends StatelessWidget {
                 ),
               ),
               Text(
-                text,
+                text.tr(),
                 style: Theme.of(context)
                     .textTheme
                     .titleMedium!
