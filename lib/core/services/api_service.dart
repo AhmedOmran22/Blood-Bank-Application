@@ -3,30 +3,25 @@ abstract class ApiService {
     String path, {
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
+    String? id,
   });
 
   Future<dynamic> post(
     String path, {
-    Object? data,
+    required Map<String, dynamic> data,
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
     bool isFormData = false,
+    String? id,
   });
 
   Future<dynamic> patch(
     String path, {
-    Object? data,
+   required Map<String, dynamic> data,
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
     bool isFormData = false,
-  });
-
-  Future<dynamic> put(
-    String path, {
-    Object? data,
-    Map<String, dynamic>? queryParameters,
-    Map<String, dynamic>? headers,
-    bool isFormData = false,
+    String? id,
   });
 
   Future<dynamic> delete(
@@ -35,5 +30,6 @@ abstract class ApiService {
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
     bool isFormData = false,
+    String? id,
   });
 }

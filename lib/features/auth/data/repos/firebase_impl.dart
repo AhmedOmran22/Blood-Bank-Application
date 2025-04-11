@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:blood_bank/core/services/firestore_service.dart';
+import 'package:blood_bank/core/services/api_service.dart';
 import 'package:blood_bank/core/services/push_notification_service.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -16,11 +16,11 @@ import 'auth_repo.dart';
 
 class FirebaseImpl extends AuthRepo {
   final FirebaseAuthService firebaseAuthService;
-  final FireStoreService fireStoreService;
+  final ApiService apiService;
 
   FirebaseImpl({
     required this.firebaseAuthService,
-    required this.fireStoreService,
+    required this.apiService,
   });
   @override
   Future<Either<Failure, UserModel>> createUserWithEmailAndPassword({
@@ -70,10 +70,10 @@ class FirebaseImpl extends AuthRepo {
       );
 
       UserModel currentUser = await getUserData(uid: user.uid);
-      fireStoreService.updateData(
-        path: BackendEndpoints.kUsers,
-        docuementId: user.uid,
+      apiService.patch(
+        BackendEndpoints.kUsers,
         data: {"fcmToken": PushNotificationService.fcmToken},
+        id: user.uid,
       );
       saveUserData(user: currentUser);
       return Right(currentUser);
@@ -84,10 +84,10 @@ class FirebaseImpl extends AuthRepo {
 
   @override
   Future addUserData({required UserModel user}) async {
-    await fireStoreService.addData(
-      path: BackendEndpoints.kUsers,
+    await apiService.post(
+      BackendEndpoints.kUsers,
       data: user.toMap(),
-      documentId: user.uid,
+      id: user.uid,
     );
   }
 
@@ -98,9 +98,9 @@ class FirebaseImpl extends AuthRepo {
   }
 
   Future<UserModel> getUserData({required String uid}) async {
-    var userData = await fireStoreService.getData(
-      path: BackendEndpoints.kUsers,
-      docuementId: uid,
+    var userData = await apiService.get(
+      BackendEndpoints.kUsers,
+      id: uid,
     );
     return UserModel.fromFireStore(userData);
   }

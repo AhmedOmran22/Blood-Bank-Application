@@ -24,6 +24,7 @@ class DioConsumer extends ApiService {
     String path, {
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
+    String? id,
   }) async {
     try {
       final response = await dio.get(
@@ -40,9 +41,10 @@ class DioConsumer extends ApiService {
   @override
   Future post(
     String path, {
-    Object? data,
+    Map<String, dynamic>? data,
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
+    String? id,
     bool isFormData = false,
   }) async {
     try {
@@ -65,6 +67,7 @@ class DioConsumer extends ApiService {
     Object? data,
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
+    String? id,
     bool isFormData = false,
   }) async {
     try {
@@ -81,22 +84,6 @@ class DioConsumer extends ApiService {
     }
   }
 
-  @override
-  Future<dynamic> put(
-    String path, {
-    Object? data,
-    Map<String, dynamic>? queryParameters,
-    Map<String, dynamic>? headers,
-    bool isFormData = false,
-  }) async {
-    final response = await dio.put(
-      path,
-      data: isFormData ? FormData.fromMap(data as Map<String, dynamic>) : data,
-      queryParameters: queryParameters,
-      options: Options(headers: headers),
-    );
-    return response.data;
-  }
 
   @override
   Future delete(
@@ -104,6 +91,7 @@ class DioConsumer extends ApiService {
     Object? data,
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
+    String? id,
     bool isFormData = false,
   }) async {
     try {
