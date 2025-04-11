@@ -33,6 +33,7 @@ class GeneralButton extends StatelessWidget {
           text,
           style: Theme.of(context).textTheme.titleMedium!.copyWith(
                 color: textColor,
+                fontWeight: FontWeight.w900,
               ),
         ).tr(),
       ),

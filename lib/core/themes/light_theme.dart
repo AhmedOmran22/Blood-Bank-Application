@@ -15,16 +15,7 @@ ThemeData lightTheme = ThemeData(
   ),
   appBarTheme: lightAppBarTheme,
   inputDecorationTheme: lightInputDecorationTheme,
-  textButtonTheme: TextButtonThemeData(
-    style: TextButton.styleFrom(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(
-          12,
-        ),
-      ),
-      backgroundColor: AppColors.primaryColor,
-    ),
-  ),
+  textButtonTheme:lightTextButtonTheme,
   textTheme: lightTextTheme,
   bottomNavigationBarTheme: lightBottomNavigationBarTheme,
   datePickerTheme: lightDatePickerTheme,
@@ -40,7 +31,7 @@ TextTheme lightTextTheme = const TextTheme(
 
 BottomNavigationBarThemeData lightBottomNavigationBarTheme =
     const BottomNavigationBarThemeData(
-  backgroundColor: Color(0xFF121212),
+  backgroundColor: AppColors.whiteColor,
   selectedItemColor: AppColors.primaryColor,
   unselectedItemColor: AppColors.greyColor,
   type: BottomNavigationBarType.fixed,
