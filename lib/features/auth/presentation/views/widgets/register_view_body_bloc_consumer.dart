@@ -5,8 +5,8 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import '../../../../../core/functions/show_snack_bar_function.dart';
 import '../../../../../core/routes/app_routes.dart';
 import '../../../../../core/utils/app_colors.dart';
-import '../../manager/register_cubit/register_cubit.dart';
-import '../../manager/register_cubit/register_cubit_state.dart';
+import '../../cubits/register_cubit/register_cubit.dart';
+import '../../cubits/register_cubit/register_cubit_state.dart';
 import 'register_view_body.dart';
 
 class RegisterViewBodyBlocConsumer extends StatelessWidget {

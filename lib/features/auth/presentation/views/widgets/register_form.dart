@@ -8,7 +8,7 @@ import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
 import '../../../../../core/widgets/general_button.dart';
 import '../../../../../core/widgets/password_field.dart';
-import '../../manager/register_cubit/register_cubit.dart';
+import '../../cubits/register_cubit/register_cubit.dart';
 import 'terms_and_conditions.dart';
 
 class RegisterForm extends StatefulWidget {

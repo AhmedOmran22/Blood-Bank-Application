@@ -5,8 +5,8 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import '../../../../../core/functions/show_snack_bar_function.dart';
 import '../../../../../core/routes/app_routes.dart';
 import '../../../../../core/utils/app_colors.dart';
-import '../../manager/login_cubit/login_cubit.dart';
-import '../../manager/login_cubit/login_cubit_state.dart';
+import '../../cubits/login_cubit/login_cubit.dart';
+import '../../cubits/login_cubit/login_cubit_state.dart';
 import 'login_view_body.dart';
 
 class LoginViewBodyBlocConsumer extends StatelessWidget {

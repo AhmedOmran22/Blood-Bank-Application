@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/routes/app_routes.dart';
 import '../../../../core/services/service_locator.dart';
 import '../../data/repos/auth_repo.dart';
-import '../manager/register_cubit/register_cubit.dart';
+import '../cubits/register_cubit/register_cubit.dart';
 import 'widgets/register_view_body_bloc_consumer.dart';
 
 class RegisterView extends StatelessWidget {

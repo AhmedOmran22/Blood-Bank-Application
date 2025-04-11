@@ -4,7 +4,7 @@ import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/widgets/general_button.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
 import '../../../../../core/widgets/password_field.dart';
-import '../../manager/login_cubit/login_cubit.dart';
+import '../../cubits/login_cubit/login_cubit.dart';
 import 'foreget_password_widget.dart';
 
 class LoginForm extends StatefulWidget {
