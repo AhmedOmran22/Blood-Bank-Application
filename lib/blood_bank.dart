@@ -12,28 +12,18 @@ class BloodBank extends StatelessWidget {
   const BloodBank({super.key});
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ThemeCubit()..getCurrentTheme(),
-      child: Builder(
-        builder: (context) {
-          return BlocBuilder<ThemeCubit, ThemeCubitState>(
-            builder: (context, state) {
-              return MaterialApp(
-                builder: (context, child) {
-                  return child!;
-                },
-                debugShowCheckedModeBanner: false,
-                theme: state is LightThemeState ? lightTheme : darkTheme,
-                onGenerateRoute: onGenerateRoute,
-                initialRoute: AppRoutes.languageAndTheme,
-                localizationsDelegates: context.localizationDelegates,
-                supportedLocales: context.supportedLocales,
-                locale: context.locale,
-              );
-            },
-          );
-        },
-      ),
+    return BlocBuilder<ThemeCubit, ThemeCubitState>(
+      builder: (context, state) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: state is LightThemeState ? lightTheme : darkTheme,
+          onGenerateRoute: onGenerateRoute,
+          initialRoute: AppRoutes.languageAndTheme,
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          locale: context.locale,
+        );
+      },
     );
   }
 }

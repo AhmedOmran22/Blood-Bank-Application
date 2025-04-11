@@ -10,8 +10,8 @@ class ActivityOptionItemModel {
 }
 List<ActivityOptionItemModel> activityOptionItems = [
   ActivityOptionItemModel(
-    title: 'Blood Donor',
-    subtitle: '120 Post'
+    title: 'Blood Donors',
+    subtitle: '120 donors'
   ),
   ActivityOptionItemModel(
     title: 'Request Blood',
