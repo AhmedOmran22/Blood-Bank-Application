@@ -62,7 +62,7 @@ class FireStoreService extends ApiService {
       return data.data();
     }
     var data = await firestore.collection(path).get();
-    return data.docs;
+    return data.docs.map((e) => e.data()).toList();
   }
 
   @override

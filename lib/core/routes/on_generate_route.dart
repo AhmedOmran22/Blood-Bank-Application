@@ -78,7 +78,7 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (BuildContext context) {
           return BlocProvider.value(
-            value: settings.arguments as PostsCubit,
+            value: (settings.arguments as PostsCubit)..fetchAllPosts(),
             child: const AllPostsView(),
           );
         },

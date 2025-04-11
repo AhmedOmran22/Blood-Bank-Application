@@ -39,7 +39,7 @@ class HomeViewBody extends StatelessWidget {
           sliver: SliverToBoxAdapter(child: PostsAndSeeAllRow()),
         ),
         SliverToBoxAdapter(child: SizedBox(height: 16)),
-        PostsSliverList(childCount: 2),
+        HomePostsSliverList(childCount: 2),
         SliverToBoxAdapter(child: SizedBox(height: 16)),
         SliverText(text: "Our Contributions"),
         SliverToBoxAdapter(child: SizedBox(height: 16)),

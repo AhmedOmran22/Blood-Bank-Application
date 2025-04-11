@@ -2,8 +2,8 @@ import 'package:blood_bank/features/home/data/models/post_model.dart';
 import 'package:blood_bank/features/home/presentation/views/widgets/post_item.dart';
 import 'package:flutter/material.dart';
 
-class PostsSliverList extends StatelessWidget {
-  const PostsSliverList({
+class HomePostsSliverList extends StatelessWidget {
+  const HomePostsSliverList({
     super.key,
     required this.childCount,
   });
