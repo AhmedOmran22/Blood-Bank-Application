@@ -20,11 +20,7 @@ class BloodBank extends StatelessWidget {
             builder: (context, state) {
               return MaterialApp(
                 builder: (context, child) {
-                  return MediaQuery(
-                    data: MediaQuery.of(context)
-                        .copyWith(textScaler: const TextScaler.linear(1.0)),
-                    child: child!,
-                  );
+                  return child!;
                 },
                 debugShowCheckedModeBanner: false,
                 theme: state is LightThemeState ? lightTheme : darkTheme,
