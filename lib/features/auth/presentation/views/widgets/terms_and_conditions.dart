@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/utils/app_styles.dart';
 import 'custom_check_box.dart';
 
 class TermsAndConditions extends StatefulWidget {
@@ -42,7 +41,7 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                 ),
                 TextSpan(
                   text: "Terms and Conditions".tr(),
-                  style: AppStyles.cairoRegular16,
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
                 TextSpan(
                   text: "Privacy Policy".tr(),

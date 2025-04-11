@@ -3,8 +3,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/app_colors.dart';
-import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/routes/app_routes.dart';
+
 class AlreadyHaveAnAccount extends StatelessWidget {
   const AlreadyHaveAnAccount({
     super.key,
@@ -17,8 +17,10 @@ class AlreadyHaveAnAccount extends StatelessWidget {
         children: [
           TextSpan(
             text: "Already have an account?".tr(),
-            style:
-                AppStyles.cairoRegular16.copyWith(color: AppColors.greyColor),
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.greyColor,
+                ),
           ),
           TextSpan(
             recognizer: TapGestureRecognizer()
@@ -26,9 +28,9 @@ class AlreadyHaveAnAccount extends StatelessWidget {
                 Navigator.pushReplacementNamed(context, AppRoutes.login);
               },
             text: "Login".tr(),
-            style: AppStyles.cairoRegular16.copyWith(
-              color: AppColors.primaryColor,
-            ),
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                  color: AppColors.primaryColor,
+                ),
           ),
         ],
       ),

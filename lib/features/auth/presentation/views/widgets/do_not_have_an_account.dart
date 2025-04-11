@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/routes/app_routes.dart';
 import '../../../../../core/utils/app_colors.dart';
-import '../../../../../core/utils/app_styles.dart';
 
 class DoNotHaveAnAccount extends StatelessWidget {
   const DoNotHaveAnAccount({
@@ -29,9 +28,9 @@ class DoNotHaveAnAccount extends StatelessWidget {
                 Navigator.pushReplacementNamed(context, AppRoutes.register);
               },
             text: "create an account".tr(),
-            style: AppStyles.cairoRegular16.copyWith(
-              color: AppColors.primaryColor,
-            ),
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                  color: AppColors.primaryColor,
+                ),
           ),
         ],
       ),
