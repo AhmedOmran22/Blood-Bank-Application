@@ -19,7 +19,7 @@ class _BottomNavigationBarViewState extends State<BottomNavigationBarView> {
   @override
   Widget build(BuildContext context) {
     return PopScope(
-      canPop: false,
+      canPop: currentIndex ==0,
       onPopInvokedWithResult: (didPop, result) => setState(() {
         currentIndex = 0;
       }),
