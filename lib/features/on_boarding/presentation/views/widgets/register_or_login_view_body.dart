@@ -27,7 +27,7 @@ class RegisterOrLoginViewBody extends StatelessWidget {
 
           GeneralButton(
             onPressed: () {
-              Navigator.pushNamed(context, AppRoutes.login);
+              Navigator.pushReplacementNamed(context, AppRoutes.login);
             },
             text: "Login",
             backgroundColor: AppColors.primaryColor,
@@ -42,7 +42,7 @@ class RegisterOrLoginViewBody extends StatelessWidget {
             ),
             child: GeneralButton(
               onPressed: () {
-                Navigator.pushNamed(context, AppRoutes.register);
+                Navigator.pushReplacementNamed(context, AppRoutes.register);
               },
               text: "Register",
               backgroundColor: Theme.of(context).brightness == Brightness.light

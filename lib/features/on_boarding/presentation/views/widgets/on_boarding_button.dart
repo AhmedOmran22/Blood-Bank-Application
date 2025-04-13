@@ -1,3 +1,5 @@
+import 'package:blood_bank/core/cache/prefs.dart';
+import 'package:blood_bank/core/constants/constatnts.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/routes/app_routes.dart';
@@ -21,7 +23,8 @@ class OnBoardingButton extends StatelessWidget {
       child: GeneralButton(
         onPressed: () {
           if (controller.page == 2) {
-            Navigator.pushNamed(context, AppRoutes.registerOrLogin);
+            Navigator.pushReplacementNamed(context, AppRoutes.registerOrLogin);
+            Prefs.setBool(kIsOnBoardingViewed, true);
           } else {
             controller.nextPage(
               duration: const Duration(milliseconds: 300),
