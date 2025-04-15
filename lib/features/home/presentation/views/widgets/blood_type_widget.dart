@@ -18,6 +18,7 @@ class BloodTypeWidget extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: CircleAvatar(
+          radius: 18,
           child: Text(
             bloodType,
             style: Theme.of(context)

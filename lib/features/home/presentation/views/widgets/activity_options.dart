@@ -22,6 +22,9 @@ class ActivityOptions extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               ActivityOptionItem(
+                onTap: () {
+                  Navigator.pushNamed(context, AppRoutes.donors);
+                },
                 activityOptionItemModel: activityOptionItems[0],
               ),
               const SizedBox(width: 16),

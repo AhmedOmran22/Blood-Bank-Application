@@ -5,6 +5,7 @@ import 'package:blood_bank/features/auth/presentation/views/reset_password_view.
 import 'package:blood_bank/features/home/data/models/post_model.dart';
 import 'package:blood_bank/features/home/presentation/cubits/posts_cubit.dart';
 import 'package:blood_bank/features/home/presentation/views/all_posts_view.dart';
+import 'package:blood_bank/features/home/presentation/views/donors_view.dart';
 import 'package:blood_bank/features/home/presentation/views/post_detailes_view.dart';
 import 'package:blood_bank/features/home/presentation/views/send_post_view.dart';
 import 'package:blood_bank/features/more/presentation/views/settings_view.dart';
@@ -111,6 +112,12 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (BuildContext context) {
           return const SettingsView();
+        },
+      );
+    case AppRoutes.donors:
+      return MaterialPageRoute(
+        builder: (BuildContext context) {
+          return const DonorsView();
         },
       );
     default:
