@@ -6,7 +6,7 @@ class DioConsumer extends ApiService {
   final Dio dio;
 
   DioConsumer({required this.dio}) {
-    dio.options.baseUrl = '';
+    dio.options.baseUrl = 'http://bloodhelperapi.runasp.net';
     dio.interceptors.add(
       LogInterceptor(
         request: true,
