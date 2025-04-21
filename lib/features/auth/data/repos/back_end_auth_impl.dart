@@ -154,4 +154,28 @@ class BackEndAuthImpl extends AuthRepo {
       return Left(ServerFailure(errMessage: e.toString()));
     }
   }
+
+  @override
+  Future<Either<Failure, void>> resetPassword({
+    required String email,
+    required String password,
+    required String code,
+  }) async {
+    try {
+      await apiService.post(
+        BackendEndpoints.resendConfirmEmail,
+        data: {
+          'email': Prefs.getBool(kUserEmail),
+          'code': code,
+          'newPassword': password
+        },
+      );
+      return const Right(null);
+    } on CustomException catch (e) {
+      log(e.message);
+      return Left(ServerFailure(errMessage: e.message));
+    } catch (e) {
+      return Left(ServerFailure(errMessage: e.toString()));
+    }
+  }
 }

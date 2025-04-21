@@ -17,13 +17,25 @@ abstract class AuthRepo {
   });
   Future<Either<Failure, UserModel>> fetchUserData({required String token});
   Future<Either<Failure, UserModel>> signinWithEmailAndPassword(
-      String email, String password);
+    String email,
+    String password,
+  );
   Future addUserData({required UserModel user});
-  Future<Either<Failure, void>> confirmEmail(
-      {required String email, required String code});
+  Future<Either<Failure, void>> confirmEmail({
+    required String email,
+    required String code,
+  });
   Future saveUserData({required UserModel user});
   Future<void> deleteUser(User? user);
   Future<Either<Failure, void>> resendCode();
   Future<void> signOut();
   Future<Either<Failure, void>> forgotPassword({required String email});
+  Future<Either<Failure, void>> resetPassword({
+    required String email,
+    required String password,
+    required String code,
+  });
 }
+// todo => add forgot password 
+// todo => add resend code
+// todo => going to login after reseting the password
