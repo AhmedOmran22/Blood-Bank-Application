@@ -73,7 +73,7 @@ class _confirmEmailViewBodyState extends State<confirmEmailViewBody> {
                 if (formKey.currentState!.validate()) {
                   context.read<ConfirmEmailCubit>().confirmEmail(
                         email: Prefs.getString("userEmail")!,
-                        otp: textEditingController.text,
+                        code: textEditingController.text,
                       );
                 } else {
                   autoValidateMode = AutovalidateMode.always;

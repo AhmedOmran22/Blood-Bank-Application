@@ -7,9 +7,9 @@ class ConfirmEmailCubit extends Cubit<ConfirmEmailCubitState> {
   final AuthRepo authRepo;
 
   Future<void> confirmEmail(
-      {required String email, required String otp}) async {
+      {required String email, required String code}) async {
     emit(ConfirmEmailCubitLoading());
-    final result = await authRepo.confirmEmail(email: email, otp: otp);
+    final result = await authRepo.confirmEmail(email: email, code: code);
     result.fold(
       (failure) => emit(ConfirmEmailCubitFailure(failure.errMessage)),
       (user) => emit(ConfirmEmailCubitSuccess()),

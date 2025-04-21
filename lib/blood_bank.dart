@@ -18,7 +18,7 @@ class BloodBank extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: state is LightThemeState ? lightTheme : darkTheme,
           onGenerateRoute: onGenerateRoute,
-          initialRoute: AppRoutes.login,
+          initialRoute: AppRoutes.confirmEmail,
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,
           locale: context.locale,

@@ -73,9 +73,24 @@ class BackEndAuthImpl extends AuthRepo {
   ) async {
     throw UnimplementedError();
   }
-  
+
   @override
-  Future<Either<Failure, UserModel>> confirmEmail({required String email, required String otp}) {
-    throw UnimplementedError();
+  Future<Either<Failure, void>> confirmEmail(
+      {required String email, required String code}) async {
+    try {
+      await apiService.post(
+        BackendEndpoints.confirmEmail,
+        data: {
+          'email': email,
+          'code': code,
+        },
+      );
+      return const Right(null);
+    } on CustomException catch (e) {
+      log(e.message);
+      return Left(ServerFailure(errMessage: e.message));
+    } catch (e) {
+      return Left(ServerFailure(errMessage: e.toString()));
+    }
   }
 }

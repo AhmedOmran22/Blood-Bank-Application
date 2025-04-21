@@ -1,5 +1,3 @@
-
-
 import 'package:blood_bank/core/functions/show_snack_bar_function.dart';
 import 'package:blood_bank/core/routes/app_routes.dart';
 import 'package:blood_bank/features/auth/presentation/cubits/confiem_email_cubit/confirm_email_cubit.dart';
@@ -21,6 +19,7 @@ class ConfirmEmailViewBodyBlocConsumer extends StatelessWidget {
       child: BlocConsumer<ConfirmEmailCubit, ConfirmEmailCubitState>(
         listener: (context, state) {
           if (state is ConfirmEmailCubitSuccess) {
+            showSnackBarFuction(context, "Email Confirmed Successfully");
             Navigator.pushReplacementNamed(context, AppRoutes.login);
           }
           if (state is ConfirmEmailCubitFailure) {
@@ -28,9 +27,9 @@ class ConfirmEmailViewBodyBlocConsumer extends StatelessWidget {
           }
         },
         builder: (context, state) {
-          return const ModalProgressHUD(
-            inAsyncCall: false,
-            child: confirmEmailViewBody(),
+          return ModalProgressHUD(
+            inAsyncCall: state is ConfirmEmailCubitLoading,
+            child: const confirmEmailViewBody(),
           );
         },
       ),

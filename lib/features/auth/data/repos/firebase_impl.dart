@@ -120,7 +120,7 @@ class FirebaseImpl extends AuthRepo {
 
   @override
   Future<Either<Failure, UserModel>> confirmEmail(
-      {required String email, required String otp}) {
+      {required String email, required String code}) {
     throw UnimplementedError();
   }
 }
