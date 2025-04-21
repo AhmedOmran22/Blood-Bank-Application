@@ -120,12 +120,12 @@ class BackEndAuthImpl extends AuthRepo {
   }
 
   @override
-  Future<Either<Failure, void>> resendCode({required String email}) async {
+  Future<Either<Failure, void>> resendCode() async {
     try {
       await apiService.post(
         BackendEndpoints.resendConfirmEmail,
         data: {
-          'email': email,
+          'email': Prefs.getString(kUserEmail),
         },
       );
       return const Right(null);

@@ -1,3 +1,5 @@
+import 'package:blood_bank/core/cache/prefs.dart';
+import 'package:blood_bank/core/constants/constatnts.dart';
 import 'package:blood_bank/core/functions/show_snack_bar_function.dart';
 import 'package:blood_bank/core/routes/app_routes.dart';
 import 'package:blood_bank/features/auth/presentation/cubits/confiem_email_cubit/confirm_email_cubit.dart';
@@ -17,6 +19,7 @@ class ConfirmEmailViewBodyBlocConsumer extends StatelessWidget {
     return BlocConsumer<ConfirmEmailCubit, ConfirmEmailCubitState>(
       listener: (context, state) {
         if (state is ConfirmEmailCubitSuccess) {
+          Prefs.removeData(key: kUserEmail);
           showSnackBarFuction(context, "Email Confirmed Successfully");
           Navigator.pushReplacementNamed(context, AppRoutes.login);
         }

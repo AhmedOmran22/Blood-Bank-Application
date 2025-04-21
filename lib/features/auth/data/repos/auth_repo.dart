@@ -23,6 +23,6 @@ abstract class AuthRepo {
       {required String email, required String code});
   Future saveUserData({required UserModel user});
   Future<void> deleteUser(User? user);
-  Future<Either<Failure, void>> resendCode({required String email});
+  Future<Either<Failure, void>> resendCode();
   Future<void> signOut();
 }

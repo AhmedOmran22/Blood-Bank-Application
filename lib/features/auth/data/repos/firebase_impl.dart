@@ -130,7 +130,7 @@ class FirebaseImpl extends AuthRepo {
   }
 
   @override
-  Future<Either<Failure, void>> resendCode({required String email}) async 
+  Future<Either<Failure, void>> resendCode() async 
   {
     throw UnimplementedError();
   }
