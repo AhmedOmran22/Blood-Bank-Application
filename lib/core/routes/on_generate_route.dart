@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../bottom_navigation_bar_view.dart';
 import '../../features/auth/presentation/views/forget_password_view.dart';
-import '../../features/auth/presentation/views/confirm_email.dart';
+import '../../features/auth/presentation/views/confirm_email_view.dart';
 import '../../features/chat_bot/presentation/views/chat_bot_view.dart';
 import '../../features/on_boarding/presentation/views/language_and_theme_view.dart';
 import '../../features/on_boarding/presentation/views/on_boarding_view.dart';
