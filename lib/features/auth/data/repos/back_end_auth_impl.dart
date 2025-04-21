@@ -65,7 +65,7 @@ class BackEndAuthImpl extends AuthRepo {
 
   @override
   Future<void> signOut() async {
-    throw UnimplementedError();
+    Prefs.removeData(key: kToken);
   }
 
   @override
@@ -126,6 +126,24 @@ class BackEndAuthImpl extends AuthRepo {
         BackendEndpoints.resendConfirmEmail,
         data: {
           'email': Prefs.getString(kUserEmail),
+        },
+      );
+      return const Right(null);
+    } on CustomException catch (e) {
+      log(e.message);
+      return Left(ServerFailure(errMessage: e.message));
+    } catch (e) {
+      return Left(ServerFailure(errMessage: e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> forgotPassword({required String email}) async {
+    try {
+      await apiService.post(
+        BackendEndpoints.resendConfirmEmail,
+        data: {
+          'email': email,
         },
       );
       return const Right(null);

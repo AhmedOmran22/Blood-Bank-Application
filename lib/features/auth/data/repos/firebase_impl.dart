@@ -134,4 +134,9 @@ class FirebaseImpl extends AuthRepo {
   {
     throw UnimplementedError();
   }
+  
+  @override
+  Future<Either<Failure, void>> forgotPassword({required String email}) {
+    throw UnimplementedError();
+  }
 }

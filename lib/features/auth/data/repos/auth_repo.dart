@@ -25,4 +25,5 @@ abstract class AuthRepo {
   Future<void> deleteUser(User? user);
   Future<Either<Failure, void>> resendCode();
   Future<void> signOut();
+  Future<Either<Failure, void>> forgotPassword({required String email});
 }
