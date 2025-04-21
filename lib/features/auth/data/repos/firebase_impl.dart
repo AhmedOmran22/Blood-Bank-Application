@@ -28,9 +28,10 @@ class FirebaseImpl extends AuthRepo {
     required String email,
     required String password,
     required String phoneNumber,
-    required String bloodType,
-    required String gender,
+     String? bloodType,
+     String? gender,
     required String NationalId,
+     int? bloodTypeId,
   }) async {
     User? user;
     try {

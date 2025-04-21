@@ -33,7 +33,7 @@ class UserInformationHeader extends StatelessWidget {
                     ),
               ),
               Text(
-                "blood Group :" + getCurrentUserFunction().bloodType,
+                "blood Group :" + "A+",
                 style: Theme.of(context).textTheme.titleMedium!.copyWith(
                       color: Colors.white,
                       fontWeight: FontWeight.normal,
