@@ -1,9 +1,7 @@
 import 'package:blood_bank/core/cache/prefs.dart';
 import 'package:blood_bank/core/constants/constatnts.dart';
-import 'package:blood_bank/core/functions/show_snack_bar_function.dart';
 import 'package:blood_bank/core/widgets/custom_text_form_field.dart';
 import 'package:blood_bank/features/auth/presentation/cubits/confiem_email_cubit/confirm_email_cubit.dart';
-import 'package:blood_bank/features/auth/presentation/cubits/confiem_email_cubit/confirm_email_cubit_state.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -90,16 +88,7 @@ class _confirmEmailViewBodyState extends State<confirmEmailViewBody> {
                 textColor: AppColors.whiteColor,
               ),
               const SizedBox(height: 16),
-              BlocListener<ConfirmEmailCubit, ConfirmEmailCubitState>(
-                listener: (context, state) {
-                  if (state is ResendEmailCubitSuccess) {
-                    showSnackBarFuction(context, "Code Resend Successfully");
-                  }
-                  if (state is ResendPasswordCubitFailure) {
-                    showSnackBarFuction(context, state.errorMessage);
-                  }
-                },
-              ),
+             
               GeneralButton(
                 onPressed: () {
                   context.read<ConfirmEmailCubit>().resendCode();

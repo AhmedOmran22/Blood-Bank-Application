@@ -26,6 +26,12 @@ class ConfirmEmailViewBodyBlocConsumer extends StatelessWidget {
         if (state is ConfirmEmailCubitFailure) {
           showSnackBarFuction(context, state.errorMessage);
         }
+        if (state is ResendEmailCubitSuccess) {
+          showSnackBarFuction(context, "Code Resend Successfully");
+        }
+        if (state is ResendPasswordCubitFailure) {
+          showSnackBarFuction(context, state.errorMessage);
+        }
       },
       builder: (context, state) {
         return ModalProgressHUD(
