@@ -1,3 +1,4 @@
+import 'package:blood_bank/core/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -18,11 +19,11 @@ class RegisterViewBodyBlocConsumer extends StatelessWidget {
     return BlocConsumer<RegisterCubit, RegisterCubitState>(
       listener: (context, state) {
         if (state is RegisterCubitSuccess) {
-          // Navigator.pushNamedAndRemoveUntil(
-          //   context,
-          //   AppRoutes.bottomNavigationBarView,
-          //   (route) => false,
-          // );
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            AppRoutes.confirmEmail,
+            (route) => false,
+          );
           showSnackBarFuction(context, "Register Successfully");
         }
         if (state is RegisterCubitError) {

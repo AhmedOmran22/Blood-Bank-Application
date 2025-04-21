@@ -37,7 +37,7 @@ class ForgetPasswordViewBody extends StatelessWidget {
           const SizedBox(height: 32),
           GeneralButton(
             onPressed: () {
-              Navigator.pushNamed(context, AppRoutes.verify);
+              Navigator.pushNamed(context, AppRoutes.confirmEmail);
             },
             text: "Forget Password",
             backgroundColor: AppColors.primaryColor,

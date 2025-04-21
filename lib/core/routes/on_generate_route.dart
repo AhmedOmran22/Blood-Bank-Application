@@ -62,10 +62,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
           return const ResetPasswordView();
         },
       );
-    case AppRoutes.verify:
+    case AppRoutes.confirmEmail:
       return MaterialPageRoute(
         builder: (BuildContext context) {
-          return const VerifyView();
+          return const ConfirmEmailView();
         },
       );
     case AppRoutes.bottomNavigationBarView:
