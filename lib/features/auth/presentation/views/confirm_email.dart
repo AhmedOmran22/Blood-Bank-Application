@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'widgets/verify_view_body.dart';
+import 'widgets/confirm_email_view_body.dart';
 
 class VerifyView extends StatelessWidget {
   const VerifyView({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +26,7 @@ class VerifyView extends StatelessWidget {
       ),
       body: const Padding(
         padding: EdgeInsets.symmetric(horizontal: 16),
-        child: VerifyViewBody(),
+        child: confirmEmailViewBody(),
       ),
     );
   }

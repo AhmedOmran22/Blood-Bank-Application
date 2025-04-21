@@ -117,4 +117,10 @@ class FirebaseImpl extends AuthRepo {
   Future<void> signOut() async {
     await firebaseAuthService.signOut();
   }
+
+  @override
+  Future<Either<Failure, UserModel>> confirmEmail(
+      {required String email, required String otp}) {
+    throw UnimplementedError();
+  }
 }

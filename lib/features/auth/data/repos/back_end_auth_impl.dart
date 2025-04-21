@@ -73,4 +73,9 @@ class BackEndAuthImpl extends AuthRepo {
   ) async {
     throw UnimplementedError();
   }
+  
+  @override
+  Future<Either<Failure, UserModel>> confirmEmail({required String email, required String otp}) {
+    throw UnimplementedError();
+  }
 }

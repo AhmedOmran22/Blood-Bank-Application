@@ -18,6 +18,8 @@ abstract class AuthRepo {
   Future<Either<Failure, UserModel>> signinWithEmailAndPassword(
       String email, String password);
   Future addUserData({required UserModel user});
+  Future<Either<Failure, UserModel>> confirmEmail(
+      {required String email, required String otp});
   Future saveUserData({required UserModel user});
   Future<void> deleteUser(User? user);
   Future<void> signOut();

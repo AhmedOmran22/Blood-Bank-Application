@@ -1,3 +1,4 @@
+import 'package:blood_bank/core/cache/prefs.dart';
 import 'package:blood_bank/core/widgets/custom_text_form_field.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -6,9 +7,9 @@ import '../../../../../core/routes/app_routes.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/widgets/general_button.dart';
 
-class VerifyViewBody extends StatelessWidget {
-  const VerifyViewBody({super.key});
-
+class confirmEmailViewBody extends StatelessWidget {
+  const confirmEmailViewBody({super.key});
+  static final String userEmail = Prefs.getString("userEmail")!;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
