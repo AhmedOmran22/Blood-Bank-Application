@@ -14,25 +14,22 @@ class ConfirmEmailViewBodyBlocConsumer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: BlocConsumer<ConfirmEmailCubit, ConfirmEmailCubitState>(
-        listener: (context, state) {
-          if (state is ConfirmEmailCubitSuccess) {
-            showSnackBarFuction(context, "Email Confirmed Successfully");
-            Navigator.pushReplacementNamed(context, AppRoutes.login);
-          }
-          if (state is ConfirmEmailCubitFailure) {
-            showSnackBarFuction(context, state.errorMessage);
-          }
-        },
-        builder: (context, state) {
-          return ModalProgressHUD(
-            inAsyncCall: state is ConfirmEmailCubitLoading,
-            child: const confirmEmailViewBody(),
-          );
-        },
-      ),
+    return BlocConsumer<ConfirmEmailCubit, ConfirmEmailCubitState>(
+      listener: (context, state) {
+        if (state is ConfirmEmailCubitSuccess) {
+          showSnackBarFuction(context, "Email Confirmed Successfully");
+          Navigator.pushReplacementNamed(context, AppRoutes.login);
+        }
+        if (state is ConfirmEmailCubitFailure) {
+          showSnackBarFuction(context, state.errorMessage);
+        }
+      },
+      builder: (context, state) {
+        return ModalProgressHUD(
+          inAsyncCall: state is ConfirmEmailCubitLoading,
+          child: const confirmEmailViewBody(),
+        );
+      },
     );
   }
 }

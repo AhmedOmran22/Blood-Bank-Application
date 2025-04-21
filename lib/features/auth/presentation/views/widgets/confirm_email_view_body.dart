@@ -1,4 +1,5 @@
 import 'package:blood_bank/core/cache/prefs.dart';
+import 'package:blood_bank/core/constants/constatnts.dart';
 import 'package:blood_bank/core/widgets/custom_text_form_field.dart';
 import 'package:blood_bank/features/auth/presentation/cubits/confiem_email_cubit/confirm_email_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -34,67 +35,71 @@ class _confirmEmailViewBodyState extends State<confirmEmailViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Form(
-        key: formKey,
-        autovalidateMode: autoValidateMode,
-        child: Column(
-          children: [
-            SizedBox(height: MediaQuery.of(context).size.height * .05),
-            Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    "Enter the code sent to your phone number",
-                    textAlign: TextAlign.start,
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleMedium!
-                        .copyWith(fontWeight: FontWeight.w500),
-                  ).tr(),
-                ),
-              ],
-            ),
-            const SizedBox(height: 32),
-            CustomTextFormField(
-              hitnText: "Enter the code",
-              controller: textEditingController,
-              textInputType: TextInputType.number,
-              validator: (data) {
-                if (data == null || data.isEmpty) {
-                  return "Field is required".tr();
-                }
-                return null;
-              },
-            ),
-            const SizedBox(height: 32),
-            GeneralButton(
-              onPressed: () {
-                if (formKey.currentState!.validate()) {
-                  context.read<ConfirmEmailCubit>().confirmEmail(
-                        email: Prefs.getString("userEmail")!,
-                        code: textEditingController.text,
-                      );
-                } else {
-                  autoValidateMode = AutovalidateMode.always;
-                  setState(() {});
-                }
-              },
-              text: "Verify Code",
-              backgroundColor: AppColors.primaryColor,
-              textColor: AppColors.whiteColor,
-            ),
-            const SizedBox(height: 16),
-            GeneralButton(
-              onPressed: () {},
-              text: "Resend Code",
-              textColor: AppColors.primaryColor,
-              backgroundColor: Theme.of(context).brightness == Brightness.light
-                  ? AppColors.whiteColor
-                  : const Color(0xFF121212),
-            ),
-            const SizedBox(height: 16)
-          ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: SingleChildScrollView(
+        child: Form(
+          key: formKey,
+          autovalidateMode: autoValidateMode,
+          child: Column(
+            children: [
+              SizedBox(height: MediaQuery.of(context).size.height * .05),
+              Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      "Enter the code sent to your phone number",
+                      textAlign: TextAlign.start,
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleMedium!
+                          .copyWith(fontWeight: FontWeight.w500),
+                    ).tr(),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 32),
+              CustomTextFormField(
+                hitnText: "Enter the code",
+                controller: textEditingController,
+                textInputType: TextInputType.number,
+                validator: (data) {
+                  if (data == null || data.isEmpty) {
+                    return "Field is required".tr();
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 32),
+              GeneralButton(
+                onPressed: () {
+                  if (formKey.currentState!.validate()) {
+                    context.read<ConfirmEmailCubit>().confirmEmail(
+                          email: Prefs.getString(kUserEmail)!,
+                          code: textEditingController.text,
+                        );
+                  } else {
+                    autoValidateMode = AutovalidateMode.always;
+                    setState(() {});
+                  }
+                },
+                text: "Verify Code",
+                backgroundColor: AppColors.primaryColor,
+                textColor: AppColors.whiteColor,
+              ),
+              const SizedBox(height: 16),
+              GeneralButton(
+                onPressed: () {},
+                text: "Resend Code",
+                textColor: AppColors.primaryColor,
+                backgroundColor:
+                    Theme.of(context).brightness == Brightness.light
+                        ? AppColors.whiteColor
+                        : const Color(0xFF121212),
+              ),
+              const SizedBox(height: 16)
+            ],
+          ),
         ),
       ),
     );

@@ -15,6 +15,7 @@ abstract class AuthRepo {
     required String nationalId,
     int? bloodTypeId,
   });
+  Future<Either<Failure, UserModel>> fetchUserData({required String token});
   Future<Either<Failure, UserModel>> signinWithEmailAndPassword(
       String email, String password);
   Future addUserData({required UserModel user});
@@ -22,5 +23,6 @@ abstract class AuthRepo {
       {required String email, required String code});
   Future saveUserData({required UserModel user});
   Future<void> deleteUser(User? user);
+  Future<Either<Failure, void>> resendCode({required String email});
   Future<void> signOut();
 }

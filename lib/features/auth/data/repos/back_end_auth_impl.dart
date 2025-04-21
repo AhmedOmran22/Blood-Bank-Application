@@ -1,6 +1,8 @@
 import 'dart:developer';
 
+import 'package:blood_bank/core/cache/prefs.dart';
 import 'package:blood_bank/core/constants/backend_endpoints.dart';
+import 'package:blood_bank/core/constants/constatnts.dart';
 import 'package:blood_bank/core/errors/exception.dart';
 import 'package:blood_bank/core/errors/failure.dart';
 import 'package:blood_bank/core/services/api_service.dart';
@@ -71,18 +73,59 @@ class BackEndAuthImpl extends AuthRepo {
     String email,
     String password,
   ) async {
-    throw UnimplementedError();
+    try {
+      var response = await apiService.post(
+        BackendEndpoints.login,
+        data: {
+          'email': email,
+          'password': password,
+        },
+      );
+      Prefs.setString(kToken, response["token"]);
+      log(Prefs.getString(kToken));
+      return await fetchUserData(token: "");
+    } on CustomException catch (e) {
+      log(e.message);
+      return Left(ServerFailure(errMessage: e.message));
+    } catch (e) {
+      return Left(ServerFailure(errMessage: e.toString()));
+    }
   }
 
   @override
-  Future<Either<Failure, void>> confirmEmail(
-      {required String email, required String code}) async {
+  Future<Either<Failure, void>> confirmEmail({
+    required String email,
+    required String code,
+  }) async {
     try {
       await apiService.post(
         BackendEndpoints.confirmEmail,
         data: {
           'email': email,
           'code': code,
+        },
+      );
+      return const Right(null);
+    } on CustomException catch (e) {
+      log(e.message);
+      return Left(ServerFailure(errMessage: e.message));
+    } catch (e) {
+      return Left(ServerFailure(errMessage: e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserModel>> fetchUserData({required String token}) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Either<Failure, void>> resendCode({required String email}) async {
+    try {
+      await apiService.post(
+        BackendEndpoints.resendConfirmEmail,
+        data: {
+          'email': email,
         },
       );
       return const Right(null);

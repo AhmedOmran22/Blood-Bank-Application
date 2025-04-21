@@ -123,4 +123,15 @@ class FirebaseImpl extends AuthRepo {
       {required String email, required String code}) {
     throw UnimplementedError();
   }
+
+  @override
+  Future<Either<Failure, UserModel>> fetchUserData({required String token}) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Either<Failure, void>> resendCode({required String email}) async 
+  {
+    throw UnimplementedError();
+  }
 }
