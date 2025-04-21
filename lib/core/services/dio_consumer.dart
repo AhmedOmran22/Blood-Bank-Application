@@ -35,7 +35,9 @@ class DioConsumer extends ApiService {
       );
       return response.data;
     } on DioException catch (e) {
-      throw ServerFailure.fromDioExcepiton(e);
+      throw CustomException(
+        message: ServerFailure.fromDioExcepiton(e).errMessage,
+      );
     }
   }
 
@@ -83,7 +85,9 @@ class DioConsumer extends ApiService {
       );
       return response.data;
     } on DioException catch (e) {
-      throw ServerFailure.fromDioExcepiton(e);
+      throw CustomException(
+        message: ServerFailure.fromDioExcepiton(e).errMessage,
+      );
     }
   }
 
@@ -106,7 +110,9 @@ class DioConsumer extends ApiService {
       );
       return response.data;
     } on DioException catch (e) {
-      throw ServerFailure.fromDioExcepiton(e);
+      throw CustomException(
+        message: ServerFailure.fromDioExcepiton(e).errMessage,
+      );
     }
   }
 }
