@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'widgets/send_post_view_body.dart';
+// import 'widgets/send_post_view_body.dart';
 
 class SendPostView extends StatelessWidget {
   const SendPostView({super.key});
@@ -24,7 +24,7 @@ class SendPostView extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
       ),
-      body: const SendPostViewBody(),
+      // body: const SendPostViewBody(),
     );
   }
 }

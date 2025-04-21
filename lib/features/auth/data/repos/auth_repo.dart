@@ -10,10 +10,10 @@ abstract class AuthRepo {
     required String email,
     required String password,
     required String phoneNumber,
-     String? bloodType,
-     String? gender,
-    required String NationalId,
-     int? bloodTypeId,
+    String? bloodType,
+    String? gender,
+    required String nationalId,
+    int? bloodTypeId,
   });
   Future<Either<Failure, UserModel>> signinWithEmailAndPassword(
       String email, String password);

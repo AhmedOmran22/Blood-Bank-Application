@@ -1,3 +1,4 @@
+import 'package:blood_bank/core/errors/exception.dart';
 import 'package:blood_bank/core/errors/failure.dart';
 import 'package:dio/dio.dart';
 import 'api_service.dart';
@@ -7,16 +8,16 @@ class DioConsumer extends ApiService {
 
   DioConsumer({required this.dio}) {
     dio.options.baseUrl = 'http://bloodhelperapi.runasp.net';
-    dio.interceptors.add(
-      LogInterceptor(
-        request: true,
-        requestBody: true,
-        requestHeader: true,
-        responseBody: true,
-        responseHeader: true,
-        error: true,
-      ),
-    );
+    // dio.interceptors.add(
+    //   LogInterceptor(
+    //     request: true,
+    //     requestBody: true,
+    //     requestHeader: true,
+    //     responseBody: true,
+    //     responseHeader: true,
+    //     error: true,
+    //   ),
+    // );
   }
 
   @override
@@ -57,7 +58,9 @@ class DioConsumer extends ApiService {
       );
       return response.data;
     } on DioException catch (e) {
-      throw ServerFailure.fromDioExcepiton(e);
+      throw CustomException(
+        message: ServerFailure.fromDioExcepiton(e).errMessage,
+      );
     }
   }
 
@@ -83,7 +86,6 @@ class DioConsumer extends ApiService {
       throw ServerFailure.fromDioExcepiton(e);
     }
   }
-
 
   @override
   Future delete(

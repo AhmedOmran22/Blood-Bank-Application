@@ -10,11 +10,13 @@ class PasswordField extends StatefulWidget {
     this.hintText,
     this.controller,
     this.textInputType = TextInputType.text,
+    this.validator,
   });
   final String? hintText;
   final Function(String?)? onSaved;
   final TextEditingController? controller;
   final TextInputType? textInputType;
+  final String? Function(String?)? validator;
 
   @override
   State<PasswordField> createState() => _PasswordFieldState();
@@ -58,12 +60,7 @@ class _PasswordFieldState extends State<PasswordField> {
       obscureText: isPasswordVisible,
       keyboardType: widget.textInputType,
       controller: widget.controller,
-      validator: (data) {
-        if (data!.isEmpty) {
-          return "Field is required".tr();
-        }
-        return null;
-      },
+      validator: widget.validator,
       onSaved: widget.onSaved,
     );
   }

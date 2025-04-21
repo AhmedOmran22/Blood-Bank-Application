@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:blood_bank/core/widgets/custom_drop_down_buttom_field.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -20,8 +22,8 @@ class RegisterForm extends StatefulWidget {
 
 class _RegisterFormState extends State<RegisterForm> {
   bool isTermsAccepted = false;
-  late String bloodType;
-  late String gender;
+  int? bloodType;
+  String? gender;
   AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
   final formKey = GlobalKey<FormState>();
   late TextEditingController nameController;
@@ -67,7 +69,6 @@ class _RegisterFormState extends State<RegisterForm> {
           buildPhoneNumberField(),
           buildNationalIDField(),
           buildDropDownBloodTypesField(),
-          buildDropDownGenderField(),
           buildPasswordField(),
           buildConfirmPasswordField(),
           TermsAndConditions(
@@ -104,6 +105,22 @@ class _RegisterFormState extends State<RegisterForm> {
     return PasswordField(
       controller: passwordController,
       hintText: "Password",
+      validator: (data) {
+        if (data == null || data.isEmpty) {
+          return "Field is required".tr();
+        } else if (!AppRegex.hasMinLength(data)) {
+          return "password must contain at least 8 characters".tr();
+        } else if (!AppRegex.hasUpperCase(data)) {
+          return "password must contain at least one uppercase letter".tr();
+        } else if (!AppRegex.hasNumber(data)) {
+          return "password must contain at least one number".tr();
+        } else if (!AppRegex.hasSpecialCharacter(data)) {
+          return "password must contain at least one special character".tr();
+        } else if (!AppRegex.hasLowerCase(data)) {
+          return "password must contain at least one lowercase letter".tr();
+        }
+        return null;
+      },
     );
   }
 
@@ -123,55 +140,15 @@ class _RegisterFormState extends State<RegisterForm> {
     );
   }
 
-  CustomDropdownButtonFormField buildDropDownGenderField() {
-    return CustomDropdownButtonFormField(
-      hintText: "Gender".tr(),
+  BloodTypeDropDownField buildDropDownBloodTypesField() {
+    return BloodTypeDropDownField(
       onChanged: (value) {
-        gender = value!;
+        setState(() {
+          bloodType = value!;
+          log(bloodType.toString());
+          log(bloodType.toString());
+        });
       },
-      items: [
-        "Male".tr(),
-        "Female".tr(),
-      ]
-          .map(
-            (type) => DropdownMenuItem(
-              value: type,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 2),
-                child: Text(type),
-              ),
-            ),
-          )
-          .toList(),
-    );
-  }
-
-  CustomDropdownButtonFormField buildDropDownBloodTypesField() {
-    return CustomDropdownButtonFormField(
-      onChanged: (value) {
-        bloodType = value!;
-      },
-      items: [
-        "A+",
-        "A-",
-        "B+",
-        "B-",
-        "O+",
-        "O-",
-        "AB+",
-        "AB-",
-        "I don't know",
-      ]
-          .map(
-            (type) => DropdownMenuItem(
-              value: type,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 2),
-                child: Text(type),
-              ),
-            ),
-          )
-          .toList(),
     );
   }
 
@@ -224,10 +201,9 @@ class _RegisterFormState extends State<RegisterForm> {
           await context.read<RegisterCubit>().register(
                 name: nameController.text,
                 email: emailController.text,
-                bloodType: bloodType,
-                gender: gender,
                 phoneNumber: phoneController.text,
                 NationalId: nationalIDController.text,
+                bloodTypeId: bloodType,
                 password: passwordController.text,
               );
         } else {

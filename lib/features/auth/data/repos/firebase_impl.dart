@@ -28,10 +28,10 @@ class FirebaseImpl extends AuthRepo {
     required String email,
     required String password,
     required String phoneNumber,
-     String? bloodType,
-     String? gender,
-    required String NationalId,
-     int? bloodTypeId,
+    String? bloodType,
+    String? gender,
+    required String nationalId,
+    int? bloodTypeId,
   }) async {
     User? user;
     try {
@@ -48,7 +48,7 @@ class FirebaseImpl extends AuthRepo {
         fcmTokenm:
             PushNotificationService.fcmToken ?? "fcmToken is not initialized",
         gender: gender,
-        NationalId: NationalId,
+        NationalId: nationalId,
       );
       await addUserData(user: userModel);
       await saveUserData(user: userModel);

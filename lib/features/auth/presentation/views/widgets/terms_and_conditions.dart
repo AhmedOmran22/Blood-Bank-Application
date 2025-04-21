@@ -1,3 +1,4 @@
+import 'package:blood_bank/core/utils/app_colors.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'custom_check_box.dart';
@@ -41,7 +42,10 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                 ),
                 TextSpan(
                   text: "Terms and Conditions".tr(),
-                  style: Theme.of(context).textTheme.titleMedium,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(color: AppColors.primaryColor),
                 ),
                 TextSpan(
                   text: "Privacy Policy".tr(),

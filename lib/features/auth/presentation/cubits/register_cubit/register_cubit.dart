@@ -12,20 +12,23 @@ class RegisterCubit extends Cubit<RegisterCubitState> {
     required String password,
     required String name,
     required String phoneNumber,
-    required String bloodType,
-    required String gender,
     required String NationalId,
+    int? bloodTypeId,
+     String? bloodType,
+     String? gender,
   }) async {
     // send loading state
     emit(RegisterCubitLoading());
-    final result = await authRepo.createUserWithEmailAndPassword(
+    final result = 
+    await authRepo.createUserWithEmailAndPassword(
       email: email,
       password: password,
       userName: name,
       phoneNumber: phoneNumber,
       bloodType: bloodType,
       gender: gender,
-      NationalId: NationalId,
+      nationalId: NationalId,
+      bloodTypeId: bloodTypeId,
     );
     result.fold(
       (failure) => emit(RegisterCubitError(failure.errMessage)),
