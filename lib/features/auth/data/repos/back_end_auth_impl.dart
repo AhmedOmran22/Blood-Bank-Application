@@ -83,16 +83,7 @@ class BackEndAuthImpl extends AuthRepo {
       );
       Prefs.setString(kToken, response["token"]);
       log(Prefs.getString(kToken));
-      return Right(
-        UserModel(
-          email: 'mamdouhanahamada@gmail.com',
-          name: 'Ahmed Omran',
-          phoneNumber: '01229804760',
-          bloodTypeid: 1,
-          NationalId: '123456789',
-          bloodType: 'A+',
-        ),
-      );
+      return await fetchUserData(token: Prefs.getString(kToken));
     } on CustomException catch (e) {
       log(e.message);
       return Left(ServerFailure(errMessage: e.message));
@@ -124,8 +115,39 @@ class BackEndAuthImpl extends AuthRepo {
   }
 
   @override
-  Future<Either<Failure, UserModel>> fetchUserData({required String token}) {
-    throw UnimplementedError();
+  Future<Either<Failure, UserModel>> fetchUserData(
+      {required String token}) async {
+    try {
+      var responde = await apiService.get(
+        BackendEndpoints.getUserProfile,
+        headers: {
+          'Authorization': 'Bearer $token',
+        },
+      );
+      String email = responde['email'];
+      Prefs.setString(kUserEmail, email);
+      String name = responde['fullName'];
+      Prefs.setString(kUserName, name);
+      String bloodType = responde['bloodType'];
+      Prefs.setString(kUserBloodType, bloodType);
+      String nationalId = responde['nationalId'];
+      Prefs.setString(kUserNationalId, nationalId);
+      return  Right(
+        UserModel(
+          email:email,
+          name: name,
+          phoneNumber: '01229804760',
+          bloodTypeid: 1,
+          NationalId: nationalId,
+          bloodType: bloodType,
+        ),
+      );
+    } on CustomException catch (e) {
+      log(e.message);
+      return Left(ServerFailure(errMessage: e.message));
+    } catch (e) {
+      return Left(ServerFailure(errMessage: e.toString()));
+    }
   }
 
   @override
