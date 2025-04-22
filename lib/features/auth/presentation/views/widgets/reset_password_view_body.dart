@@ -1,3 +1,4 @@
+import 'package:blood_bank/core/functions/show_snack_bar_function.dart';
 import 'package:blood_bank/core/utils/app_regex.dart';
 import 'package:blood_bank/features/auth/presentation/cubits/forgot_password_cubit/forgot_password_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -61,6 +62,7 @@ class _ResetPasswordViewBodyState extends State<ResetPasswordViewBody> {
                 return null;
               },
             ),
+            const SizedBox(height: 16),
             PasswordField(
               controller: passwordController,
               hintText: "New Password",
@@ -103,6 +105,8 @@ class _ResetPasswordViewBodyState extends State<ResetPasswordViewBody> {
                           password: passwordController.text,
                           code: codeController.text,
                         );
+                  } else {
+                    showSnackBarFuction(context, "Passwords do not match");
                   }
                   formKey.currentState!.save();
                 } else {

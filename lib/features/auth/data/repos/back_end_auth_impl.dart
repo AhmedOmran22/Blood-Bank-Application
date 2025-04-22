@@ -83,7 +83,16 @@ class BackEndAuthImpl extends AuthRepo {
       );
       Prefs.setString(kToken, response["token"]);
       log(Prefs.getString(kToken));
-      return await fetchUserData(token: "");
+      return Right(
+        UserModel(
+          email: 'mamdouhanahamada@gmail.com',
+          name: 'Ahmed Omran',
+          phoneNumber: '01229804760',
+          bloodTypeid: 1,
+          NationalId: '123456789',
+          bloodType: 'A+',
+        ),
+      );
     } on CustomException catch (e) {
       log(e.message);
       return Left(ServerFailure(errMessage: e.message));
@@ -164,7 +173,7 @@ class BackEndAuthImpl extends AuthRepo {
       await apiService.post(
         BackendEndpoints.resetPassword,
         data: {
-          'email': Prefs.getBool(kForgotPasswordEmail),
+          'email': Prefs.getString(kForgotPasswordEmail),
           'code': code,
           'newPassword': password
         },

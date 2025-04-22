@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/functions/get_current_user_function.dart';
+// import '../../../../../core/functions/get_current_user_function.dart';
 
 class HomeSliverAppBar extends StatelessWidget {
   const HomeSliverAppBar({
@@ -25,7 +25,7 @@ class HomeSliverAppBar extends StatelessWidget {
             child: Icon(Icons.person),
           ),
           title: Text(
-            getCurrentUserFunction().name,
+            "Ahmed Omran",
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(

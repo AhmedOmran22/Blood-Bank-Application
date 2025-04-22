@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/functions/get_current_user_function.dart';
+// import '../../../../../core/functions/get_current_user_function.dart';
 import '../../../../../core/utils/app_colors.dart';
 
 class UserInformationHeader extends StatelessWidget {
@@ -26,7 +26,7 @@ class UserInformationHeader extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Text(
-                getCurrentUserFunction().name,
+                "Ahmed Omran",
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                       color: Colors.white,
                       fontSize: 20,
