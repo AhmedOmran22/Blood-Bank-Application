@@ -141,7 +141,7 @@ class BackEndAuthImpl extends AuthRepo {
   Future<Either<Failure, void>> forgotPassword({required String email}) async {
     try {
       await apiService.post(
-        BackendEndpoints.resendConfirmEmail,
+        BackendEndpoints.forgotPassword,
         data: {
           'email': email,
         },
@@ -157,13 +157,12 @@ class BackEndAuthImpl extends AuthRepo {
 
   @override
   Future<Either<Failure, void>> resetPassword({
-    required String email,
     required String password,
     required String code,
   }) async {
     try {
       await apiService.post(
-        BackendEndpoints.resendConfirmEmail,
+        BackendEndpoints.resetPassword,
         data: {
           'email': Prefs.getBool(kForgotPasswordEmail),
           'code': code,

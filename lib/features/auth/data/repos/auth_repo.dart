@@ -31,7 +31,6 @@ abstract class AuthRepo {
   Future<void> signOut();
   Future<Either<Failure, void>> forgotPassword({required String email});
   Future<Either<Failure, void>> resetPassword({
-    required String email,
     required String password,
     required String code,
   });

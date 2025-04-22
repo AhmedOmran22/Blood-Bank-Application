@@ -18,18 +18,18 @@ class confirmEmailViewBody extends StatefulWidget {
 }
 
 class _confirmEmailViewBodyState extends State<confirmEmailViewBody> {
-  late TextEditingController textEditingController;
+  late TextEditingController codeController;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
   @override
   void initState() {
-    textEditingController = TextEditingController();
+    codeController = TextEditingController();
     super.initState();
   }
 
   @override
   void dispose() {
-    textEditingController.dispose();
+    codeController.dispose();
     super.dispose();
   }
 
@@ -61,7 +61,7 @@ class _confirmEmailViewBodyState extends State<confirmEmailViewBody> {
               const SizedBox(height: 32),
               CustomTextFormField(
                 hitnText: "Enter the code",
-                controller: textEditingController,
+                controller: codeController,
                 textInputType: TextInputType.number,
                 validator: (data) {
                   if (data == null || data.isEmpty) {
@@ -76,7 +76,7 @@ class _confirmEmailViewBodyState extends State<confirmEmailViewBody> {
                   if (formKey.currentState!.validate()) {
                     context.read<ConfirmEmailCubit>().confirmEmail(
                           email: Prefs.getString(kConfirmedUserEmail)!,
-                          code: textEditingController.text,
+                          code: codeController.text,
                         );
                   } else {
                     autoValidateMode = AutovalidateMode.always;
