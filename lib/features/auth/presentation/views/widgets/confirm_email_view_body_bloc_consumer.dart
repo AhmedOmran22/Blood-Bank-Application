@@ -19,7 +19,7 @@ class ConfirmEmailViewBodyBlocConsumer extends StatelessWidget {
     return BlocConsumer<ConfirmEmailCubit, ConfirmEmailCubitState>(
       listener: (context, state) {
         if (state is ConfirmEmailCubitSuccess) {
-          Prefs.removeData(key: kUserEmail);
+          Prefs.removeData(key: kConfirmedUserEmail);
           showSnackBarFuction(context, "Email Confirmed Successfully");
           Navigator.pushReplacementNamed(context, AppRoutes.login);
         }

@@ -75,7 +75,7 @@ class _confirmEmailViewBodyState extends State<confirmEmailViewBody> {
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     context.read<ConfirmEmailCubit>().confirmEmail(
-                          email: Prefs.getString(kUserEmail)!,
+                          email: Prefs.getString(kConfirmedUserEmail)!,
                           code: textEditingController.text,
                         );
                   } else {
@@ -88,7 +88,6 @@ class _confirmEmailViewBodyState extends State<confirmEmailViewBody> {
                 textColor: AppColors.whiteColor,
               ),
               const SizedBox(height: 16),
-             
               GeneralButton(
                 onPressed: () {
                   context.read<ConfirmEmailCubit>().resendCode();

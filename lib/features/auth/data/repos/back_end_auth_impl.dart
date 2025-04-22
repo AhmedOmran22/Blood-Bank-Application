@@ -125,7 +125,7 @@ class BackEndAuthImpl extends AuthRepo {
       await apiService.post(
         BackendEndpoints.resendConfirmEmail,
         data: {
-          'email': Prefs.getString(kUserEmail),
+          'email': Prefs.getString(kConfirmedUserEmail),
         },
       );
       return const Right(null);
@@ -165,7 +165,7 @@ class BackEndAuthImpl extends AuthRepo {
       await apiService.post(
         BackendEndpoints.resendConfirmEmail,
         data: {
-          'email': Prefs.getBool(kUserEmail),
+          'email': Prefs.getBool(kForgotPasswordEmail),
           'code': code,
           'newPassword': password
         },
