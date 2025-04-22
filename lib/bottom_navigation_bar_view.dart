@@ -20,14 +20,24 @@ class _BottomNavigationBarViewState extends State<BottomNavigationBarView> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: ValueKey(EasyLocalization.of(context)!.locale),
-      body: IndexedStack(
-        index: currentIndex,
-        children: [
-          const HomeView(),
-          const AwarnessView(),
-          const ChatBotView(),
-          const MoreView(),
-        ],
+      body: PopScope(
+        canPop: currentIndex == 0,
+        onPopInvokedWithResult: (didPop, result) {
+          {
+            setState(() {
+              currentIndex = 0;
+            });
+          }
+        },
+        child: IndexedStack(
+          index: currentIndex,
+          children: [
+            const HomeView(),
+            const AwarnessView(),
+            const ChatBotView(),
+            const MoreView(),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,

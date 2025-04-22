@@ -19,10 +19,9 @@ class RegisterViewBodyBlocConsumer extends StatelessWidget {
     return BlocConsumer<RegisterCubit, RegisterCubitState>(
       listener: (context, state) {
         if (state is RegisterCubitSuccess) {
-          Navigator.pushNamedAndRemoveUntil(
+          Navigator.pushNamed(
             context,
             AppRoutes.confirmEmail,
-            (route) => false,
           );
           showSnackBarFuction(context, "Register Successfully");
         }
