@@ -1,6 +1,6 @@
 import 'package:blood_bank/core/utils/app_colors.dart';
 import 'package:blood_bank/core/widgets/custom_text_form_field.dart';
-import 'package:blood_bank/features/chat_bot/data/repos/chat_repo_imple.dart';
+import 'package:blood_bank/features/chat_bot/data/repos/chat_repo.dart';
 import 'package:blood_bank/features/chat_bot/presentation/views/widgets/messages_list_view_builder.dart';
 import 'package:blood_bank/features/chat_bot/presentation/views/widgets/start_conservation_widget.dart';
 import 'package:flutter/material.dart';
@@ -66,7 +66,8 @@ class _ChatBotViewState extends State<ChatBotView> {
                 : MessageListViewBuilder(
                     scrollController: _scrollController,
                     messages: _messages,
-                    isBotTyping: isBotTyping),
+                    isBotTyping: isBotTyping,
+                  ),
           ),
           Padding(
             padding: const EdgeInsets.all(12),
