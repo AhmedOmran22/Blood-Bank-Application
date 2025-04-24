@@ -56,7 +56,15 @@ class _ChatBotViewState extends State<ChatBotView> {
       appBar: AppBar(
         title: const Text("Chat Bot"),
         centerTitle: true,
-        backgroundColor: Colors.redAccent,
+        actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.refresh_rounded,
+              color: AppColors.primaryColor,
+            ),
+            onPressed: () => _messages.clear(),
+          )
+        ],
       ),
       body: Column(
         children: [
