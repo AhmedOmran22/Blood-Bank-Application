@@ -9,7 +9,9 @@ class PostModel {
   final String dateYouNeedBlod;
   final String cityName;
   final int? bloodTypeid;
+  final int? id;
   PostModel({
+    this.id,
     required this.cityName,
     required this.title,
     required this.userName,
@@ -36,13 +38,14 @@ class PostModel {
   }
 
   factory PostModel.fromJson(Map<String, dynamic> json) => PostModel(
+        id: json["id"],
         userName: json["contactPerson"],
         title: json["title"],
         hospitalName: json["hospitalName"],
         howManyBagsNeeeded: json["bagsNeeded"],
         cityName: json["cityName"],
         whyDoYouNeedBlood: json["description"],
-        mobileNumber: json["mobileNumber"],
+        mobileNumber: json["mobileNumber"] ?? "01229804760",
         dateYouNeedBlod: json["dateOfPublish"],
         bloodType: json["bloodTypeName"],
       );

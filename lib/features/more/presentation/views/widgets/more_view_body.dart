@@ -3,7 +3,7 @@ import 'package:blood_bank/features/more/presentation/views/widgets/more_item.da
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../../../../home/presentation/cubits/cummuniy_cubit.dart';
+import '../../../../home/presentation/cubits/community_cubit/cummuniy_cubit.dart';
 import 'user_information_header.dart';
 
 class MoreViewBody extends StatelessWidget {

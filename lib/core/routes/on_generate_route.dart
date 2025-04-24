@@ -1,9 +1,11 @@
 import 'package:blood_bank/core/routes/app_routes.dart';
+import 'package:blood_bank/core/services/service_locator.dart';
 import 'package:blood_bank/features/auth/presentation/views/login_view.dart';
 import 'package:blood_bank/features/auth/presentation/views/register_view.dart';
 import 'package:blood_bank/features/auth/presentation/views/reset_password_view.dart';
-import 'package:blood_bank/features/home/data/models/post_model.dart';
-import 'package:blood_bank/features/home/presentation/cubits/cummuniy_cubit.dart';
+import 'package:blood_bank/features/home/data/repos/posts_repo.dart';
+import 'package:blood_bank/features/home/presentation/cubits/community_cubit/cummuniy_cubit.dart';
+import 'package:blood_bank/features/home/presentation/cubits/get_post_detailes_cubit/get_post_detaile_cubit.dart';
 import 'package:blood_bank/features/home/presentation/views/all_posts_view.dart';
 import 'package:blood_bank/features/home/presentation/views/post_detailes_view.dart';
 import 'package:blood_bank/features/home/presentation/views/send_post_view.dart';
@@ -86,8 +88,13 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case AppRoutes.postDetails:
       return MaterialPageRoute(
         builder: (BuildContext context) {
-          return PostDetailesView(
-            postModel: settings.arguments as PostModel,
+          return BlocProvider(
+            create: (context) => GetPostDetailesCubit(
+              getIt.get<PostsRepo>(),
+            ),
+            child: PostDetailesView(
+              postId: settings.arguments as int,
+            ),
           );
         },
       );

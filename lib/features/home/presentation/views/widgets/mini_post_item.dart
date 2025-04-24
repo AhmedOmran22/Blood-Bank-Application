@@ -1,3 +1,4 @@
+import 'package:blood_bank/core/functions/formate_date_function.dart';
 import 'package:blood_bank/core/routes/app_routes.dart';
 import 'package:blood_bank/features/home/data/models/mini_post_model.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class MiniPostItem extends StatelessWidget {
           Navigator.pushNamed(
             context,
             AppRoutes.postDetails,
-            arguments: miniPostModel,
+            arguments: miniPostModel.id,
           );
         },
         child: DecoratedBox(
@@ -81,7 +82,7 @@ class MiniPostItem extends StatelessWidget {
                           ),
                           Expanded(
                             child: Text(
-                              miniPostModel.dateOfPublish,
+                              formatDateYMD(miniPostModel.dateOfPublish),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: Theme.of(context)

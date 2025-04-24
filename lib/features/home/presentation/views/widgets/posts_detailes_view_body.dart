@@ -6,7 +6,10 @@ import '../../../data/models/post_model.dart';
 import 'post_detailes_item.dart';
 
 class PostDetailesViewBody extends StatelessWidget {
-  const PostDetailesViewBody({super.key, required this.postModel});
+  const PostDetailesViewBody({
+    super.key,
+    required this.postModel,
+  });
   final PostModel postModel;
   @override
   Widget build(BuildContext context) {

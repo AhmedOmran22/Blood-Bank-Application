@@ -5,8 +5,8 @@ import 'package:blood_bank/core/utils/app_colors.dart';
 import 'package:blood_bank/core/widgets/custom_text_form_field.dart';
 import 'package:blood_bank/core/widgets/general_button.dart';
 import 'package:blood_bank/features/home/data/models/post_model.dart';
-import 'package:blood_bank/features/home/presentation/cubits/cummuniy_cubit.dart';
-import 'package:blood_bank/features/home/presentation/cubits/community_cubit_state.dart';
+import 'package:blood_bank/features/home/presentation/cubits/community_cubit/cummuniy_cubit.dart';
+import 'package:blood_bank/features/home/presentation/cubits/community_cubit/community_cubit_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
