@@ -11,7 +11,7 @@ class AllPostsViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<PostsCubit, PostsCubitState>(
       builder: (context, state) {
-        if (state is PostsLoadedState) {
+        if (state is MiniPostsLoadedState) {
           return CustomScrollView(
             physics: const BouncingScrollPhysics(),
             slivers: [
@@ -19,13 +19,13 @@ class AllPostsViewBody extends StatelessWidget {
                 delegate: SliverChildBuilderDelegate(
                   childCount: state.posts.length,
                   (context, index) {
-                    return PostItem(postModel: state.posts[index]);
+                    return MiniPostItem(miniPostModel: state.posts[index]);
                   },
                 ),
               )
             ],
           );
-        } else if (state is PostsErrorState) {
+        } else if (state is ErrorState) {
           return Center(child: Text(state.errMessage));
         } else {
           return const Center(child: CircularProgressIndicator());

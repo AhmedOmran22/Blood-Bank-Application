@@ -1,4 +1,6 @@
+import 'package:blood_bank/core/cache/prefs.dart';
 import 'package:blood_bank/core/constants/backend_endpoints.dart';
+import 'package:blood_bank/core/constants/constatnts.dart';
 import 'package:blood_bank/core/errors/failure.dart';
 import 'package:blood_bank/core/services/api_service.dart';
 import 'package:blood_bank/features/home/data/models/mini_post_model.dart';
@@ -16,6 +18,9 @@ class PostsRepoImpl implements PostsRepo {
     try {
       final response = await apiService.get(
         BackendEndpoints.getAllPosts,
+        headers: {
+          'Authorization': 'Bearer ${Prefs.getString(kToken)}',
+        },
       );
       for (var item in response) {
         miniPosts.add(MiniPostModel.fromJson(item));
@@ -34,6 +39,9 @@ class PostsRepoImpl implements PostsRepo {
             '/' +
             id +
             BackendEndpoints.getPostDetailes,
+        headers: {
+          'Authorization': 'Bearer ${Prefs.getString(kToken)}',
+        },
       );
       return Right(PostModel.fromJson(response));
     } catch (e) {
@@ -46,6 +54,9 @@ class PostsRepoImpl implements PostsRepo {
     try {
       await apiService.post(
         BackendEndpoints.getAllPosts,
+        headers: {
+          'Authorization': 'Bearer ${Prefs.getString(kToken)}',
+        },
         data: postModel.toJson(),
       );
       return const Right(null);

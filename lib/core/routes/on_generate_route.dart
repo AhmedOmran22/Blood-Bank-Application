@@ -3,13 +3,11 @@ import 'package:blood_bank/features/auth/presentation/views/login_view.dart';
 import 'package:blood_bank/features/auth/presentation/views/register_view.dart';
 import 'package:blood_bank/features/auth/presentation/views/reset_password_view.dart';
 import 'package:blood_bank/features/home/data/models/post_model.dart';
-import 'package:blood_bank/features/home/presentation/cubits/posts_cubit.dart';
 import 'package:blood_bank/features/home/presentation/views/all_posts_view.dart';
 import 'package:blood_bank/features/home/presentation/views/post_detailes_view.dart';
 import 'package:blood_bank/features/home/presentation/views/send_post_view.dart';
 import 'package:blood_bank/features/more/presentation/views/settings_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../bottom_navigation_bar_view.dart';
 import '../../features/auth/presentation/views/forget_password_view.dart';
 import '../../features/auth/presentation/views/confirm_email_view.dart';
@@ -77,10 +75,7 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case AppRoutes.allPostsView:
       return MaterialPageRoute(
         builder: (BuildContext context) {
-          return BlocProvider.value(
-            value: (settings.arguments as PostsCubit)..fetchAllPosts(),
-            child: const AllPostsView(),
-          );
+          return const AllPostsView();
         },
       );
     case AppRoutes.postDetails:
@@ -94,10 +89,7 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case AppRoutes.sendPost:
       return MaterialPageRoute(
         builder: (BuildContext context) {
-          return BlocProvider.value(
-            value: settings.arguments as PostsCubit,
-            child: const SendPostView(),
-          );
+          return const SendPostView();
         },
       );
     case AppRoutes.chatBot:
