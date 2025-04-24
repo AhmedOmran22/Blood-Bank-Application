@@ -1,5 +1,5 @@
-import 'package:blood_bank/features/home/presentation/cubits/posts_cubit.dart';
-import 'package:blood_bank/features/home/presentation/cubits/posts_cubit_state.dart';
+import 'package:blood_bank/features/home/presentation/cubits/cummuniy_cubit.dart';
+import 'package:blood_bank/features/home/presentation/cubits/community_cubit_state.dart';
 import 'package:blood_bank/features/home/presentation/views/widgets/post_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,7 +9,7 @@ class AllPostsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<PostsCubit, PostsCubitState>(
+    return BlocBuilder<CommunityCubit, CommunityCubitState>(
       builder: (context, state) {
         if (state is MiniPostsLoadedState) {
           return CustomScrollView(

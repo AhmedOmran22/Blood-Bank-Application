@@ -3,7 +3,7 @@ import 'package:blood_bank/features/auth/presentation/views/login_view.dart';
 import 'package:blood_bank/features/auth/presentation/views/register_view.dart';
 import 'package:blood_bank/features/auth/presentation/views/reset_password_view.dart';
 import 'package:blood_bank/features/home/data/models/post_model.dart';
-import 'package:blood_bank/features/home/presentation/cubits/posts_cubit.dart';
+import 'package:blood_bank/features/home/presentation/cubits/cummuniy_cubit.dart';
 import 'package:blood_bank/features/home/presentation/views/all_posts_view.dart';
 import 'package:blood_bank/features/home/presentation/views/post_detailes_view.dart';
 import 'package:blood_bank/features/home/presentation/views/send_post_view.dart';
@@ -78,7 +78,7 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (BuildContext context) {
           return BlocProvider.value(
-            value: (settings.arguments as PostsCubit)..fetchAllPosts(),
+            value: (settings.arguments as CommunityCubit)..fetchAllPosts(),
             child: const AllPostsView(),
           );
         },
@@ -95,7 +95,7 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (BuildContext context) {
           return BlocProvider.value(
-            value: settings.arguments as PostsCubit,
+            value: settings.arguments as CommunityCubit,
             child: const SendPostView(),
           );
         },

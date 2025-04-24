@@ -5,8 +5,8 @@ import 'package:blood_bank/core/utils/app_colors.dart';
 import 'package:blood_bank/core/widgets/custom_text_form_field.dart';
 import 'package:blood_bank/core/widgets/general_button.dart';
 import 'package:blood_bank/features/home/data/models/post_model.dart';
-import 'package:blood_bank/features/home/presentation/cubits/posts_cubit.dart';
-import 'package:blood_bank/features/home/presentation/cubits/posts_cubit_state.dart';
+import 'package:blood_bank/features/home/presentation/cubits/cummuniy_cubit.dart';
+import 'package:blood_bank/features/home/presentation/cubits/community_cubit_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -61,7 +61,7 @@ class _SendPostViewBodyState extends State<SendPostViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<PostsCubit, PostsCubitState>(
+    return BlocListener<CommunityCubit, CommunityCubitState>(
       listener: (context, state) {
         if (state is PostAddedSuccessState) {
           showSnackBarFuction(context, "Your Post Added Successfully");
@@ -150,7 +150,7 @@ class _SendPostViewBodyState extends State<SendPostViewBody> {
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
                       _formKey.currentState!.save();
-                      BlocProvider.of<PostsCubit>(context).addPost(
+                      BlocProvider.of<CommunityCubit>(context).addPost(
                         PostModel(
                           title: postTitleController.text,
                           bloodTypeid: bloodTypeId,
