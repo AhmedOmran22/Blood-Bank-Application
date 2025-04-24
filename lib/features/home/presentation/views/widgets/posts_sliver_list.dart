@@ -16,6 +16,7 @@ class HomePostsSliverList extends StatelessWidget {
         (context, index) {
           return MiniPostItem(
             miniPostModel: MiniPostModel(
+              title: "need blood",
               bloodTypeName: "A+",
               id: 2,
               hospitalName: '',

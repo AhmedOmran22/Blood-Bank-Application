@@ -22,8 +22,8 @@ class PostsRepoImpl implements PostsRepo {
           'Authorization': 'Bearer ${Prefs.getString(kToken)}',
         },
       );
-      for (var item in response) {
-        miniPosts.add(MiniPostModel.fromJson(item));
+      for (var post in response) {
+        miniPosts.add(MiniPostModel.fromJson(post));
       }
       return Right(miniPosts);
     } catch (e) {
@@ -53,7 +53,7 @@ class PostsRepoImpl implements PostsRepo {
   Future<Either<Failure, void>> publishPost(PostModel postModel) async {
     try {
       await apiService.post(
-        BackendEndpoints.getAllPosts,
+        BackendEndpoints.publishPost,
         headers: {
           'Authorization': 'Bearer ${Prefs.getString(kToken)}',
         },

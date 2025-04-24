@@ -44,7 +44,7 @@ class MiniPostItem extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        miniPostModel.id.toString(),
+                        miniPostModel.title,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: Theme.of(context).textTheme.titleLarge!.copyWith(

@@ -17,9 +17,9 @@ class AllPostsViewBody extends StatelessWidget {
             slivers: [
               SliverList(
                 delegate: SliverChildBuilderDelegate(
-                  childCount: state.posts.length,
+                  childCount: state.miniPosts.length,
                   (context, index) {
-                    return MiniPostItem(miniPostModel: state.posts[index]);
+                    return MiniPostItem(miniPostModel: state.miniPosts[index]);
                   },
                 ),
               )
@@ -27,8 +27,10 @@ class AllPostsViewBody extends StatelessWidget {
           );
         } else if (state is ErrorState) {
           return Center(child: Text(state.errMessage));
-        } else {
+        } else if (state is LoadingState) {
           return const Center(child: CircularProgressIndicator());
+        } else {
+          return const Center(child: Text("I don't have any posts"));
         }
       },
     );

@@ -13,9 +13,9 @@ class ErrorState extends PostsCubitState {
 class LoadingState extends PostsCubitState {}
 
 class MiniPostsLoadedState extends PostsCubitState {
-  final List<MiniPostModel> posts;
+  final List<MiniPostModel> miniPosts;
 
-  MiniPostsLoadedState({required this.posts});
+  MiniPostsLoadedState({required this.miniPosts});
 }
 
 class PostDetailsLoadedState extends PostsCubitState {

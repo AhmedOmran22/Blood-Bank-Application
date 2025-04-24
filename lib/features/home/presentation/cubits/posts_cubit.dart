@@ -13,7 +13,7 @@ class PostsCubit extends Cubit<PostsCubitState> {
     final result = await _postsRepo.fetchAllPosts();
     result.fold(
       (failure) => emit(ErrorState(errMessage: failure.errMessage)),
-      (MiniPosts) => emit(MiniPostsLoadedState(posts: MiniPosts)),
+      (MiniPosts) => emit(MiniPostsLoadedState(miniPosts: MiniPosts)),
     );
   }
 
