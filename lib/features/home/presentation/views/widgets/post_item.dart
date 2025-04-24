@@ -1,14 +1,14 @@
 import 'package:blood_bank/core/routes/app_routes.dart';
+import 'package:blood_bank/features/home/data/models/mini_post_model.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../../core/utils/app_colors.dart';
-import '../../../data/models/post_model.dart';
 
-class PostItem extends StatelessWidget {
-  const PostItem({super.key, required this.postModel});
+class MiniPostItem extends StatelessWidget {
+  const MiniPostItem({super.key, required this.miniPostModel});
 
-  final PostModel postModel;
+  final MiniPostModel miniPostModel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,7 +18,7 @@ class PostItem extends StatelessWidget {
           Navigator.pushNamed(
             context,
             AppRoutes.postDetails,
-            arguments: postModel,
+            arguments: miniPostModel,
           );
         },
         child: DecoratedBox(
@@ -36,7 +36,7 @@ class PostItem extends StatelessWidget {
               spacing: 16,
               children: [
                 CircleAvatar(
-                  child: Text(postModel.bloodType),
+                  child: Text(miniPostModel.bloodTypeName),
                 ),
                 Expanded(
                   child: Column(
@@ -44,7 +44,7 @@ class PostItem extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        postModel.title,
+                        miniPostModel.id.toString(),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: Theme.of(context).textTheme.titleLarge!.copyWith(
@@ -60,7 +60,7 @@ class PostItem extends StatelessWidget {
                           ),
                           Expanded(
                             child: Text(
-                              postModel.hospitalName,
+                              miniPostModel.hospitalName,
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: Theme.of(context)
@@ -81,7 +81,7 @@ class PostItem extends StatelessWidget {
                           ),
                           Expanded(
                             child: Text(
-                              postModel.dateYouNeedBlod,
+                              miniPostModel.dateOfPublish,
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: Theme.of(context)

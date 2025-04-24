@@ -1,10 +1,12 @@
 import 'package:blood_bank/core/errors/failure.dart';
+import 'package:blood_bank/features/home/data/models/mini_post_model.dart';
 import 'package:blood_bank/features/home/data/models/post_model.dart';
 import 'package:dartz/dartz.dart';
 
-abstract class PostsRepo 
-{
-  Future<Either<Failure, List<PostModel>>> getAllPosts();
+abstract class PostsRepo {
+  Future<Either<Failure, List<MiniPostModel>>> fetchAllPosts();
 
-  Future<Either<Failure, void>> addPost(PostModel postModel);
+  Future<Either<Failure, void>> publishPost(PostModel postModel);
+
+  Future<Either<Failure, PostModel>> getPostDetailes(String id);
 }

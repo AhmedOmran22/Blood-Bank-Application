@@ -19,7 +19,6 @@ void setupGetit() {
   getIt.registerSingleton<AuthRepo>(
     BackEndAuthImpl(apiService: getIt<ApiService>()),
   );
-
   getIt.registerSingleton<PostsRepo>(
     PostsRepoImpl(
       apiService: getIt<ApiService>(),

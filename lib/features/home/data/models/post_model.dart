@@ -3,11 +3,12 @@ class PostModel {
   final String mobileNumber;
   final String title;
   final int howManyBagsNeeeded;
-  final String bloodType;
+  final String? bloodType;
   final String hospitalName;
   final String whyDoYouNeedBlood;
   final String dateYouNeedBlod;
   final String cityName;
+  final int? bloodTypeid;
   PostModel({
     required this.cityName,
     required this.title,
@@ -15,37 +16,36 @@ class PostModel {
     required this.dateYouNeedBlod,
     required this.mobileNumber,
     required this.howManyBagsNeeeded,
-    required this.bloodType,
+    this.bloodType,
+    this.bloodTypeid,
     required this.hospitalName,
     required this.whyDoYouNeedBlood,
   });
   toJson() {
     return {
-      "cityName": cityName,
+      "contactPerson": userName,
       "title": title,
-      "userName": userName,
-      "dateYouNeedBlod": dateYouNeedBlod,
-      "mobileNumber": mobileNumber,
-      "howManyBagsNeeeded": howManyBagsNeeeded,
-      "bloodType": bloodType,
       "hospitalName": hospitalName,
-      "whyDoYouNeedBlood": whyDoYouNeedBlood,
+      "bagsNeeded": howManyBagsNeeeded,
+      "cityName": cityName,
+      "description": whyDoYouNeedBlood,
+      "mobileNumber": mobileNumber,
+      "dateOfPublish": dateYouNeedBlod,
+      "bloodTypeId": bloodTypeid,
     };
   }
 
-  factory PostModel.fromJson(Map<String, dynamic> json) {
-    return PostModel(
-      cityName: json["cityName"],
-      title: json["title"],
-      userName: json["userName"],
-      dateYouNeedBlod: json["dateYouNeedBlod"],
-      mobileNumber: json["mobileNumber"],
-      howManyBagsNeeeded: json["howManyBagsNeeeded"],
-      bloodType: json["bloodType"],
-      hospitalName: json["hospitalName"],
-      whyDoYouNeedBlood: json["whyDoYouNeedBlood"],
-    );
-  }
+  factory PostModel.fromJson(Map<String, dynamic> json) => PostModel(
+        userName: json["contactPerson"],
+        title: json["title"],
+        hospitalName: json["hospitalName"],
+        howManyBagsNeeeded: json["bagsNeeded"],
+        cityName: json["cityName"],
+        whyDoYouNeedBlood: json["description"],
+        mobileNumber: json["mobileNumber"],
+        dateYouNeedBlod: json["dateOfPublish"],
+        bloodType: json["bloodTypeName"],
+      );
 }
 
 List<PostModel> posts = [

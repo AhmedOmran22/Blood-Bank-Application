@@ -9,22 +9,29 @@ class PostsCubit extends Cubit<PostsCubitState> {
   final PostsRepo _postsRepo;
 
   fetchAllPosts() async {
-    emit(PostsLodaingState());
-    final result = await _postsRepo.getAllPosts();
+    emit(LoadingState());
+    final result = await _postsRepo.fetchAllPosts();
     result.fold(
-      (left) => emit(PostsErrorState(errMessage: left.errMessage)),
-      (right) => emit(
-        PostsLoadedState(posts: right),
-      ),
+      (failure) => emit(ErrorState(errMessage: failure.errMessage)),
+      (MiniPosts) => emit(MiniPostsLoadedState(posts: MiniPosts)),
     );
   }
 
   addPost(PostModel postModel) async {
-    emit(PostsLodaingState());
-    final result = await _postsRepo.addPost(postModel);
+    emit(LoadingState());
+    final result = await _postsRepo.publishPost(postModel);
     result.fold(
-      (left) => emit(PostAddedErrorState(errMessage: left.errMessage)),
-      (right) => emit(PostAddedSuccessState()),
+      (failure) => emit(ErrorState(errMessage: failure.errMessage)),
+      (_) => emit(PostAddedSuccessState()),
+    );
+  }
+
+  getPostDetails(String id) async {
+    emit(LoadingState());
+    final result = await _postsRepo.getPostDetailes(id);
+    result.fold(
+      (failure) => emit(ErrorState(errMessage: failure.errMessage)),
+      (post) => emit(PostDetailsLoadedState(postModel: post)),
     );
   }
 }

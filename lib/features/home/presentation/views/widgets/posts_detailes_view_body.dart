@@ -21,7 +21,7 @@ class PostDetailesViewBody extends StatelessWidget {
           CircleAvatar(
             radius: 32,
             child: Text(
-              postModel.bloodType,
+              postModel.bloodType ?? "A+",
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.titleMedium!.copyWith(
                     fontSize: 20,

@@ -1,6 +1,7 @@
 abstract class BackendEndpoints {
   static const String kUsers = 'users';
   static const String kPosts = 'posts';
+  static const String baseUrl = 'http://bloodhelperapi.runasp.net';
   static const String login = "/Auth";
   static const String register = "/Auth/register";
   static const String confirmEmail = "/auth/confirm-email";
@@ -10,4 +11,7 @@ abstract class BackendEndpoints {
   static const String getUserProfile = "/me";
   static const String updateUserProfile = "/me/info";
   static const String changePassword = "/me/change-password";
+  static const String getAllPosts = "/api/Posts";
+  static const String publishPost = "/api/Posts";
+  static const String getPostDetailes = "/Details";
 }

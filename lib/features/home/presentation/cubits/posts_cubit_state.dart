@@ -1,27 +1,27 @@
+import 'package:blood_bank/features/home/data/models/mini_post_model.dart';
 import 'package:blood_bank/features/home/data/models/post_model.dart';
 
 abstract class PostsCubitState {}
 
 class PostsCubitInitial extends PostsCubitState {}
 
-class PostAddedErrorState extends PostsCubitState {
+class ErrorState extends PostsCubitState {
   final String errMessage;
+  ErrorState({required this.errMessage});
+}
 
-  PostAddedErrorState({required this.errMessage});
+class LoadingState extends PostsCubitState {}
+
+class MiniPostsLoadedState extends PostsCubitState {
+  final List<MiniPostModel> posts;
+
+  MiniPostsLoadedState({required this.posts});
+}
+
+class PostDetailsLoadedState extends PostsCubitState {
+  final PostModel postModel;
+
+  PostDetailsLoadedState({required this.postModel});
 }
 
 class PostAddedSuccessState extends PostsCubitState {}
-
-class PostsLoadedState extends PostsCubitState {
-  final List<PostModel> posts;
-
-  PostsLoadedState({required this.posts});
-}
-
-class PostsLodaingState extends PostsCubitState {}
-
-class PostsErrorState extends PostsCubitState {
-  final String errMessage;
-
-  PostsErrorState({required this.errMessage});
-}

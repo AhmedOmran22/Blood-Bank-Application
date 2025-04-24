@@ -1,3 +1,4 @@
+import 'package:blood_bank/core/constants/backend_endpoints.dart';
 import 'package:blood_bank/core/errors/exception.dart';
 import 'package:blood_bank/core/errors/failure.dart';
 import 'package:dio/dio.dart';
@@ -7,17 +8,7 @@ class DioConsumer extends ApiService {
   final Dio dio;
 
   DioConsumer({required this.dio}) {
-    dio.options.baseUrl = 'http://bloodhelperapi.runasp.net';
-    // dio.interceptors.add(
-    //   LogInterceptor(
-    //     request: true,
-    //     requestBody: true,
-    //     requestHeader: true,
-    //     responseBody: true,
-    //     responseHeader: true,
-    //     error: true,
-    //   ),
-    // );
+    dio.options.baseUrl = BackendEndpoints.baseUrl;
   }
 
   @override
