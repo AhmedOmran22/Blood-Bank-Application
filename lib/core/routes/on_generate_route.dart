@@ -79,8 +79,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case AppRoutes.allPostsView:
       return MaterialPageRoute(
         builder: (BuildContext context) {
-          return BlocProvider.value(
-            value: (settings.arguments as CommunityCubit)..fetchAllPosts(),
+          return BlocProvider(
+            create: (context) => CommunityCubit(
+              getIt.get<PostsRepo>(),
+            ),
             child: const AllPostsView(),
           );
         },
