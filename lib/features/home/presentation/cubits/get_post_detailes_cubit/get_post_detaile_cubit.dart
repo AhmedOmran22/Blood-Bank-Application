@@ -1,11 +1,11 @@
-import 'package:blood_bank/features/home/data/repos/posts_repo.dart';
+import 'package:blood_bank/features/home/data/repos/community_repo.dart';
 import 'package:blood_bank/features/home/presentation/cubits/get_post_detailes_cubit/get_post_detailes_cubit_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class GetPostDetailesCubit extends Cubit<GetPostDetailesCubitState> {
   GetPostDetailesCubit(this._postsRepo) : super(GetPostDetailesCubitInitial());
 
-  final PostsRepo _postsRepo;
+  final CommunityRepo _postsRepo;
 
   getPostDetails(String id) async {
     emit(GetPostDetailesCubitLoading());

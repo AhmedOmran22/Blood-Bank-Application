@@ -1,5 +1,5 @@
 import 'package:blood_bank/core/services/service_locator.dart';
-import 'package:blood_bank/features/home/data/repos/posts_repo.dart';
+import 'package:blood_bank/features/home/data/repos/community_repo.dart';
 import 'package:blood_bank/features/home/presentation/cubits/community_cubit/cummuniy_cubit.dart';
 import 'package:blood_bank/features/more/presentation/views/widgets/more_view_body.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -13,7 +13,7 @@ class MoreView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => CommunityCubit(
-        getIt.get<PostsRepo>(),
+        getIt.get<CommunityRepo>(),
       ),
       child: Scaffold(
         appBar: AppBar(

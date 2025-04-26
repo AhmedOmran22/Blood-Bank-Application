@@ -3,7 +3,7 @@ import 'package:blood_bank/core/services/service_locator.dart';
 import 'package:blood_bank/features/auth/presentation/views/login_view.dart';
 import 'package:blood_bank/features/auth/presentation/views/register_view.dart';
 import 'package:blood_bank/features/auth/presentation/views/reset_password_view.dart';
-import 'package:blood_bank/features/home/data/repos/posts_repo.dart';
+import 'package:blood_bank/features/home/data/repos/community_repo.dart';
 import 'package:blood_bank/features/home/presentation/cubits/community_cubit/cummuniy_cubit.dart';
 import 'package:blood_bank/features/home/presentation/cubits/get_post_detailes_cubit/get_post_detaile_cubit.dart';
 import 'package:blood_bank/features/home/presentation/views/all_posts_view.dart';
@@ -81,7 +81,7 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
         builder: (BuildContext context) {
           return BlocProvider(
             create: (context) => CommunityCubit(
-              getIt.get<PostsRepo>(),
+              getIt.get<CommunityRepo>(),
             ),
             child: const AllPostsView(),
           );
@@ -92,7 +92,7 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
         builder: (BuildContext context) {
           return BlocProvider(
             create: (context) => GetPostDetailesCubit(
-              getIt.get<PostsRepo>(),
+              getIt.get<CommunityRepo>(),
             ),
             child: PostDetailesView(
               postId: settings.arguments as int,

@@ -5,13 +5,13 @@ import 'package:blood_bank/core/errors/failure.dart';
 import 'package:blood_bank/core/services/api_service.dart';
 import 'package:blood_bank/features/home/data/models/mini_post_model.dart';
 import 'package:blood_bank/features/home/data/models/post_model.dart';
-import 'package:blood_bank/features/home/data/repos/posts_repo.dart';
+import 'package:blood_bank/features/home/data/repos/community_repo.dart';
 import 'package:dartz/dartz.dart';
 
-class PostsRepoImpl implements PostsRepo {
+class CommunityRepoImpl implements CommunityRepo {
   final ApiService apiService;
 
-  PostsRepoImpl({required this.apiService});
+  CommunityRepoImpl({required this.apiService});
   @override
   Future<Either<Failure, List<MiniPostModel>>> fetchAllPosts() async {
     List<MiniPostModel> miniPosts = [];
