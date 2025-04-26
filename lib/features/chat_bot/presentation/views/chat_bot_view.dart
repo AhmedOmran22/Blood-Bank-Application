@@ -62,7 +62,11 @@ class _ChatBotViewState extends State<ChatBotView> {
               Icons.refresh_rounded,
               color: AppColors.primaryColor,
             ),
-            onPressed: () => _messages.clear(),
+            onPressed: () {
+              setState(() {
+                _messages.clear();
+              });
+            },
           )
         ],
       ),
