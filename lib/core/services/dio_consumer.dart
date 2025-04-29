@@ -1,6 +1,4 @@
-import 'package:blood_bank/core/cache/prefs.dart';
 import 'package:blood_bank/core/constants/backend_endpoints.dart';
-import 'package:blood_bank/core/constants/constatnts.dart';
 import 'package:blood_bank/core/errors/exception.dart';
 import 'package:blood_bank/core/errors/failure.dart';
 import 'package:dio/dio.dart';
@@ -11,8 +9,7 @@ class DioConsumer extends ApiService {
 
   DioConsumer({required this.dio}) {
     dio.options.baseUrl = BackendEndpoints.baseUrl;
-    // dio.interceptors.addAll(
-    //   [
+    // dio.interceptors.add(
     //     InterceptorsWrapper(
     //       onRequest: (options, handler) async {
     //         final token = await Prefs.getString(kToken);
@@ -23,7 +20,6 @@ class DioConsumer extends ApiService {
     //       },
     //     ),
     //     AuthInterceptor(dio),
-    //   ],
     // );
   }
 
