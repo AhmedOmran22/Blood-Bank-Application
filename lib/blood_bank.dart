@@ -1,3 +1,5 @@
+import 'package:blood_bank/core/cache/prefs.dart';
+import 'package:blood_bank/core/constants/constatnts.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,7 +20,7 @@ class BloodBank extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: state is LightThemeState ? lightTheme : darkTheme,
           onGenerateRoute: onGenerateRoute,
-          initialRoute: AppRoutes.languageAndTheme,
+          initialRoute: handleInitialRoute(),
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,
           locale: context.locale,
@@ -26,4 +28,17 @@ class BloodBank extends StatelessWidget {
       },
     );
   }
+}
+
+String handleInitialRoute() {
+  if (Prefs.getBool(kIsOnBoardingViewed)) {
+    return AppRoutes.login;
+  }
+  if (Prefs.getString(kToken) != null) {
+    return AppRoutes.bottomNavigationBarView;
+  }
+  if (Prefs.getString(kConfirmedUserEmail)) {
+    return AppRoutes.confirmEmail;
+  }
+  return AppRoutes.onBoarding;
 }

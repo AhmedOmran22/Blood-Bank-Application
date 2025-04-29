@@ -1,3 +1,5 @@
+import 'package:blood_bank/core/cache/prefs.dart';
+import 'package:blood_bank/core/constants/constatnts.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +23,7 @@ class SkipWidget extends StatelessWidget {
         visible: !(controller.hasClients && controller.page == 2),
         child: InkWell(
           onTap: () {
+            Prefs.setBool(kIsOnBoardingViewed, true);
             Navigator.pushNamed(context, AppRoutes.registerOrLogin);
           },
           splashColor: Colors.grey.shade300,
