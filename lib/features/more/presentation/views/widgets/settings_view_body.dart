@@ -1,6 +1,5 @@
 import 'package:blood_bank/core/cache/prefs.dart';
 import 'package:blood_bank/core/constants/constatnts.dart';
-import 'package:blood_bank/core/services/firebase_auth_service.dart';
 import 'package:blood_bank/core/utils/app_colors.dart';
 import 'package:blood_bank/core/widgets/general_button.dart';
 import 'package:blood_bank/features/more/presentation/views/widgets/select_languauge_item.dart';
@@ -42,7 +41,6 @@ class SetingsViewBody extends StatelessWidget {
         const Spacer(),
         GeneralButton(
           onPressed: () async {
-            FirebaseAuthService().signOut();
             Prefs.removeData(key: kUserData);
             Navigator.pushNamedAndRemoveUntil(
               context,

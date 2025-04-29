@@ -1,6 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-
 import '../../../../core/errors/failure.dart';
 import '../models/user_model.dart';
 
@@ -25,8 +23,6 @@ abstract class AuthRepo {
     required String email,
     required String code,
   });
-  Future saveUserData({required UserModel user});
-  Future<void> deleteUser(User? user);
   Future<Either<Failure, void>> resendCode();
   Future<void> signOut();
   Future<Either<Failure, void>> forgotPassword({required String email});

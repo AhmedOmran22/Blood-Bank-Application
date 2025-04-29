@@ -9,7 +9,6 @@ import 'package:blood_bank/core/services/api_service.dart';
 import 'package:blood_bank/features/auth/data/models/user_model.dart';
 import 'package:blood_bank/features/auth/data/repos/auth_repo.dart';
 import 'package:dartz/dartz.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class BackEndAuthImpl extends AuthRepo {
   final ApiService apiService;
@@ -53,15 +52,8 @@ class BackEndAuthImpl extends AuthRepo {
     }
   }
 
-  @override
-  Future<void> deleteUser(User? user) async {
-    throw UnimplementedError();
-  }
 
-  @override
-  Future saveUserData({required UserModel user}) async {
-    throw UnimplementedError();
-  }
+
 
   @override
   Future<void> signOut() async {
