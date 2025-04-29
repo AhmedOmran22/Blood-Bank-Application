@@ -31,6 +31,3 @@ abstract class AuthRepo {
     required String code,
   });
 }
-// todo => add forgot password 
-// todo => add resend code
-// todo => going to login after reseting the password
