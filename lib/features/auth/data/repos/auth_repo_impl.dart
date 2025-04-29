@@ -10,10 +10,10 @@ import 'package:blood_bank/features/auth/data/models/user_model.dart';
 import 'package:blood_bank/features/auth/data/repos/auth_repo.dart';
 import 'package:dartz/dartz.dart';
 
-class BackEndAuthImpl extends AuthRepo {
+class AuthRepoImpl extends AuthRepo {
   final ApiService apiService;
 
-  BackEndAuthImpl({required this.apiService});
+  AuthRepoImpl({required this.apiService});
   @override
   Future addUserData({required UserModel user}) {
     throw UnimplementedError();
@@ -51,9 +51,6 @@ class BackEndAuthImpl extends AuthRepo {
       return Left(ServerFailure(errMessage: e.toString()));
     }
   }
-
-
-
 
   @override
   Future<void> signOut() async {
@@ -124,9 +121,9 @@ class BackEndAuthImpl extends AuthRepo {
       Prefs.setString(kUserBloodType, bloodType);
       String nationalId = responde['nationalId'];
       Prefs.setString(kUserNationalId, nationalId);
-      return  Right(
+      return Right(
         UserModel(
-          email:email,
+          email: email,
           name: name,
           phoneNumber: '01229804760',
           bloodTypeid: 1,
