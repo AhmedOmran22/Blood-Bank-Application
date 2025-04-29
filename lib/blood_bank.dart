@@ -31,14 +31,14 @@ class BloodBank extends StatelessWidget {
 }
 
 String handleInitialRoute() {
-  if (Prefs.getBool(kIsOnBoardingViewed)) {
-    return AppRoutes.login;
-  }
   if (Prefs.getString(kToken) != null) {
     return AppRoutes.bottomNavigationBarView;
   }
-  if (Prefs.getString(kConfirmedUserEmail)) {
+  if (Prefs.getString(kConfirmedUserEmail) != null) {
     return AppRoutes.confirmEmail;
+  }
+  if (Prefs.getBool(kIsOnBoardingViewed)) {
+    return AppRoutes.login;
   }
   return AppRoutes.onBoarding;
 }

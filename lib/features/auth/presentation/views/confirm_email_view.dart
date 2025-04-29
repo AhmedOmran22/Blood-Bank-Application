@@ -1,3 +1,4 @@
+import 'package:blood_bank/core/routes/app_routes.dart';
 import 'package:blood_bank/core/services/service_locator.dart';
 import 'package:blood_bank/features/auth/data/repos/auth_repo.dart';
 import 'package:blood_bank/features/auth/presentation/cubits/confiem_email_cubit/confirm_email_cubit.dart';
@@ -29,7 +30,7 @@ class ConfirmEmailView extends StatelessWidget {
                   ? Colors.white
                   : Colors.black,
             ),
-            onPressed: () => Navigator.pop(context),
+            onPressed: () => Navigator.pushNamed(context, AppRoutes.login),
           ),
         ),
         body: const ConfirmEmailViewBodyBlocConsumer(),

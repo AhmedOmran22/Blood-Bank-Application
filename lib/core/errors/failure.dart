@@ -46,7 +46,8 @@ class ServerFailure extends Failure {
 
   factory ServerFailure.fromResponse(int statusCode, dynamic response) {
     if (statusCode == 400 || statusCode == 401 || statusCode == 409) {
-      return ServerFailure(errMessage: response['errors'][1]);
+      return ServerFailure(
+          errMessage: response['errors'][1] ?? response['errors'][0]);
     } else if (statusCode == 500) {
       return ServerFailure(
         errMessage: 'Internal Server fialure , please try later',

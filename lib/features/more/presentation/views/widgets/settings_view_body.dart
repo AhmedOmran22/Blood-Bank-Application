@@ -41,7 +41,7 @@ class SetingsViewBody extends StatelessWidget {
         const Spacer(),
         GeneralButton(
           onPressed: () async {
-            Prefs.removeData(key: kUserData);
+            Prefs.removeData(key: kToken);
             Navigator.pushNamedAndRemoveUntil(
               context,
               AppRoutes.login,
