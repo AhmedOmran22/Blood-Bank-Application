@@ -1,7 +1,4 @@
 import 'dart:developer';
-
-import 'package:blood_bank/core/cache/prefs.dart';
-import 'package:blood_bank/core/constants/constatnts.dart';
 import 'package:blood_bank/core/widgets/custom_drop_down_buttom_field.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -200,7 +197,6 @@ class _RegisterFormState extends State<RegisterForm> {
       formKey.currentState!.save();
       if (isTermsAccepted) {
         if (passwordController.text == confirmPasswordController.text) {
-          Prefs.setString(kConfirmedUserEmail, emailController.text);
           await context.read<RegisterCubit>().register(
                 name: nameController.text,
                 email: emailController.text,

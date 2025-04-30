@@ -39,6 +39,8 @@ class AuthRepoImpl extends AuthRepo {
         BackendEndpoints.register,
         data: userModel.toBackendMap(password),
       );
+      Prefs.setString(kConfirmedUserEmail, email);
+
       return Right(userModel);
     } on CustomException catch (e) {
       log(e.message);
