@@ -103,8 +103,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case AppRoutes.sendPost:
       return MaterialPageRoute(
         builder: (BuildContext context) {
-          return BlocProvider.value(
-            value: settings.arguments as CommunityCubit,
+          return BlocProvider(
+            create: (context) => CommunityCubit(
+              getIt.get<CommunityRepo>(),
+            ),
             child: const SendPostView(),
           );
         },

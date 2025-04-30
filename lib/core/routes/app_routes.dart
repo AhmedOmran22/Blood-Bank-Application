@@ -13,4 +13,7 @@ abstract class AppRoutes {
   static const String sendPost = 'addPostView';
   static const String chatBot = 'chatBotView';
   static const String settings = 'settingsView';
+  static const String bloodDonors = 'bloodDonorsView';
+  static const String requestBlood = 'requestBloodView';
+  static const String bloodGiven = 'bloodGivenView';
 }
