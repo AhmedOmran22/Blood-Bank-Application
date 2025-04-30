@@ -1,11 +1,10 @@
 import 'package:blood_bank/features/auth/data/repos/auth_repo.dart';
-import 'package:blood_bank/features/auth/presentation/cubits/forgot_password_cubit/forgot_password_cubit_state.dart';
+import 'package:blood_bank/features/auth/presentation/cubits/forgot_and_reset_password_cubit/forgot_and_reset_password_cubit_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ForgotAndResetPasswordCubit
     extends Cubit<ForgotAndResetPasswordCubitState> {
-  ForgotAndResetPasswordCubit(this.authRepo)
-      : super(ForgotPasswordCubitInitial());
+  ForgotAndResetPasswordCubit(this.authRepo) : super(Initial());
 
   final AuthRepo authRepo;
 
