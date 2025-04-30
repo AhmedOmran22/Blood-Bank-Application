@@ -12,6 +12,7 @@ class PushNotificationService {
     //! there is an exception thrown from here
     try {
       fcmToken = await _messaging.getToken();
+      log(fcmToken!);
     } on Exception catch (e) {
       log(e.toString());
     }

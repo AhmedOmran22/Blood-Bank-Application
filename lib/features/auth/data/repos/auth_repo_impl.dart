@@ -14,10 +14,6 @@ class AuthRepoImpl extends AuthRepo {
   final ApiService apiService;
 
   AuthRepoImpl({required this.apiService});
-  @override
-  Future addUserData({required UserModel user}) {
-    throw UnimplementedError();
-  }
 
   @override
   Future<Either<Failure, UserModel>> createUserWithEmailAndPassword({
@@ -71,7 +67,6 @@ class AuthRepoImpl extends AuthRepo {
         },
       );
       Prefs.setString(kToken, response["token"]);
-      log(Prefs.getString(kToken));
       return await fetchUserData(token: Prefs.getString(kToken));
     } on CustomException catch (e) {
       log(e.message);

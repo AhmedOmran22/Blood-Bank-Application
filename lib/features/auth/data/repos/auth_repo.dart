@@ -18,7 +18,6 @@ abstract class AuthRepo {
     String email,
     String password,
   );
-  Future addUserData({required UserModel user});
   Future<Either<Failure, void>> confirmEmail({
     required String email,
     required String code,
