@@ -6,8 +6,6 @@ A cross-platform mobile application built with **Flutter** to help users request
 
 - 🔐 User Authentication (Email/Password)
 - 📍 Location-based blood requests
-- 🗂️ Filter by blood type and city
-- 🔄 Real-time updates using Firestore
 - 📲 Push notifications via Firebase Cloud Messaging (FCM)
 - 📦 Donor history and request tracking
 - 💬 Request system with live listener
