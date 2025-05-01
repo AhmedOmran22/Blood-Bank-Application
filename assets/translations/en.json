@@ -93,7 +93,31 @@
     "Donate us": "Donate us",
     "Blood Donors": "Blood Donors",
     "Logout": "Logout",
-    
+    "Give Blood": "Give Blood",  
+    "title": "title",
+    "Contact Person Name": "Contact Person Name",
+    "Phone Number": "Phone Number",
+    "Amount you need ? ":"Amount you need ? ",
+    "Hopsital Name": "Hopsital Name",
+    "Date": "Date",
+    "Why Do You Need Blood ?": "Why Do You Need Blood ?",
+    "Send": "Send",
+
+    "Why is Blood Donation Important ?": "Why is Blood Donation Important ?",
+    "Blood donation is essential because it saves lives. Donated blood helps people during surgeries, accidents, cancer treatments, and for those with chronic illnesses like anemia and blood disorders.": "Blood donation is essential because it saves lives. Donated blood helps people during surgeries, accidents, cancer treatments, and for those with chronic illnesses like anemia and blood disorders.",
+    "Who Can Donate Blood ?": "Who Can Donate Blood ?",
+    "Healthy individuals aged 18 to 65, weighing at least 50 kg (110 lbs), and free from infectious diseases can usually donate blood. Always consult your local blood donation guidelines for exact criteria.":"'Healthy individuals aged 18 to 65, weighing at least 50 kg (110 lbs), and free from infectious diseases can usually donate blood. Always consult your local blood donation guidelines for exact criteria.",
+    "Benefits of Donating Blood": "Benefits of Donating Blood",
+    "Besides saving lives, donating blood can improve your heart health, reduce harmful iron stores, stimulate blood cell production, and give you a sense of accomplishment and purpose.": "Besides saving lives, donating blood can improve your heart health, reduce harmful iron stores, stimulate blood cell production, and give you a sense of accomplishment and purpose.",
+    "How Often Can You Donate ? ": "How Often Can You Donate ? ",
+    "You can typically donate whole blood every 8 weeks (56 days). Platelet, plasma, and double red cell donations have different intervals. Always follow donation center guidelines.": "You can typically donate whole blood every 8 weeks (56 days). Platelet, plasma, and double red cell donations have different intervals. Always follow donation center guidelines.",
+    "Before You Donate Blood": "Before You Donate Blood",
+    "Get enough sleep, eat a healthy meal, drink plenty of water, and avoid fatty foods before donating. Make sure to bring identification with you to the donation center.": "Get enough sleep, eat a healthy meal, drink plenty of water, and avoid fatty foods before donating. Make sure to bring identification with you to the donation center.",
+    "After You Donate Blood": "After You Donate Blood",
+    "Rest for a few minutes, drink fluids, and eat a light snack. Avoid strenuous activities for the rest of the day and stay hydrated.": "Rest for a few minutes, drink fluids, and eat a light snack. Avoid strenuous activities for the rest of the day and stay hydrated.",
+    "Is Blood Donation Safe ?": "Is Blood Donation Safe ?",
+    "Yes. Blood donation is safe. Sterile, disposable equipment is used for each donor, eliminating any risk of infection.": "Yes. Blood donation is safe. Sterile, disposable equipment is used for each donor, eliminating any risk of infection.",
+
     "English": "English",
     "Arabic": "Arabic"
 }

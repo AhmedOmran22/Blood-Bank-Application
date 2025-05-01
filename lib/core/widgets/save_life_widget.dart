@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -20,13 +21,26 @@ class SaveLifeWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text(
-              "Save a Life\nGive Blood",
-              textAlign: TextAlign.center,
-              style: Theme.of(context)
-                  .textTheme
-                  .titleLarge!
-                  .copyWith(letterSpacing: 1, fontSize: 20),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Save a Life",
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(letterSpacing: 1, fontSize: 20),
+                ).tr(),
+                Text(
+                  "Give Blood",
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(letterSpacing: 1, fontSize: 20),
+                ).tr(),
+              ],
             ),
             SvgPicture.asset(
               AppAssets.imagesAnotherTesting,
