@@ -14,10 +14,10 @@ import 'core/services/service_locator.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   Future.wait([
-    Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    ),
     PushNotificationService.initialize(),
     LocalNotificationService.init(),
     EasyLocalization.ensureInitialized(),
