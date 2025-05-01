@@ -9,5 +9,7 @@ class AppAssets {
   static const String imagesAwarness2 = "assets/images/awarness2.jpg";
 
   static const String imagesAwarness3 = "assets/images/awarness3.jpg";
+
+  static const String imagesHypertension = "assets/images/hypertension.png";
 }
 
