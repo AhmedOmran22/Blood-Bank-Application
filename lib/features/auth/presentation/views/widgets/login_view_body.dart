@@ -19,7 +19,7 @@ class LoginViewBody extends StatelessWidget {
           children: [
             SizedBox(height: MediaQuery.of(context).size.height * .1),
             SvgPicture.asset(
-              AppAssets.imagesAnotherTesting,
+              AppAssets.imagesBloodDonation,
               height: MediaQuery.of(context).size.height * .3,
             ),
             const SizedBox(height: 16),

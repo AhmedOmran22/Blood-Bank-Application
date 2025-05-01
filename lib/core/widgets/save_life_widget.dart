@@ -43,7 +43,7 @@ class SaveLifeWidget extends StatelessWidget {
               ],
             ),
             SvgPicture.asset(
-              AppAssets.imagesAnotherTesting,
+              AppAssets.imagesBloodDonation,
               height: MediaQuery.of(context).size.height * .12,
             )
           ],
