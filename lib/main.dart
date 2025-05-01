@@ -14,14 +14,16 @@ import 'core/services/service_locator.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  await PushNotificationService.initialize();
-  await LocalNotificationService.init();
+  Future.wait([
+    Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    ),
+    PushNotificationService.initialize(),
+    LocalNotificationService.init(),
+    EasyLocalization.ensureInitialized(),
+    Prefs.init(),
+  ]);
   tz.initializeTimeZones();
-  await EasyLocalization.ensureInitialized();
-  await Prefs.init();
   setupGetit();
   changeSystemUiOverlayStyle();
 
