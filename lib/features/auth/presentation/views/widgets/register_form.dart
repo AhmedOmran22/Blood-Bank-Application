@@ -197,7 +197,7 @@ class _RegisterFormState extends State<RegisterForm> {
       formKey.currentState!.save();
       if (isTermsAccepted) {
         if (passwordController.text == confirmPasswordController.text) {
-          await context.read<RegisterCubit>().register(
+          await context.read<RegisterCubit>().registerNewUser(
                 name: nameController.text,
                 email: emailController.text,
                 phoneNumber: phoneController.text,

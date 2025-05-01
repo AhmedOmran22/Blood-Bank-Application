@@ -7,20 +7,19 @@ class RegisterCubit extends Cubit<RegisterCubitState> {
   RegisterCubit(this.authRepo) : super(RegisterCubitInitial());
   final AuthRepo authRepo;
 
-  Future<void> register({
+  Future<void> registerNewUser({
     required String email,
     required String password,
     required String name,
     required String phoneNumber,
     required String NationalId,
     int? bloodTypeId,
-     String? bloodType,
-     String? gender,
+    String? bloodType,
+    String? gender,
   }) async {
     // send loading state
     emit(RegisterCubitLoading());
-    final result = 
-    await authRepo.createUserWithEmailAndPassword(
+    final result = await authRepo.registerNewUser(
       email: email,
       password: password,
       userName: name,

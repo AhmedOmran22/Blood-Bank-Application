@@ -16,7 +16,7 @@ class AuthRepoImpl extends AuthRepo {
   AuthRepoImpl({required this.apiService});
 
   @override
-  Future<Either<Failure, UserModel>> createUserWithEmailAndPassword({
+  Future<Either<Failure, UserModel>> registerNewUser({
     required String userName,
     required String email,
     required String password,
@@ -51,7 +51,7 @@ class AuthRepoImpl extends AuthRepo {
   }
 
   @override
-  Future<Either<Failure, UserModel>> signinWithEmailAndPassword(
+  Future<Either<Failure, UserModel>> login(
     String email,
     String password,
   ) async {

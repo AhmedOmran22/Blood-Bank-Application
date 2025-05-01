@@ -3,7 +3,7 @@ import '../../../../core/errors/failure.dart';
 import '../models/user_model.dart';
 
 abstract class AuthRepo {
-  Future<Either<Failure, UserModel>> createUserWithEmailAndPassword({
+  Future<Either<Failure, UserModel>> registerNewUser({
     required String userName,
     required String email,
     required String password,
@@ -14,7 +14,7 @@ abstract class AuthRepo {
     int? bloodTypeId,
   });
   Future<Either<Failure, UserModel>> fetchUserData({required String token});
-  Future<Either<Failure, UserModel>> signinWithEmailAndPassword(
+  Future<Either<Failure, UserModel>> login(
     String email,
     String password,
   );
