@@ -23,7 +23,6 @@ abstract class AuthRepo {
     required String code,
   });
   Future<Either<Failure, void>> resendCode();
-  Future<void> signOut();
   Future<Either<Failure, void>> forgotPassword({required String email});
   Future<Either<Failure, void>> resetPassword({
     required String password,

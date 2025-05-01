@@ -51,11 +51,6 @@ class AuthRepoImpl extends AuthRepo {
   }
 
   @override
-  Future<void> signOut() async {
-    Prefs.removeData(key: kToken);
-  }
-
-  @override
   Future<Either<Failure, UserModel>> signinWithEmailAndPassword(
     String email,
     String password,
