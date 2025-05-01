@@ -48,7 +48,7 @@ class _confirmEmailViewBodyState extends State<confirmEmailViewBody> {
                 children: [
                   Expanded(
                     child: Text(
-                      "Enter the code sent to your phone number",
+                      "Enter the code sent to ${Prefs.getString(kConfirmedUserEmail)}",
                       textAlign: TextAlign.start,
                       style: Theme.of(context)
                           .textTheme

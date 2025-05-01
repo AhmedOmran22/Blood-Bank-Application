@@ -27,9 +27,6 @@ class ResetPasswordViewBodyBlocConsumer extends StatelessWidget {
         if (state is ResetPasswordCubitFailure) {
           showSnackBarFuction(context, state.errMessage);
         }
-        if (state is ResetPasswordCubitLoading) {
-          showSnackBarFuction(context, "Loading...");
-        }
       },
       builder: (context, state) {
         return ModalProgressHUD(
