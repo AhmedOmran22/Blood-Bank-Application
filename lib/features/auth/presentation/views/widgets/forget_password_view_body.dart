@@ -35,61 +35,64 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      reverse: true,
-      child: Form(
-        key: formKey,
-        autovalidateMode: autoValidateMode,
-        child: Column(
-          children: [
-            SizedBox(height: MediaQuery.of(context).size.height * .05),
-            Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    textAlign: TextAlign.start,
-                    "do not worry, just enter your Email and we will send you a code to reset your password",
-                    style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                          fontWeight: FontWeight.w500,
-                        ),
-                  ).tr(),
-                ),
-              ],
-            ),
-            const SizedBox(height: 16),
-            CustomTextFormField(
-              controller: emailController,
-              validator: (data) {
-                if (data == null || data.isEmpty) {
-                  return "Field is required".tr();
-                } else if (!AppRegex.isEmailValid(data)) {
-                  return "Invalid email".tr();
-                }
-                return null;
-              },
-              // controller: emailController,
-              hitnText: "Email Address",
-            ),
-            const SizedBox(height: 32),
-            GeneralButton(
-              onPressed: () {
-                if (formKey.currentState!.validate()) {
-                  formKey.currentState!.save();
-                  Prefs.setString(kForgotPasswordEmail, emailController.text);
-                  context
-                      .read<ForgotAndResetPasswordCubit>()
-                      .forgotPassword(email: emailController.text);
-                  Prefs.setString(kForgotPasswordEmail, emailController.text);
-                } else {
-                  autoValidateMode = AutovalidateMode.always;
-                  setState(() {});
-                }
-              },
-              text: "Forget Password",
-              backgroundColor: AppColors.primaryColor,
-              textColor: AppColors.whiteColor,
-            ),
-          ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: SingleChildScrollView(
+        reverse: true,
+        child: Form(
+          key: formKey,
+          autovalidateMode: autoValidateMode,
+          child: Column(
+            children: [
+              SizedBox(height: MediaQuery.of(context).size.height * .05),
+              Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      textAlign: TextAlign.start,
+                      "do not worry, just enter your Email and we will send you a code to reset your password",
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                            fontWeight: FontWeight.w500,
+                          ),
+                    ).tr(),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+              CustomTextFormField(
+                controller: emailController,
+                validator: (data) {
+                  if (data == null || data.isEmpty) {
+                    return "Field is required".tr();
+                  } else if (!AppRegex.isEmailValid(data)) {
+                    return "Invalid email".tr();
+                  }
+                  return null;
+                },
+                // controller: emailController,
+                hitnText: "Email Address",
+              ),
+              const SizedBox(height: 32),
+              GeneralButton(
+                onPressed: () {
+                  if (formKey.currentState!.validate()) {
+                    formKey.currentState!.save();
+                    Prefs.setString(kForgotPasswordEmail, emailController.text);
+                    context
+                        .read<ForgotAndResetPasswordCubit>()
+                        .forgotPassword(email: emailController.text);
+                    Prefs.setString(kForgotPasswordEmail, emailController.text);
+                  } else {
+                    autoValidateMode = AutovalidateMode.always;
+                    setState(() {});
+                  }
+                },
+                text: "Forget Password",
+                backgroundColor: AppColors.primaryColor,
+                textColor: AppColors.whiteColor,
+              ),
+            ],
+          ),
         ),
       ),
     );
