@@ -13,10 +13,7 @@ A cross-platform mobile application built with **Flutter** to help users request
 ## 🛠️ Tech Stack
 
 - **Flutter** (Dart)
-- **Firebase Auth** – for login/register
-- **Firestore** – to store blood requests and user info
 - **FCM** – for real-time notifications
-- **Google Maps API** – for location support *(optional)*
 
 ## 📱 Screenshots
 ![773shots_so](https://github.com/user-attachments/assets/9f301e01-ccd8-4111-b193-09575f345c09)
