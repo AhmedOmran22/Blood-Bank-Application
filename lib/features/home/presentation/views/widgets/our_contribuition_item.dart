@@ -1,3 +1,4 @@
+import 'package:blood_bank/core/functions/is_dark_mode.dart';
 import 'package:flutter/material.dart';
 
 import '../../../data/models/contribution_model.dart';
@@ -35,7 +36,9 @@ class OurContributionsItem extends StatelessWidget {
           ),
         ),
         decoration: BoxDecoration(
-          color: contributionModel.backgroundColor,
+          color: isDarkMode(context)
+              ? Theme.of(context).colorScheme.surface
+              : contributionModel.backgroundColor,
           borderRadius: BorderRadius.circular(8),
         ),
       ),
