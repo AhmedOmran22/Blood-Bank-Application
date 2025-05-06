@@ -4,24 +4,12 @@ import 'package:blood_bank/features/home/presentation/views/widgets/mini_post_it
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class HomePostsSliverList extends StatefulWidget {
+class HomePostsSliverList extends StatelessWidget {
   const HomePostsSliverList({
     super.key,
     required this.childCount,
   });
   final int childCount;
-
-  @override
-  State<HomePostsSliverList> createState() => _HomePostsSliverListState();
-}
-
-class _HomePostsSliverListState extends State<HomePostsSliverList> {
-  @override
-  void initState() {
-    context.read<CommunityCubit>().fetchAllPosts();
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CommunityCubit, CommunityCubitState>(
@@ -29,7 +17,7 @@ class _HomePostsSliverListState extends State<HomePostsSliverList> {
         if (state is MiniPostsLoadedState) {
           return SliverList(
             delegate: SliverChildBuilderDelegate(
-              childCount: widget.childCount,
+              childCount: childCount,
               (context, index) {
                 return MiniPostItem(
                   miniPostModel: state.miniPosts[index],
