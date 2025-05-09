@@ -1,5 +1,5 @@
 import 'package:blood_bank/features/awarness/presentation/views/widgets/custom_carousel_slider.dart';
-import 'package:blood_bank/features/awarness/presentation/views/widgets/awarneww_info_sliver_list.dart';
+import 'package:blood_bank/features/awarness/presentation/views/widgets/awarness_info_sliver_list.dart';
 import 'package:flutter/material.dart';
 
 class AwarnessViewBody extends StatelessWidget {
