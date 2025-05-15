@@ -34,10 +34,6 @@ class MoreViewBody extends StatelessWidget {
               text: "Be a Donor",
               icon: Icons.bloodtype_rounded,
             ),
-            // const MoreItem(
-            //   text: "Blogs",
-            //   icon: FontAwesomeIcons.lightbulb,
-            // ),
             MoreItem(
               onTap: () => Navigator.pushNamed(context, AppRoutes.settings),
               text: "Settings",
