@@ -24,12 +24,19 @@ class _ChatBotViewState extends State<ChatBotView> {
     _scrollController = ScrollController();
     _controller = TextEditingController();
     _chatRepo.connect();
+
     _chatRepo.messagesStream.listen((msg) {
       if (mounted) {
         setState(() {
           _messages.add(msg);
-          isBotTyping = false;
+           isBotTyping = false;
         });
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+        );
+       
       }
     });
     super.initState();
@@ -102,13 +109,6 @@ class _ChatBotViewState extends State<ChatBotView> {
                   onPressed: () {
                     _sendMessage();
                     isBotTyping = true;
-                    _messages.isNotEmpty
-                        ? _scrollController.animateTo(
-                            _scrollController.position.maxScrollExtent,
-                            duration: const Duration(milliseconds: 300),
-                            curve: Curves.easeOut,
-                          )
-                        : null;
                     setState(() {});
                   },
                 ),
