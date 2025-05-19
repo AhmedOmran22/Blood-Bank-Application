@@ -125,7 +125,7 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
           return const SettingsView();
         },
       );
-    case AppRoutes.donors:
+    case AppRoutes.bloodDonors:
       return MaterialPageRoute(
         builder: (BuildContext context) {
           return const DonorsView();
