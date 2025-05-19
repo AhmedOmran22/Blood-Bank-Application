@@ -42,9 +42,10 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                 ),
                 TextSpan(
                   text: "Terms and Conditions".tr(),
-                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                        color: AppColors.primaryColor,
-                      ),
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(color: AppColors.primaryColor),
                 ),
                 TextSpan(
                   text: "Privacy Policy".tr(),

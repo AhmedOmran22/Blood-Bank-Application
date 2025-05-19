@@ -1,9 +1,11 @@
 import 'package:blood_bank/core/routes/app_routes.dart';
+import 'package:blood_bank/core/services/service_locator.dart';
 import 'package:blood_bank/features/auth/presentation/views/login_view.dart';
 import 'package:blood_bank/features/auth/presentation/views/register_view.dart';
 import 'package:blood_bank/features/auth/presentation/views/reset_password_view.dart';
-import 'package:blood_bank/features/home/data/models/post_model.dart';
-import 'package:blood_bank/features/home/presentation/cubits/posts_cubit.dart';
+import 'package:blood_bank/features/home/data/repos/community_repo.dart';
+import 'package:blood_bank/features/home/presentation/cubits/community_cubit/cummuniy_cubit.dart';
+import 'package:blood_bank/features/home/presentation/cubits/get_post_detailes_cubit/get_post_detaile_cubit.dart';
 import 'package:blood_bank/features/home/presentation/views/all_posts_view.dart';
 import 'package:blood_bank/features/home/presentation/views/donors_view.dart';
 import 'package:blood_bank/features/home/presentation/views/post_detailes_view.dart';
@@ -13,7 +15,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../bottom_navigation_bar_view.dart';
 import '../../features/auth/presentation/views/forget_password_view.dart';
-import '../../features/auth/presentation/views/verify_view.dart';
+import '../../features/auth/presentation/views/confirm_email_view.dart';
 import '../../features/chat_bot/presentation/views/chat_bot_view.dart';
 import '../../features/on_boarding/presentation/views/language_and_theme_view.dart';
 import '../../features/on_boarding/presentation/views/on_boarding_view.dart';
@@ -63,10 +65,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
           return const ResetPasswordView();
         },
       );
-    case AppRoutes.verify:
+    case AppRoutes.confirmEmail:
       return MaterialPageRoute(
         builder: (BuildContext context) {
-          return const VerifyView();
+          return const ConfirmEmailView();
         },
       );
     case AppRoutes.bottomNavigationBarView:
@@ -78,8 +80,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case AppRoutes.allPostsView:
       return MaterialPageRoute(
         builder: (BuildContext context) {
-          return BlocProvider.value(
-            value: (settings.arguments as PostsCubit)..fetchAllPosts(),
+          return BlocProvider(
+            create: (context) => CommunityCubit(
+              getIt.get<CommunityRepo>(),
+            ),
             child: const AllPostsView(),
           );
         },
@@ -87,16 +91,23 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case AppRoutes.postDetails:
       return MaterialPageRoute(
         builder: (BuildContext context) {
-          return PostDetailesView(
-            postModel: settings.arguments as PostModel,
+          return BlocProvider(
+            create: (context) => GetPostDetailesCubit(
+              getIt.get<CommunityRepo>(),
+            ),
+            child: PostDetailesView(
+              postId: settings.arguments as int,
+            ),
           );
         },
       );
     case AppRoutes.sendPost:
       return MaterialPageRoute(
         builder: (BuildContext context) {
-          return BlocProvider.value(
-            value: settings.arguments as PostsCubit,
+          return BlocProvider(
+            create: (context) => CommunityCubit(
+              getIt.get<CommunityRepo>(),
+            ),
             child: const SendPostView(),
           );
         },

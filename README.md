@@ -5,20 +5,19 @@ A cross-platform mobile application built with **Flutter** to help users request
 ## 🚀 Features
 
 - 🔐 User Authentication (Email/Password)
-- 📍 Location-based blood requests
-- 🗂️ Filter by blood type and city
-- 🔄 Real-time updates using Firestore
 - 📲 Push notifications via Firebase Cloud Messaging (FCM)
 - 📦 Donor history and request tracking
 - 💬 Request system with live listener
 
 ## 🛠️ Tech Stack
-
 - **Flutter** (Dart)
-- **Firebase Auth** – for login/register
-- **Firestore** – to store blood requests and user info
 - **FCM** – for real-time notifications
-- **Google Maps API** – for location support *(optional)*
+- **API** – to communicate with backend services
+- **Postman** – for testing and debugging APIs
+- **Dio** – for making HTTP requests easily
+- **Cubit** – for lightweight state management
+- **State Management** – to manage and control app states efficiently
+
 
 ## 📱 Screenshots
 ![773shots_so](https://github.com/user-attachments/assets/9f301e01-ccd8-4111-b193-09575f345c09)

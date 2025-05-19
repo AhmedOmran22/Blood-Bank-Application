@@ -1,6 +1,7 @@
+import 'package:blood_bank/core/functions/get_current_user_function.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/functions/get_current_user_function.dart';
+// import '../../../../../core/functions/get_current_user_function.dart';
 import '../../../../../core/utils/app_colors.dart';
 
 class UserInformationHeader extends StatelessWidget {
@@ -26,14 +27,15 @@ class UserInformationHeader extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Text(
-                getCurrentUserFunction().name,
+                getCurrentUserFromBackEndFunction().name,
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                       color: Colors.white,
                       fontSize: 20,
                     ),
               ),
               Text(
-                "blood Group :" + getCurrentUserFunction().bloodType,
+                "blood Group :" +
+                    getCurrentUserFromBackEndFunction().bloodType!,
                 style: Theme.of(context).textTheme.titleMedium!.copyWith(
                       color: Colors.white,
                       fontWeight: FontWeight.normal,

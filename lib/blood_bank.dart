@@ -1,6 +1,5 @@
 import 'package:blood_bank/core/cache/prefs.dart';
 import 'package:blood_bank/core/constants/constatnts.dart';
-import 'package:blood_bank/core/services/firebase_auth_service.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,7 +20,7 @@ class BloodBank extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: state is LightThemeState ? lightTheme : darkTheme,
           onGenerateRoute: onGenerateRoute,
-          initialRoute: handlingInitialRout(),
+          initialRoute: handleInitialRoute(),
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,
           locale: context.locale,
@@ -31,13 +30,15 @@ class BloodBank extends StatelessWidget {
   }
 }
 
-String handlingInitialRout() {
-  if (Prefs.getBool(kIsOnBoardingViewed)) {
-    if (FirebaseAuthService().isLoggedIn()) {
-      return AppRoutes.bottomNavigationBarView;
-    }
-    return AppRoutes.login;
-  } else {
-    return AppRoutes.onBoarding;
+String handleInitialRoute() {
+  if (Prefs.getString(kToken) != null) {
+    return AppRoutes.bottomNavigationBarView;
   }
+  if (Prefs.getString(kConfirmedUserEmail) != null) {
+    return AppRoutes.confirmEmail;
+  }
+  if (Prefs.getBool(kIsOnBoardingViewed)) {
+    return AppRoutes.login;
+  }
+  return AppRoutes.onBoarding;
 }

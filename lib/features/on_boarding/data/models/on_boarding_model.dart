@@ -14,19 +14,19 @@ class OnBoardingModel {
 
 List<OnBoardingModel> onBoardingModels = [
   OnBoardingModel(
-    image: AppAssets.imagesAnotherTesting,
+    image: AppAssets.imagesBloodDonation,
     title: 'Save a Life',
     subtitle:
         'Your blood donation can save someone in desperate need. Every drop counts!',
   ),
   OnBoardingModel(
-    image: AppAssets.imagesAnotherTesting,
+    image: AppAssets.imagesBloodDonation,
     title: 'Simple Act, Big Impact',
     subtitle:
         'Donating blood is a quick and safe process, but its impact on patients’ lives is huge.',
   ),
   OnBoardingModel(
-    image: AppAssets.imagesAnotherTesting,
+    image: AppAssets.imagesBloodDonation,
     title: 'Join Our Community',
     subtitle:
         'Be part of a life saving community! Together, we can make a difference and help those in need.',

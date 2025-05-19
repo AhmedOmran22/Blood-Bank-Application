@@ -1,19 +1,29 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-class CustomDropdownButtonFormField extends StatelessWidget {
-  const CustomDropdownButtonFormField({
+class BloodTypeDropDownField extends StatelessWidget {
+  const BloodTypeDropDownField({
     super.key,
     required this.onChanged,
-   required this.items,
     this.hintText,
   });
-  final void Function(String?) onChanged;
-  final List<DropdownMenuItem<String>> items;
+  static final List<String> bloodTypes = [
+    "O+",
+    "O-",
+    "A+",
+    "A-",
+    "B+",
+    "B-",
+    "AB+",
+    "AB-",
+  ];
+
+  final void Function(int?) onChanged;
   final String? hintText;
+
   @override
   Widget build(BuildContext context) {
-    return DropdownButtonFormField<String>(
+    return DropdownButtonFormField<int>(
       validator: (value) {
         if (value == null) {
           return 'Field is required'.tr();
@@ -31,7 +41,13 @@ class CustomDropdownButtonFormField extends StatelessWidget {
             fontWeight: FontWeight.w500,
             fontSize: 14,
           ),
-      items: items,
+      items: List.generate(
+        bloodTypes.length,
+        (index) => DropdownMenuItem(
+          value: index + 1,
+          child: Text(bloodTypes[index]),
+        ),
+      ),
       onChanged: onChanged,
     );
   }

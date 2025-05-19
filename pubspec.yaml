@@ -21,18 +21,18 @@ version: 1.0.0+1
 environment:
   sdk: ^3.6.1
 dependencies:
-  cloud_firestore: ^5.6.5
+  carousel_slider: ^5.0.0
   cupertino_icons: ^1.0.8
   dartz: ^0.10.1
   dio: ^5.8.0+1
   easy_localization: ^3.0.7
-  firebase_auth: ^5.5.1
   firebase_core: ^3.12.1
   firebase_messaging: ^15.2.4
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.0
   flutter_local_notifications: ^18.0.1
+  flutter_markdown: ^0.7.7
   flutter_svg: ^2.0.17
   flutter_timezone: ^4.1.0
   font_awesome_flutter: ^10.8.0
@@ -41,11 +41,20 @@ dependencies:
   shared_preferences: ^2.5.2
   smooth_page_indicator: ^1.2.1
   timezone: ^0.10.0
+  web_socket_channel: ^3.0.3
 
 dev_dependencies:
   flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.14.3
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/hypertension.png"
+
+
 flutter:
   uses-material-design: true
   assets:

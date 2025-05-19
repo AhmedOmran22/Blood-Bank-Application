@@ -48,7 +48,7 @@ abstract class AppRegex {
     return RegExp(r'^(010|011|012|015)[0-9]{8}$').hasMatch(phoneNumber);
   }
 
- static bool isValidDateFormat(String input) {
+  static bool isValidDateFormat(String input) {
     final RegExp datePattern = RegExp(r'^\d{4}/\d{2}/\d{2}$');
 
     if (!datePattern.hasMatch(input)) return false;
@@ -62,5 +62,40 @@ abstract class AppRegex {
     } catch (e) {
       return false;
     }
+  }
+
+  static bool validatePasswordIsMoreThan8(String password) {
+    if (password.length < 8) {
+      return false;
+    }
+    return true;
+  }
+
+  static bool validatePasswordHasUpperCase(String password) {
+    if (!RegExp(r'[A-Z]').hasMatch(password)) {
+      return false;
+    }
+    return true;
+  }
+
+  static bool validatePasswordHasLowerCase(String password) {
+    if (!RegExp(r'[a-z]').hasMatch(password)) {
+      return false;
+    }
+    return true;
+  }
+
+  static bool validatePasswordHasNumber(String password) {
+    if (!RegExp(r'[0-9]').hasMatch(password)) {
+      return false;
+    }
+    return true;
+  }
+
+  static bool validatePasswordHasSpecialCharacter(String password) {
+    if (!RegExp(r'[^A-Za-z0-9]').hasMatch(password)) {
+      return false;
+    }
+    return true;
   }
 }

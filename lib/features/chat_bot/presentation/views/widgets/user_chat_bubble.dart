@@ -1,14 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import '../../../data/models/message_model.dart';
-
 class UserChatBubble extends StatelessWidget {
   const UserChatBubble({
     super.key,
-    required this.messageModel,
+    required this.message,
   });
-  final MessageModel messageModel;
+  final String message;
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -33,7 +31,7 @@ class UserChatBubble extends StatelessWidget {
           color: Theme.of(context).colorScheme.primary,
         ),
         child: Text(
-          messageModel.message,
+          message.replaceFirst(RegExp(r'^(You:|Bot:)\s*'), ''),
           style: Theme.of(context)
               .textTheme
               .titleMedium!

@@ -23,8 +23,8 @@ class OnBoardingButton extends StatelessWidget {
       child: GeneralButton(
         onPressed: () {
           if (controller.page == 2) {
-            Navigator.pushReplacementNamed(context, AppRoutes.registerOrLogin);
             Prefs.setBool(kIsOnBoardingViewed, true);
+            Navigator.pushNamed(context, AppRoutes.registerOrLogin);
           } else {
             controller.nextPage(
               duration: const Duration(milliseconds: 300),

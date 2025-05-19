@@ -3,7 +3,7 @@ import 'package:blood_bank/features/more/presentation/views/widgets/more_item.da
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../../../../home/presentation/cubits/posts_cubit.dart';
+import '../../../../home/presentation/cubits/community_cubit/cummuniy_cubit.dart';
 import 'user_information_header.dart';
 
 class MoreViewBody extends StatelessWidget {
@@ -27,17 +27,13 @@ class MoreViewBody extends StatelessWidget {
               onTap: () => Navigator.pushNamed(
                 context,
                 AppRoutes.sendPost,
-                arguments: BlocProvider.of<PostsCubit>(context),
+                arguments: BlocProvider.of<CommunityCubit>(context),
               ),
             ),
             const MoreItem(
               text: "Be a Donor",
               icon: Icons.bloodtype_rounded,
             ),
-            // const MoreItem(
-            //   text: "Blogs",
-            //   icon: FontAwesomeIcons.lightbulb,
-            // ),
             MoreItem(
               onTap: () => Navigator.pushNamed(context, AppRoutes.settings),
               text: "Settings",

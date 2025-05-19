@@ -1,14 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-
-import '../../../data/models/message_model.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 
 class ChatBotBubble extends StatelessWidget {
   const ChatBotBubble({
     super.key,
-    required this.messageModel,
+    required this.message,
   });
-  final MessageModel messageModel;
+  final String message;
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -32,14 +31,24 @@ class ChatBotBubble extends StatelessWidget {
                 ),
           color: Theme.of(context).colorScheme.surface,
         ),
-        child: Text(
-          messageModel.message,
-          style: Theme.of(context)
-              .textTheme
-              .titleMedium!
-              .copyWith(letterSpacing: -.5, fontWeight: FontWeight.normal),
+        child: MarkdownBody(
+          data: message,
+          styleSheet: MarkdownStyleSheet(
+            p: Theme.of(context)
+                .textTheme
+                .titleMedium!
+                .copyWith(letterSpacing: -.5, fontWeight: FontWeight.normal),
+          ),
         ),
       ),
     );
   }
 }
+
+// Text(
+//           message,
+//           style: Theme.of(context)
+//               .textTheme
+//               .titleMedium!
+//               .copyWith(letterSpacing: -.5, fontWeight: FontWeight.normal),
+//         ),

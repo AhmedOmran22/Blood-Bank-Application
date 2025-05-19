@@ -17,11 +17,13 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  await PushNotificationService.initialize();
-  await LocalNotificationService.init();
+  Future.wait([
+    PushNotificationService.initialize(),
+    LocalNotificationService.init(),
+    EasyLocalization.ensureInitialized(),
+    Prefs.init(),
+  ]);
   tz.initializeTimeZones();
-  await EasyLocalization.ensureInitialized();
-  await Prefs.init();
   setupGetit();
   changeSystemUiOverlayStyle();
 

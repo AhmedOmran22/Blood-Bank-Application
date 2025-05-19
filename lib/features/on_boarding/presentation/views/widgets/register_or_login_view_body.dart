@@ -21,7 +21,7 @@ class RegisterOrLoginViewBody extends StatelessWidget {
 
           SvgPicture.asset(
             height: 270,
-            AppAssets.imagesAnotherTesting,
+            AppAssets.imagesBloodDonation,
           ),
           SizedBox(height: MediaQuery.of(context).size.height * .1),
 

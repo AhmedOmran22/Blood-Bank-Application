@@ -6,7 +6,10 @@ import '../../../data/models/post_model.dart';
 import 'post_detailes_item.dart';
 
 class PostDetailesViewBody extends StatelessWidget {
-  const PostDetailesViewBody({super.key, required this.postModel});
+  const PostDetailesViewBody({
+    super.key,
+    required this.postModel,
+  });
   final PostModel postModel;
   @override
   Widget build(BuildContext context) {
@@ -21,7 +24,7 @@ class PostDetailesViewBody extends StatelessWidget {
           CircleAvatar(
             radius: 32,
             child: Text(
-              postModel.bloodType,
+              postModel.bloodType ?? "A+",
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.titleMedium!.copyWith(
                     fontSize: 20,

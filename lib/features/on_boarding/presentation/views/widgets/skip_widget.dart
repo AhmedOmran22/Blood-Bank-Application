@@ -23,8 +23,8 @@ class SkipWidget extends StatelessWidget {
         visible: !(controller.hasClients && controller.page == 2),
         child: InkWell(
           onTap: () {
-            Navigator.pushReplacementNamed(context, AppRoutes.registerOrLogin);
             Prefs.setBool(kIsOnBoardingViewed, true);
+            Navigator.pushNamed(context, AppRoutes.registerOrLogin);
           },
           splashColor: Colors.grey.shade300,
           borderRadius: BorderRadius.circular(8),

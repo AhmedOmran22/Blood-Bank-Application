@@ -1,3 +1,5 @@
+import 'package:blood_bank/core/constants/backend_endpoints.dart';
+import 'package:blood_bank/core/errors/exception.dart';
 import 'package:blood_bank/core/errors/failure.dart';
 import 'package:dio/dio.dart';
 import 'api_service.dart';
@@ -6,17 +8,19 @@ class DioConsumer extends ApiService {
   final Dio dio;
 
   DioConsumer({required this.dio}) {
-    dio.options.baseUrl = '';
-    dio.interceptors.add(
-      LogInterceptor(
-        request: true,
-        requestBody: true,
-        requestHeader: true,
-        responseBody: true,
-        responseHeader: true,
-        error: true,
-      ),
-    );
+    dio.options.baseUrl = BackendEndpoints.baseUrl;
+    // dio.interceptors.add(
+    //     InterceptorsWrapper(
+    //       onRequest: (options, handler) async {
+    //         final token = await Prefs.getString(kToken);
+    //         if (token != null) {
+    //           options.headers['Authorization'] = 'Bearer $token';
+    //         }
+    //         return handler.next(options);
+    //       },
+    //     ),
+    //     AuthInterceptor(dio),
+    // );
   }
 
   @override
@@ -34,7 +38,9 @@ class DioConsumer extends ApiService {
       );
       return response.data;
     } on DioException catch (e) {
-      throw ServerFailure.fromDioExcepiton(e);
+      throw CustomException(
+        message: ServerFailure.fromDioExcepiton(e).errMessage,
+      );
     }
   }
 
@@ -57,7 +63,9 @@ class DioConsumer extends ApiService {
       );
       return response.data;
     } on DioException catch (e) {
-      throw ServerFailure.fromDioExcepiton(e);
+      throw CustomException(
+        message: ServerFailure.fromDioExcepiton(e).errMessage,
+      );
     }
   }
 
@@ -80,10 +88,11 @@ class DioConsumer extends ApiService {
       );
       return response.data;
     } on DioException catch (e) {
-      throw ServerFailure.fromDioExcepiton(e);
+      throw CustomException(
+        message: ServerFailure.fromDioExcepiton(e).errMessage,
+      );
     }
   }
-
 
   @override
   Future delete(
@@ -104,7 +113,9 @@ class DioConsumer extends ApiService {
       );
       return response.data;
     } on DioException catch (e) {
-      throw ServerFailure.fromDioExcepiton(e);
+      throw CustomException(
+        message: ServerFailure.fromDioExcepiton(e).errMessage,
+      );
     }
   }
 }
