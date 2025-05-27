@@ -25,7 +25,7 @@ class CommunityRepoImpl implements CommunityRepo {
       for (var post in response) {
         miniPosts.add(MiniPostModel.fromJson(post));
       }
-      return Right(miniPosts);
+      return Right(miniPosts.reversed.toList());
     } catch (e) {
       return Left(ServerFailure(errMessage: e.toString()));
     }
