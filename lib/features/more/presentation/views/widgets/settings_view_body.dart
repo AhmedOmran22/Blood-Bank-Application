@@ -52,7 +52,7 @@ class SetingsViewBody extends StatelessWidget {
           backgroundColor: AppColors.primaryColor,
           textColor: AppColors.whiteColor,
         ),
-        SizedBox(height: MediaQuery.of(context).size.height * .1)
+        const SizedBox(height: 32)
       ],
     );
   }
