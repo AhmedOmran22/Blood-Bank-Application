@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:blood_bank/core/widgets/custom_drop_down_buttom_field.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/functions/show_snack_bar_function.dart';
 import '../../../../../core/utils/app_regex.dart';
 import '../../../../../core/utils/app_colors.dart';
+import '../../../../../core/widgets/city_drop_down_field.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
 import '../../../../../core/widgets/general_button.dart';
 import '../../../../../core/widgets/password_field.dart';
@@ -20,11 +20,12 @@ class RegisterForm extends StatefulWidget {
 }
 
 class _RegisterFormState extends State<RegisterForm> {
+  final formKey = GlobalKey<FormState>();
   bool isTermsAccepted = false;
+  AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
   int? bloodType;
   String? gender;
-  AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
-  final formKey = GlobalKey<FormState>();
+  int? cityId;
   late TextEditingController nameController;
   late TextEditingController emailController;
   late TextEditingController passwordController;
@@ -68,6 +69,7 @@ class _RegisterFormState extends State<RegisterForm> {
           buildPhoneNumberField(),
           buildNationalIDField(),
           buildDropDownBloodTypesField(),
+          buildDropDownCityField(),
           buildPasswordField(),
           buildConfirmPasswordField(),
           TermsAndConditions(
@@ -90,6 +92,16 @@ class _RegisterFormState extends State<RegisterForm> {
           )
         ],
       ),
+    );
+  }
+
+  CityDropDownField buildDropDownCityField() {
+    return CityDropDownField(
+      onChanged: (value) {
+        setState(() {
+          cityId = value;
+        });
+      },
     );
   }
 
@@ -144,8 +156,6 @@ class _RegisterFormState extends State<RegisterForm> {
       onChanged: (value) {
         setState(() {
           bloodType = value!;
-          log(bloodType.toString());
-          log(bloodType.toString());
         });
       },
     );
@@ -204,6 +214,7 @@ class _RegisterFormState extends State<RegisterForm> {
                 NationalId: nationalIDController.text,
                 bloodTypeId: bloodType,
                 password: passwordController.text,
+                cityId: cityId,
               );
         } else {
           showSnackBarFuction(context, "Passwords do not match");

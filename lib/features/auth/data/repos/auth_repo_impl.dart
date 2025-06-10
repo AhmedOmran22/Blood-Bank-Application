@@ -24,6 +24,7 @@ class AuthRepoImpl extends AuthRepo {
     String? bloodType,
     String? gender,
     required String nationalId,
+    int? cityId,
     int? bloodTypeId,
   }) async {
     try {
@@ -33,14 +34,15 @@ class AuthRepoImpl extends AuthRepo {
         phoneNumber: phoneNumber,
         NationalId: nationalId,
         bloodTypeid: bloodTypeId,
+        cityId: cityId,
       );
 
       await apiService.post(
         BackendEndpoints.register,
         data: userModel.toBackendMap(password),
       );
-      Prefs.setString(kConfirmedUserEmail, email);
 
+      Prefs.setString(kConfirmedUserEmail, email);
       return Right(userModel);
     } on CustomException catch (e) {
       log(e.message);
@@ -96,8 +98,9 @@ class AuthRepoImpl extends AuthRepo {
   }
 
   @override
-  Future<Either<Failure, UserModel>> fetchUserData(
-      {required String token}) async {
+  Future<Either<Failure, UserModel>> fetchUserData({
+    required String token,
+  }) async {
     try {
       var responde = await apiService.get(
         BackendEndpoints.getUserProfile,

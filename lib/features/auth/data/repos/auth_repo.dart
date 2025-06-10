@@ -11,6 +11,7 @@ abstract class AuthRepo {
     String? bloodType,
     String? gender,
     required String nationalId,
+    int? cityId,
     int? bloodTypeId,
   });
   Future<Either<Failure, UserModel>> fetchUserData({required String token});

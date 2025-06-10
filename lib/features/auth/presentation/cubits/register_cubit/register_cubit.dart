@@ -14,10 +14,10 @@ class RegisterCubit extends Cubit<RegisterCubitState> {
     required String phoneNumber,
     required String NationalId,
     int? bloodTypeId,
+    int? cityId,
     String? bloodType,
     String? gender,
   }) async {
-    // send loading state
     emit(RegisterCubitLoading());
     final result = await authRepo.registerNewUser(
       email: email,
@@ -25,6 +25,7 @@ class RegisterCubit extends Cubit<RegisterCubitState> {
       userName: name,
       phoneNumber: phoneNumber,
       bloodType: bloodType,
+      cityId: cityId,
       gender: gender,
       nationalId: NationalId,
       bloodTypeId: bloodTypeId,
