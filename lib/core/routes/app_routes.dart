@@ -16,4 +16,7 @@ abstract class AppRoutes {
   static const String bloodDonors = 'bloodDonorsView';
   static const String requestBlood = 'requestBloodView';
   static const String bloodGiven = 'bloodGivenView';
+  static const String recommendedView = 'recommendedView'; 
+  static const String predictView = 'predictView'; 
+
 }

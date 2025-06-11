@@ -8,6 +8,8 @@ import 'package:blood_bank/features/home/presentation/cubits/community_cubit/cum
 import 'package:blood_bank/features/home/presentation/cubits/get_post_detailes_cubit/get_post_detaile_cubit.dart';
 import 'package:blood_bank/features/home/presentation/views/all_posts_view.dart';
 import 'package:blood_bank/features/home/presentation/views/post_detailes_view.dart';
+import 'package:blood_bank/features/home/presentation/views/predict_view.dart';
+import 'package:blood_bank/features/home/presentation/views/recommended_view.dart';
 import 'package:blood_bank/features/home/presentation/views/send_post_view.dart';
 import 'package:blood_bank/features/more/presentation/views/settings_view.dart';
 import 'package:flutter/material.dart';
@@ -117,7 +119,18 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
           return const ChatBotView();
         },
       );
-
+    case AppRoutes.recommendedView:
+      return MaterialPageRoute(
+        builder: (BuildContext context) {
+          return const RecommendedView();
+        },
+      );
+    case AppRoutes.predictView:
+      return MaterialPageRoute(
+        builder: (BuildContext context) {
+          return const PredictView();
+        },
+      );
     case AppRoutes.settings:
       return MaterialPageRoute(
         builder: (BuildContext context) {

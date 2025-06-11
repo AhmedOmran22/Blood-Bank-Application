@@ -19,9 +19,9 @@ List<ActivityOptionItemModel> activityOptionItems = [
     navigateTo: AppRoutes.bloodDonors,
   ),
   ActivityOptionItemModel(
-    title: 'Request Blood',
+    title: 'Can Donate ?',
     subtitle: 'Get help',
-    navigateTo: AppRoutes.requestBlood,
+    navigateTo: AppRoutes.predictView,
   ),
   ActivityOptionItemModel(
     title: 'Create Post',
@@ -31,6 +31,6 @@ List<ActivityOptionItemModel> activityOptionItems = [
   ActivityOptionItemModel(
     title: 'Blood Given',
     subtitle: "It's easy 1 step",
-    navigateTo: AppRoutes.bloodGiven,
+    navigateTo: AppRoutes.recommendedView,
   ),
 ];
