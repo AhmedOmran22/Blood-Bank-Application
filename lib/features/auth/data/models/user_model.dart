@@ -30,6 +30,7 @@ class UserModel {
         "cityId": cityId,
         "phoneNumber": phoneNumber,
         "password": password,
+        "bloodBankId":6,
         "bloodTypeId": bloodTypeid
       };
 }
