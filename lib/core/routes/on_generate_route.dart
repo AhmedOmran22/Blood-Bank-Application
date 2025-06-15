@@ -7,6 +7,7 @@ import 'package:blood_bank/features/home/data/repos/community_repo.dart';
 import 'package:blood_bank/features/home/presentation/cubits/community_cubit/cummuniy_cubit.dart';
 import 'package:blood_bank/features/home/presentation/cubits/get_post_detailes_cubit/get_post_detaile_cubit.dart';
 import 'package:blood_bank/features/home/presentation/views/all_posts_view.dart';
+import 'package:blood_bank/features/home/presentation/views/appointment_view.dart';
 import 'package:blood_bank/features/home/presentation/views/post_detailes_view.dart';
 import 'package:blood_bank/features/home/presentation/views/predict_view.dart';
 import 'package:blood_bank/features/home/presentation/views/recommended_view.dart';
@@ -18,16 +19,16 @@ import '../../bottom_navigation_bar_view.dart';
 import '../../features/auth/presentation/views/forget_password_view.dart';
 import '../../features/auth/presentation/views/confirm_email_view.dart';
 import '../../features/chat_bot/presentation/views/chat_bot_view.dart';
-import '../../features/on_boarding/presentation/views/language_and_theme_view.dart';
+import '../../features/on_boarding/presentation/views/splash_view.dart';
 import '../../features/on_boarding/presentation/views/on_boarding_view.dart';
 import '../../features/on_boarding/presentation/views/register_or_login_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
-    case AppRoutes.languageAndTheme:
+    case AppRoutes.splashView:
       return MaterialPageRoute(
         builder: (BuildContext context) {
-          return const LanguageAndThemeView();
+          return const SplashView();
         },
       );
     case AppRoutes.onBoarding:
@@ -129,6 +130,12 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (BuildContext context) {
           return const PredictView();
+        },
+      );
+    case AppRoutes.appointmentView:
+      return MaterialPageRoute(
+        builder: (BuildContext context) {
+          return const AppointmentView();
         },
       );
     case AppRoutes.settings:

@@ -1,5 +1,9 @@
+import 'package:blood_bank/core/services/service_locator.dart';
+import 'package:blood_bank/features/home/data/repos/predict_repo.dart';
+import 'package:blood_bank/features/home/presentation/cubits/predict_cubit/predict_cubit.dart';
 import 'package:blood_bank/features/home/presentation/views/widgets/predict_view_body.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PredictView extends StatelessWidget {
   const PredictView({super.key});
@@ -23,9 +27,12 @@ class PredictView extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
       ),
-      body: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16),
-        child: PredictViewBody(),
+      body: BlocProvider(
+        create: (context) => PredictCubit(getIt<PredictRepo>()),
+        child: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16),
+          child: PredictViewBody(),
+        ),
       ),
     );
   }

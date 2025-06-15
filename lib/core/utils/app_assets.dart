@@ -11,5 +11,7 @@ class AppAssets {
   static const String imagesBloodDonation = "assets/images/blood_donation.svg";
 
   static const String imagesHypertension = "assets/images/hypertension.png";
+
+  static const String imagesLogo = "assets/images/Logo.png";
 }
 

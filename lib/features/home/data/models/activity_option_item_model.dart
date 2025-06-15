@@ -14,9 +14,9 @@ class ActivityOptionItemModel {
 
 List<ActivityOptionItemModel> activityOptionItems = [
   ActivityOptionItemModel(
-    title: 'Blood Donors',
+    title: 'Appointment',
     subtitle: '120 donors',
-    navigateTo: AppRoutes.bloodDonors,
+    navigateTo: AppRoutes.appointmentView,
   ),
   ActivityOptionItemModel(
     title: 'Can Donate ?',
@@ -29,7 +29,7 @@ List<ActivityOptionItemModel> activityOptionItems = [
     navigateTo: AppRoutes.sendPost,
   ),
   ActivityOptionItemModel(
-    title: 'Blood Given',
+    title: 'Recommended',
     subtitle: "It's easy 1 step",
     navigateTo: AppRoutes.recommendedView,
   ),

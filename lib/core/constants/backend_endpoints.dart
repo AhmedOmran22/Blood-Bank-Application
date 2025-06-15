@@ -14,4 +14,7 @@ abstract class BackendEndpoints {
   static const String getAllPosts = "/api/Posts";
   static const String publishPost = "/api/Posts";
   static const String getPostDetailes = "/Details";
+  static const String predictDonation = "/api/Ai/predict";
+  static const String recommended = '/api/Ai/recommended';
+  static const String bookAppointment = '/api/Ai/recommended';
 }
