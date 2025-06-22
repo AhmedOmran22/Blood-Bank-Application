@@ -14,11 +14,12 @@ class SplashViewBody extends StatefulWidget {
 class _SplashViewBodyState extends State<SplashViewBody> {
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 1))
-        .then((value) => Navigator.pushReplacementNamed(
-              context,
-              _handleInitialRoute(),
-            ));
+    Future.delayed(const Duration(seconds: 1)).then(
+      (value) => Navigator.pushReplacementNamed(
+        context,
+        _handleInitialRoute(),
+      ),
+    );
     super.initState();
   }
 
